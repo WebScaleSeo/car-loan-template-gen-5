@@ -1,0 +1,32 @@
+{
+  "parts": [
+    {
+      "name": "foundation",
+      "description": "site foundation including branding, SEO defaults, and footer content",
+      "schemaPath": "template_config/schemas/foundation_schema.json"
+    },
+    {
+      "name": "home_page",
+      "description": "complete home page content",
+      "schemaPath": "template_config/schemas/home_page_schema.json"
+    },
+    {
+      "name": "about_page",
+      "description": "complete about page content",
+      "schemaPath": "template_config/schemas/about_page_schema.json",
+      "context": "foundation"
+    },
+    {
+      "name": "faq_page",
+      "description": "complete faq page content",
+      "schemaPath": "template_config/schemas/faq_page_schema.json",
+      "context": "foundation"
+    },
+    {
+      "name": "contact_page",
+      "description": "complete contact page content",
+      "schemaPath": "template_config/schemas/contact_page_schema.json",
+      "context": "foundation"
+    }
+  ]
+}

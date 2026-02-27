@@ -1,0 +1,219 @@
+{
+  "name": "generate_contact_page",
+  "description": "Generate complete contact page content",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "seo": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 60
+          },
+          "metaDescription": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "title",
+          "metaDescription"
+        ]
+      },
+      "componentOrder": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "contactHero",
+            "contactForm",
+            "contactReassurance",
+            "contactFaqPreview"
+          ]
+        },
+        "minItems": 4,
+        "maxItems": 4
+      },
+      "sections": {
+        "type": "object",
+        "properties": {
+          "contactHero": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Contact page headline"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Brief description of what to expect after reaching out"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline"
+            ]
+          },
+          "contactForm": {
+            "type": "object",
+            "properties": {
+              "formTitle": {
+                "type": "string",
+                "description": "Form heading"
+              },
+              "formDescription": {
+                "type": "string",
+                "description": "Brief instructions for filling out the form"
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fieldName": {
+                      "type": "string",
+                      "description": "Field identifier (e.g., 'fullName', 'email')"
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "User-facing label"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Input type (text, email, tel, textarea, select)"
+                    },
+                    "placeholder": {
+                      "type": "string",
+                      "description": "Placeholder text"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "Whether this field is required"
+                    }
+                  },
+                  "required": [
+                    "fieldName",
+                    "label",
+                    "type",
+                    "placeholder",
+                    "required"
+                  ]
+                }
+              },
+              "submitButtonText": {
+                "type": "string",
+                "description": "Submit button label"
+              },
+              "privacyNote": {
+                "type": "string",
+                "description": "Brief privacy assurance text below the form"
+              }
+            },
+            "required": [
+              "formTitle",
+              "formDescription",
+              "fields",
+              "submitButtonText",
+              "privacyNote"
+            ]
+          },
+          "contactReassurance": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'What to Expect'"
+              },
+              "reassurancePoints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Reassurance point title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Brief explanation"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "reassurancePoints"
+            ]
+          },
+          "contactFaqPreview": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for mini FAQ"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question text"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Concise answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              },
+              "viewAllText": {
+                "type": "string",
+                "description": "Link text to full FAQ page"
+              },
+              "viewAllUrl": {
+                "type": "string",
+                "description": "URL — must be /faq"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs",
+              "viewAllText",
+              "viewAllUrl"
+            ]
+          }
+        },
+        "required": [
+          "contactHero",
+          "contactForm",
+          "contactReassurance",
+          "contactFaqPreview"
+        ]
+      }
+    },
+    "required": [
+      "seo",
+      "componentOrder",
+      "sections"
+    ]
+  }
+}

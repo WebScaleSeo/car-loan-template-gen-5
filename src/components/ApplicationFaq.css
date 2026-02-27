@@ -1,0 +1,454 @@
+/* ============================================
+   ApplicationFaq — Dramatic Cinematic / LIGHT + GRADIENT
+   Centered with radiating elements
+   Animated borders + mesh gradients + wave/ripple
+   ============================================ */
+
+/* ---------- Section Shell ---------- */
+.applicationFaq-section {
+  position: relative;
+  padding: 7rem 1.5rem 8rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 20%, var(--element-depth) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 85% 75%, var(--decorative-color) 0%, transparent 65%),
+    radial-gradient(ellipse 80% 70% at 50% 50%, var(--element-depth) 0%, transparent 70%),
+    var(--bg-page);
+}
+
+/* ---------- Mesh Gradient Blobs ---------- */
+.faq-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq-blob-1 {
+  width: 600px;
+  height: 400px;
+  top: -80px;
+  left: -150px;
+  background: radial-gradient(ellipse, var(--element-depth), transparent 70%);
+  animation: blobDrift1 12s ease-in-out infinite;
+}
+
+.faq-blob-2 {
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  right: -120px;
+  background: radial-gradient(ellipse, var(--decorative-color), transparent 70%);
+  animation: blobDrift2 15s ease-in-out infinite;
+}
+
+.faq-blob-3 {
+  width: 400px;
+  height: 300px;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, var(--element-depth), transparent 70%);
+  animation: blobDrift3 18s ease-in-out infinite;
+}
+
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 20px) scale(1.05); }
+}
+
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, -15px) scale(1.08); }
+}
+
+@keyframes blobDrift3 {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+}
+
+/* ---------- Radiating Rings ---------- */
+.faq-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.faq-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+.faq-ring-1 {
+  width: 300px;
+  height: 300px;
+  animation: ringRipple 4s ease-out infinite 0s;
+}
+
+.faq-ring-2 {
+  width: 500px;
+  height: 500px;
+  animation: ringRipple 4s ease-out infinite 1s;
+}
+
+.faq-ring-3 {
+  width: 700px;
+  height: 700px;
+  animation: ringRipple 4s ease-out infinite 2s;
+}
+
+.faq-ring-4 {
+  width: 900px;
+  height: 900px;
+  animation: ringRipple 4s ease-out infinite 3s;
+}
+
+@keyframes ringRipple {
+  0%   { transform: translate(-50%, -50%) scale(0.6); opacity: 0.5; border-color: var(--accent-highlight); }
+  60%  { opacity: 0.15; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; border-color: var(--border-color); }
+}
+
+/* ---------- Container ---------- */
+.faq-container {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- Header ---------- */
+.faq-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeUpIn 0.7s ease both;
+}
+
+.faq-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.faq-eyebrow-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-highlight);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+.faq-eyebrow-dot:last-child {
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+.faq-eyebrow-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-highlight);
+}
+
+.faq-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--hero-gradient-from) 0%, var(--secondary-color) 45%, var(--accent-highlight) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.5rem;
+}
+
+.faq-title-accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.faq-accent-line {
+  display: block;
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--accent-highlight), transparent);
+}
+
+.faq-accent-diamond {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--gradient-accent);
+  transform: rotate(45deg);
+}
+
+/* ---------- FAQ List ---------- */
+.faq-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ---------- FAQ Item ---------- */
+.faq-item {
+  position: relative;
+  border-radius: 16px;
+  animation: fadeUpIn 0.6s ease both;
+}
+
+/* Animated gradient border layer */
+.faq-item-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--border-color);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: background 0.4s ease;
+  z-index: 0;
+}
+
+.faq-item:hover .faq-item-border {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-highlight));
+  animation: borderShimmer 3s linear infinite;
+}
+
+.faq-item--open .faq-item-border {
+  background: var(--gradient-accent);
+  animation: borderShimmer 3s linear infinite;
+}
+
+@keyframes borderShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Inner content surface */
+.faq-item > .faq-question,
+.faq-item > .faq-answer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Question Button ---------- */
+.faq-question {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-surface);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+.faq-item--open .faq-question {
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 4px 24px var(--shadow-color);
+  background: var(--bg-surface);
+}
+
+.faq-question:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px var(--shadow-color);
+}
+
+.faq-question-number {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 2.5rem;
+  letter-spacing: -0.03em;
+}
+
+.faq-question-text {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* ---------- Toggle Icon ---------- */
+.faq-toggle {
+  flex-shrink: 0;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--badge-bg);
+  transition: background 0.3s ease, transform 0.35s ease;
+}
+
+.faq-item--open .faq-toggle {
+  background: var(--gradient-accent);
+  transform: rotate(45deg);
+}
+
+.faq-toggle-h,
+.faq-toggle-v {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+  background: var(--text-primary);
+  transform-origin: center;
+  transition: background 0.3s ease;
+}
+
+.faq-item--open .faq-toggle-h,
+.faq-item--open .faq-toggle-v {
+  background: var(--text-inverse);
+}
+
+.faq-toggle-h {
+  width: 12px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.faq-toggle-v {
+  width: 2px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- Answer Panel ---------- */
+.faq-answer {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-surface);
+  border-radius: 0 0 14px 14px;
+  padding: 0 1.75rem 1.75rem calc(1.75rem + 2.5rem + 1.25rem);
+  border-top: 1px solid var(--section-divider);
+  box-shadow: 0 4px 24px var(--shadow-color);
+}
+
+.faq-answer-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+  padding-top: 1.25rem;
+}
+
+/* ---------- Footer Accent ---------- */
+.faq-footer-accent {
+  position: relative;
+  margin-top: 3.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.faq-footer-line {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-highlight), transparent);
+}
+
+.faq-footer-glow {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--gradient-accent);
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(1.4); }
+}
+
+/* ---------- Entrance Animation ---------- */
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .applicationFaq-section {
+    padding: 5rem 1rem 6rem;
+  }
+
+  .faq-question {
+    padding: 1.25rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .faq-question-number {
+    font-size: 1.25rem;
+    min-width: 2rem;
+  }
+
+  .faq-question-text {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem calc(1.25rem + 2rem + 1rem);
+  }
+
+  .faq-ring-3,
+  .faq-ring-4 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-question-number {
+    display: none;
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
+}

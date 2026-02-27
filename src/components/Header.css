@@ -1,0 +1,382 @@
+/* =============================================
+   Header — Classic Elevated | Midnight Luxe
+   ============================================= */
+
+/* ---------- Keyframes ---------- */
+
+@keyframes logoPulse {
+  0%   { opacity: 0; transform: scale(0.85); }
+  65%  { opacity: 1; transform: scale(1.05); }
+  85%  { transform: scale(0.97); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes accentStripIn {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+
+@keyframes navLinkFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ctaSlideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shineMove {
+  from { left: -80%; }
+  to   { left: 120%; }
+}
+
+/* ---------- Root ---------- */
+
+.header-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  /* Light background with visible depth — subtle top-to-bottom gradient */
+  background: linear-gradient(
+    180deg,
+    var(--bg-surface) 0%,
+    var(--bg-page) 100%
+  );
+  border-bottom: 1px solid var(--border-color);
+  transition:
+    box-shadow 0.4s ease,
+    background 0.4s ease,
+    border-color 0.35s ease;
+}
+
+/* Scrolled state — solidify, deepen shadow, accent border */
+.header-scrolled {
+  background: var(--bg-surface);
+  box-shadow:
+    0 2px 8px var(--shadow-color),
+    0 8px 32px var(--element-depth);
+  border-bottom-color: transparent;
+}
+
+.header-scrolled .header-bottom-accent {
+  opacity: 1;
+}
+
+/* ---------- Top Accent Strip ---------- */
+
+.header-accent-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  animation: accentStripIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+  z-index: 2;
+}
+
+/* ---------- Bottom Accent Border (reveals on scroll) ---------- */
+
+.header-bottom-accent {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-highlight) 35%,
+    var(--primary-color) 65%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+/* ---------- Background Decorative Pattern ---------- */
+
+.header-bg-decor {
+  position: absolute;
+  inset: 0;
+  /* Subtle dot grid — tasteful depth without blurring edges */
+  background-image: radial-gradient(
+    circle,
+    var(--decorative-color) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  background-position: 14px 8px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Inner Layout (logo left — nav right) ---------- */
+
+.header-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 1.25rem 2.5rem;
+  gap: 2rem;
+}
+
+/* ---------- Logo — LEFT ---------- */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  animation: logoPulse 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.header-logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 10px var(--element-depth));
+  transition: filter 0.25s ease;
+}
+
+.header-logo:hover .header-logo-mark {
+  filter: drop-shadow(0 4px 16px var(--shadow-color));
+}
+
+.header-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.header-logo-core {
+  font-family: var(--font-heading, serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  /* Gradient text for premium feel */
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-logo-qualifier {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+/* ---------- Navigation — RIGHT ---------- */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Nav Links ---------- */
+
+.header-nav-link {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  transition: color 0.22s ease, background 0.22s ease;
+  gap: 4px;
+}
+
+/* Staggered fade-in for each nav link */
+.header-nav .header-nav-link:nth-child(1) { animation: navLinkFadeIn 0.45s ease 0.3s both; }
+.header-nav .header-nav-link:nth-child(2) { animation: navLinkFadeIn 0.45s ease 0.4s both; }
+.header-nav .header-nav-link:nth-child(3) { animation: navLinkFadeIn 0.45s ease 0.5s both; }
+.header-nav .header-nav-link:nth-child(4) { animation: navLinkFadeIn 0.45s ease 0.6s both; }
+.header-nav .header-nav-link:nth-child(5) { animation: navLinkFadeIn 0.45s ease 0.7s both; }
+
+.header-nav-link:hover,
+.header-nav-link:focus-visible {
+  color: var(--accent-highlight);
+  background: var(--badge-bg);
+  outline: none;
+}
+
+.header-nav-link-label {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Underline slide reveal on hover */
+.header-nav-link-bar {
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+.header-nav-link:hover .header-nav-link-bar,
+.header-nav-link:focus-visible .header-nav-link-bar {
+  width: calc(100% - 2rem);
+}
+
+/* ---------- CTA Button ---------- */
+
+.header-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  margin-left: 0.75rem;
+  border-radius: 8px;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow:
+    0 2px 10px var(--element-depth),
+    0 1px 0 rgba(255,255,255,0.1) inset;
+  transition:
+    box-shadow 0.28s ease,
+    transform 0.2s ease,
+    filter 0.28s ease;
+  animation: ctaSlideIn 0.5s ease 0.75s both;
+}
+
+/* Shine sweep on hover */
+.header-cta-shine {
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.22) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: none;
+}
+
+.header-cta-btn:hover .header-cta-shine,
+.header-cta-btn:focus-visible .header-cta-shine {
+  animation: shineMove 0.55s ease-out forwards;
+}
+
+.header-cta-btn:hover,
+.header-cta-btn:focus-visible {
+  box-shadow:
+    0 6px 24px var(--shadow-color),
+    0 0 0 2px var(--accent-highlight),
+    0 1px 0 rgba(255,255,255,0.1) inset;
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  outline: none;
+}
+
+.header-cta-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.97);
+}
+
+/* ---------- Responsive — tablet ---------- */
+
+@media (max-width: 900px) {
+  .header-inner {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .header-nav-link {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.825rem;
+  }
+
+  .header-cta-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+}
+
+/* ---------- Responsive — mobile ---------- */
+
+@media (max-width: 640px) {
+  .header-inner {
+    padding: 0.875rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .header-logo {
+    flex: 0 0 auto;
+  }
+
+  .header-nav {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+  }
+
+  .header-nav-link {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.78rem;
+  }
+
+  .header-nav-link-bar {
+    display: none;
+  }
+
+  .header-cta-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+  }
+
+  .header-bg-decor {
+    background-size: 20px 20px;
+  }
+}

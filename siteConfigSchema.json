@@ -1,0 +1,992 @@
+{
+  "meta": {
+    "version": "2.0.0",
+    "timestamp": "2026-02-26T06:21:11.630Z",
+    "description": "Auto-generated schema for editing site content via UI form",
+    "generator": "orchestrator-v7"
+  },
+  "structure": {
+    "pages": {
+      "type": "object",
+      "label": "Pages",
+      "children": {
+        "home": {
+          "type": "page",
+          "label": "Home Page",
+          "path": "site.pages.home",
+          "children": {
+            "pageTitle": {
+              "path": "site.pages.home.seo.title",
+              "type": "text",
+              "label": "Page Title (Browser Tab)"
+            },
+            "metaDescription": {
+              "path": "site.pages.home.seo.metaDescription",
+              "type": "textarea",
+              "label": "Meta Description (Search Results)"
+            },
+            "heroSection": {
+              "type": "object",
+              "label": "Hero Section",
+              "children": {
+                "headline": {
+                  "path": "site.pages.home.sections.heroSection.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "subheadline": {
+                  "path": "site.pages.home.sections.heroSection.subheadline",
+                  "type": "textarea",
+                  "label": "Subheadline"
+                },
+                "ctaButtonText": {
+                  "path": "site.pages.home.sections.heroSection.ctaButtonText",
+                  "type": "text",
+                  "label": "CTA Button Text"
+                },
+                "ctaButtonUrl": {
+                  "path": "site.pages.home.sections.heroSection.ctaButtonUrl",
+                  "type": "url",
+                  "label": "CTA Button URL"
+                },
+                "secondaryCtaText": {
+                  "path": "site.pages.home.sections.heroSection.secondaryCtaText",
+                  "type": "text",
+                  "label": "Secondary CTA Text"
+                },
+                "secondaryCtaUrl": {
+                  "path": "site.pages.home.sections.heroSection.secondaryCtaUrl",
+                  "type": "url",
+                  "label": "Secondary CTA URL"
+                }
+              },
+              "description": "Immediately communicates the core value proposition — helping visitors secure affordable car loans — and drives them to take the first step toward getting a quote."
+            },
+            "keyBenefits": {
+              "type": "object",
+              "label": "Key Benefits",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.home.sections.keyBenefits.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionSubtitle": {
+                  "path": "site.pages.home.sections.keyBenefits.sectionSubtitle",
+                  "type": "textarea",
+                  "label": "Section Subtitle"
+                },
+                "benefits": {
+                  "path": "site.pages.home.sections.keyBenefits.benefits",
+                  "type": "array",
+                  "label": "Benefits",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "iconName": {
+                        "type": "image",
+                        "label": "Icon Name"
+                      },
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Highlights the primary advantages of choosing DriveWay Finance for a car loan — such as competitive rates, flexible terms, and fast approval — building immediate confidence."
+            },
+            "howItWorks": {
+              "type": "object",
+              "label": "How It Works",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.home.sections.howItWorks.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionSubtitle": {
+                  "path": "site.pages.home.sections.howItWorks.sectionSubtitle",
+                  "type": "textarea",
+                  "label": "Section Subtitle"
+                },
+                "steps": {
+                  "path": "site.pages.home.sections.howItWorks.steps",
+                  "type": "array",
+                  "label": "Steps",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "stepNumber": {
+                        "type": "text",
+                        "label": "Step Number"
+                      },
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                },
+                "ctaText": {
+                  "path": "site.pages.home.sections.howItWorks.ctaText",
+                  "type": "text",
+                  "label": "CTA Text"
+                },
+                "ctaUrl": {
+                  "path": "site.pages.home.sections.howItWorks.ctaUrl",
+                  "type": "url",
+                  "label": "CTA URL"
+                }
+              },
+              "description": "Explains the straightforward car loan application process in clear sequential steps so visitors know exactly what to expect."
+            },
+            "loanTypesOverview": {
+              "type": "object",
+              "label": "Loan Types Overview",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.home.sections.loanTypesOverview.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionSubtitle": {
+                  "path": "site.pages.home.sections.loanTypesOverview.sectionSubtitle",
+                  "type": "textarea",
+                  "label": "Section Subtitle"
+                },
+                "loanTypes": {
+                  "path": "site.pages.home.sections.loanTypesOverview.loanTypes",
+                  "type": "array",
+                  "label": "Loan Types",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "iconName": {
+                        "type": "image",
+                        "label": "Icon Name"
+                      },
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      },
+                      "ctaText": {
+                        "type": "text",
+                        "label": "CTA Text"
+                      },
+                      "ctaUrl": {
+                        "type": "url",
+                        "label": "CTA URL"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Showcases the different types of car loans available — new car, used car, refinancing — so visitors can find the option that fits their situation."
+            },
+            "testimonialShowcase": {
+              "type": "object",
+              "label": "Testimonial Showcase",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.home.sections.testimonialShowcase.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionSubtitle": {
+                  "path": "site.pages.home.sections.testimonialShowcase.sectionSubtitle",
+                  "type": "textarea",
+                  "label": "Section Subtitle"
+                },
+                "testimonials": {
+                  "path": "site.pages.home.sections.testimonialShowcase.testimonials",
+                  "type": "array",
+                  "label": "Testimonials",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "quote": {
+                        "type": "textarea",
+                        "label": "Quote"
+                      },
+                      "authorName": {
+                        "type": "text",
+                        "label": "Author Name"
+                      },
+                      "loanType": {
+                        "type": "text",
+                        "label": "Loan Type"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Builds trust and social proof by sharing real customer experiences and satisfaction with the car loan process."
+            },
+            "whyChooseUs": {
+              "type": "object",
+              "label": "Why Choose Us",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.home.sections.whyChooseUs.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionDescription": {
+                  "path": "site.pages.home.sections.whyChooseUs.sectionDescription",
+                  "type": "textarea",
+                  "label": "Section Description"
+                },
+                "differentiators": {
+                  "path": "site.pages.home.sections.whyChooseUs.differentiators",
+                  "type": "array",
+                  "label": "Differentiators",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Communicates the unique differentiators of DriveWay Finance over traditional banks and other lenders, reinforcing the value proposition."
+            },
+            "homeFaqPreview": {
+              "type": "object",
+              "label": "Home FAQ Preview",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.home.sections.homeFaqPreview.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionSubtitle": {
+                  "path": "site.pages.home.sections.homeFaqPreview.sectionSubtitle",
+                  "type": "textarea",
+                  "label": "Section Subtitle"
+                },
+                "faqs": {
+                  "path": "site.pages.home.sections.homeFaqPreview.faqs",
+                  "type": "array",
+                  "label": "Faqs",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "question": {
+                        "type": "text",
+                        "label": "Question"
+                      },
+                      "answer": {
+                        "type": "textarea",
+                        "label": "Answer"
+                      }
+                    }
+                  }
+                },
+                "viewAllText": {
+                  "path": "site.pages.home.sections.homeFaqPreview.viewAllText",
+                  "type": "text",
+                  "label": "View All Text"
+                },
+                "viewAllUrl": {
+                  "path": "site.pages.home.sections.homeFaqPreview.viewAllUrl",
+                  "type": "url",
+                  "label": "View All URL"
+                }
+              },
+              "description": "Addresses the most common quick questions about car loans to reduce hesitation and encourage visitors to move forward."
+            },
+            "homeCtaBanner": {
+              "type": "object",
+              "label": "Home CTA Banner",
+              "children": {
+                "headline": {
+                  "path": "site.pages.home.sections.homeCtaBanner.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "description": {
+                  "path": "site.pages.home.sections.homeCtaBanner.description",
+                  "type": "textarea",
+                  "label": "Description"
+                },
+                "ctaButtonText": {
+                  "path": "site.pages.home.sections.homeCtaBanner.ctaButtonText",
+                  "type": "text",
+                  "label": "CTA Button Text"
+                },
+                "ctaButtonUrl": {
+                  "path": "site.pages.home.sections.homeCtaBanner.ctaButtonUrl",
+                  "type": "url",
+                  "label": "CTA Button URL"
+                }
+              },
+              "description": "Provides a final compelling call to action at the bottom of the homepage to capture visitors who have scrolled through all content and are ready to act."
+            }
+          }
+        },
+        "about": {
+          "type": "page",
+          "label": "About Page",
+          "path": "site.pages.about",
+          "children": {
+            "pageTitle": {
+              "path": "site.pages.about.seo.title",
+              "type": "text",
+              "label": "Page Title (Browser Tab)"
+            },
+            "metaDescription": {
+              "path": "site.pages.about.seo.metaDescription",
+              "type": "textarea",
+              "label": "Meta Description (Search Results)"
+            },
+            "aboutHero": {
+              "type": "object",
+              "label": "About Hero",
+              "children": {
+                "headline": {
+                  "path": "site.pages.about.sections.aboutHero.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "subheadline": {
+                  "path": "site.pages.about.sections.aboutHero.subheadline",
+                  "type": "textarea",
+                  "label": "Subheadline"
+                }
+              },
+              "description": "Introduces the About page with a compelling narrative about DriveWay Finance's purpose and commitment to car buyers."
+            },
+            "missionStatement": {
+              "type": "object",
+              "label": "Mission Statement",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.about.sections.missionStatement.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "missionText": {
+                  "path": "site.pages.about.sections.missionStatement.missionText",
+                  "type": "textarea",
+                  "label": "Mission Text"
+                },
+                "visionText": {
+                  "path": "site.pages.about.sections.missionStatement.visionText",
+                  "type": "textarea",
+                  "label": "Vision Text"
+                }
+              },
+              "description": "Communicates the company's core mission — making car financing simple, fair, and accessible for all types of buyers."
+            },
+            "ourApproach": {
+              "type": "object",
+              "label": "Our Approach",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.about.sections.ourApproach.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionDescription": {
+                  "path": "site.pages.about.sections.ourApproach.sectionDescription",
+                  "type": "textarea",
+                  "label": "Section Description"
+                },
+                "approachPillars": {
+                  "path": "site.pages.about.sections.ourApproach.approachPillars",
+                  "type": "array",
+                  "label": "Approach Pillars",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "iconName": {
+                        "type": "image",
+                        "label": "Icon Name"
+                      },
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Explains the company's distinctive approach to car lending — transparency, personalized service, and finding the right fit for each borrower."
+            },
+            "coreValues": {
+              "type": "object",
+              "label": "Core Values",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.about.sections.coreValues.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "sectionSubtitle": {
+                  "path": "site.pages.about.sections.coreValues.sectionSubtitle",
+                  "type": "textarea",
+                  "label": "Section Subtitle"
+                },
+                "values": {
+                  "path": "site.pages.about.sections.coreValues.values",
+                  "type": "array",
+                  "label": "Values",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Presents the guiding principles that shape every interaction and loan decision at DriveWay Finance."
+            },
+            "teamOverview": {
+              "type": "object",
+              "label": "Team Overview",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.about.sections.teamOverview.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "description": {
+                  "path": "site.pages.about.sections.teamOverview.description",
+                  "type": "textarea",
+                  "label": "Description"
+                },
+                "teamHighlights": {
+                  "path": "site.pages.about.sections.teamOverview.teamHighlights",
+                  "type": "array",
+                  "label": "Team Highlights",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "role": {
+                        "type": "text",
+                        "label": "Role"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Describes the expertise and dedication of the DriveWay Finance team using role descriptions rather than specific individuals."
+            },
+            "aboutCtaBanner": {
+              "type": "object",
+              "label": "About CTA Banner",
+              "children": {
+                "headline": {
+                  "path": "site.pages.about.sections.aboutCtaBanner.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "description": {
+                  "path": "site.pages.about.sections.aboutCtaBanner.description",
+                  "type": "textarea",
+                  "label": "Description"
+                },
+                "ctaButtonText": {
+                  "path": "site.pages.about.sections.aboutCtaBanner.ctaButtonText",
+                  "type": "text",
+                  "label": "CTA Button Text"
+                },
+                "ctaButtonUrl": {
+                  "path": "site.pages.about.sections.aboutCtaBanner.ctaButtonUrl",
+                  "type": "url",
+                  "label": "CTA Button URL"
+                }
+              },
+              "description": "Encourages visitors who have learned about the company to take the next step and reach out for a personalized quote."
+            }
+          }
+        },
+        "faq": {
+          "type": "page",
+          "label": "FAQ Page",
+          "path": "site.pages.faq",
+          "children": {
+            "pageTitle": {
+              "path": "site.pages.faq.seo.title",
+              "type": "text",
+              "label": "Page Title (Browser Tab)"
+            },
+            "metaDescription": {
+              "path": "site.pages.faq.seo.metaDescription",
+              "type": "textarea",
+              "label": "Meta Description (Search Results)"
+            },
+            "faqHero": {
+              "type": "object",
+              "label": "FAQ Hero",
+              "children": {
+                "headline": {
+                  "path": "site.pages.faq.sections.faqHero.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "subheadline": {
+                  "path": "site.pages.faq.sections.faqHero.subheadline",
+                  "type": "textarea",
+                  "label": "Subheadline"
+                }
+              },
+              "description": "Introduces the FAQ page and reassures visitors that their questions about car loans will be thoroughly answered."
+            },
+            "faqCategories": {
+              "type": "object",
+              "label": "FAQ Categories",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.faq.sections.faqCategories.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "categories": {
+                  "path": "site.pages.faq.sections.faqCategories.categories",
+                  "type": "array",
+                  "label": "Categories",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "iconName": {
+                        "type": "image",
+                        "label": "Icon Name"
+                      },
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Provides quick navigation to different FAQ categories so visitors can jump directly to topics relevant to them."
+            },
+            "generalFaq": {
+              "type": "object",
+              "label": "General FAQ",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.faq.sections.generalFaq.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "faqs": {
+                  "path": "site.pages.faq.sections.generalFaq.faqs",
+                  "type": "array",
+                  "label": "Faqs",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "question": {
+                        "type": "text",
+                        "label": "Question"
+                      },
+                      "answer": {
+                        "type": "textarea",
+                        "label": "Answer"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Answers fundamental questions about car loans — what they are, who qualifies, and what documents are needed."
+            },
+            "ratesFaq": {
+              "type": "object",
+              "label": "Rates FAQ",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.faq.sections.ratesFaq.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "faqs": {
+                  "path": "site.pages.faq.sections.ratesFaq.faqs",
+                  "type": "array",
+                  "label": "Faqs",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "question": {
+                        "type": "text",
+                        "label": "Question"
+                      },
+                      "answer": {
+                        "type": "textarea",
+                        "label": "Answer"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Addresses common questions about interest rates, loan terms, monthly payments, and factors that influence pricing."
+            },
+            "applicationFaq": {
+              "type": "object",
+              "label": "Application FAQ",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.faq.sections.applicationFaq.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "faqs": {
+                  "path": "site.pages.faq.sections.applicationFaq.faqs",
+                  "type": "array",
+                  "label": "Faqs",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "question": {
+                        "type": "text",
+                        "label": "Question"
+                      },
+                      "answer": {
+                        "type": "textarea",
+                        "label": "Answer"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Walks visitors through common questions about the application process, approval timelines, and what to expect after applying."
+            },
+            "faqCtaBanner": {
+              "type": "object",
+              "label": "FAQ CTA Banner",
+              "children": {
+                "headline": {
+                  "path": "site.pages.faq.sections.faqCtaBanner.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "description": {
+                  "path": "site.pages.faq.sections.faqCtaBanner.description",
+                  "type": "textarea",
+                  "label": "Description"
+                },
+                "ctaButtonText": {
+                  "path": "site.pages.faq.sections.faqCtaBanner.ctaButtonText",
+                  "type": "text",
+                  "label": "CTA Button Text"
+                },
+                "ctaButtonUrl": {
+                  "path": "site.pages.faq.sections.faqCtaBanner.ctaButtonUrl",
+                  "type": "url",
+                  "label": "CTA Button URL"
+                }
+              },
+              "description": "Invites visitors who still have unanswered questions to reach out directly, capturing leads from engaged FAQ readers."
+            }
+          }
+        },
+        "contact": {
+          "type": "page",
+          "label": "Contact Page",
+          "path": "site.pages.contact",
+          "children": {
+            "pageTitle": {
+              "path": "site.pages.contact.seo.title",
+              "type": "text",
+              "label": "Page Title (Browser Tab)"
+            },
+            "metaDescription": {
+              "path": "site.pages.contact.seo.metaDescription",
+              "type": "textarea",
+              "label": "Meta Description (Search Results)"
+            },
+            "contactHero": {
+              "type": "object",
+              "label": "Contact Hero",
+              "children": {
+                "headline": {
+                  "path": "site.pages.contact.sections.contactHero.headline",
+                  "type": "text",
+                  "label": "Headline"
+                },
+                "subheadline": {
+                  "path": "site.pages.contact.sections.contactHero.subheadline",
+                  "type": "textarea",
+                  "label": "Subheadline"
+                }
+              },
+              "description": "Welcomes visitors to the contact page and sets expectations for what will happen when they reach out."
+            },
+            "contactForm": {
+              "type": "object",
+              "label": "Contact Form",
+              "children": {
+                "formTitle": {
+                  "path": "site.pages.contact.sections.contactForm.formTitle",
+                  "type": "text",
+                  "label": "Form Title"
+                },
+                "formDescription": {
+                  "path": "site.pages.contact.sections.contactForm.formDescription",
+                  "type": "textarea",
+                  "label": "Form Description"
+                },
+                "fields": {
+                  "path": "site.pages.contact.sections.contactForm.fields",
+                  "type": "array",
+                  "label": "Fields",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "fieldName": {
+                        "type": "text",
+                        "label": "Field Name"
+                      },
+                      "label": {
+                        "type": "text",
+                        "label": "Label"
+                      },
+                      "type": {
+                        "type": "text",
+                        "label": "Type"
+                      },
+                      "placeholder": {
+                        "type": "text",
+                        "label": "Placeholder"
+                      },
+                      "required": {
+                        "type": "toggle",
+                        "label": "Required"
+                      }
+                    }
+                  }
+                },
+                "submitButtonText": {
+                  "path": "site.pages.contact.sections.contactForm.submitButtonText",
+                  "type": "text",
+                  "label": "Submit Button Text"
+                },
+                "privacyNote": {
+                  "path": "site.pages.contact.sections.contactForm.privacyNote",
+                  "type": "textarea",
+                  "label": "Privacy Note"
+                }
+              },
+              "description": "Collects visitor information and loan inquiry details so the DriveWay Finance team can provide a personalized response."
+            },
+            "contactReassurance": {
+              "type": "object",
+              "label": "Contact Reassurance",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.contact.sections.contactReassurance.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "reassurancePoints": {
+                  "path": "site.pages.contact.sections.contactReassurance.reassurancePoints",
+                  "type": "array",
+                  "label": "Reassurance Points",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "iconName": {
+                        "type": "image",
+                        "label": "Icon Name"
+                      },
+                      "title": {
+                        "type": "text",
+                        "label": "Title"
+                      },
+                      "description": {
+                        "type": "textarea",
+                        "label": "Description"
+                      }
+                    }
+                  }
+                }
+              },
+              "description": "Builds confidence in reaching out by highlighting what makes the experience of working with DriveWay Finance positive and risk-free."
+            },
+            "contactFaqPreview": {
+              "type": "object",
+              "label": "Contact FAQ Preview",
+              "children": {
+                "sectionTitle": {
+                  "path": "site.pages.contact.sections.contactFaqPreview.sectionTitle",
+                  "type": "text",
+                  "label": "Section Title"
+                },
+                "faqs": {
+                  "path": "site.pages.contact.sections.contactFaqPreview.faqs",
+                  "type": "array",
+                  "label": "Faqs",
+                  "itemSchema": {
+                    "type": "object",
+                    "children": {
+                      "question": {
+                        "type": "text",
+                        "label": "Question"
+                      },
+                      "answer": {
+                        "type": "textarea",
+                        "label": "Answer"
+                      }
+                    }
+                  }
+                },
+                "viewAllText": {
+                  "path": "site.pages.contact.sections.contactFaqPreview.viewAllText",
+                  "type": "text",
+                  "label": "View All Text"
+                },
+                "viewAllUrl": {
+                  "path": "site.pages.contact.sections.contactFaqPreview.viewAllUrl",
+                  "type": "url",
+                  "label": "View All URL"
+                }
+              },
+              "description": "Addresses quick questions visitors may have before submitting the form, reducing friction and form abandonment."
+            }
+          }
+        }
+      }
+    },
+    "header": {
+      "type": "object",
+      "label": "Header & Navigation",
+      "path": "site.global.navigation",
+      "children": {
+        "items": {
+          "path": "site.global.navigation.items",
+          "type": "array",
+          "label": "Navigation Items",
+          "itemSchema": {
+            "type": "object",
+            "children": {
+              "label": {
+                "type": "text",
+                "label": "Label"
+              },
+              "url": {
+                "type": "url",
+                "label": "URL"
+              },
+              "type": {
+                "type": "select",
+                "label": "Type",
+                "options": [
+                  "link",
+                  "cta"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "label": "Footer",
+      "path": "site.global.footer",
+      "children": {
+        "name": {
+          "path": "site.global.footer.branding.name",
+          "type": "text",
+          "label": "Footer Brand Name"
+        },
+        "description": {
+          "path": "site.global.footer.branding.description",
+          "type": "textarea",
+          "label": "Footer Description"
+        },
+        "copyright": {
+          "path": "site.global.footer.copyright",
+          "type": "text",
+          "label": "Copyright Text"
+        },
+        "links": {
+          "path": "site.global.footer.links",
+          "type": "array",
+          "label": "Footer Links",
+          "itemSchema": {
+            "type": "object",
+            "children": {
+              "label": {
+                "type": "text",
+                "label": "Label"
+              },
+              "url": {
+                "type": "url",
+                "label": "URL"
+              }
+            }
+          }
+        }
+      }
+    },
+    "branding": {
+      "type": "object",
+      "label": "Branding & SEO",
+      "children": {
+        "name": {
+          "path": "site.global.branding.name",
+          "type": "text",
+          "label": "Brand Name"
+        },
+        "tagline": {
+          "path": "site.global.branding.tagline",
+          "type": "text",
+          "label": "Tagline"
+        },
+        "defaultTitle": {
+          "path": "site.global.seo.defaultTitle",
+          "type": "text",
+          "label": "Default SEO Title"
+        },
+        "defaultDescription": {
+          "path": "site.global.seo.defaultDescription",
+          "type": "textarea",
+          "label": "Default Meta Description"
+        }
+      }
+    }
+  }
+}

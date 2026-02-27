@@ -1,0 +1,405 @@
+/* ============================================================
+   FOOTER — Dark Gradient + Split-Screen Bleed
+   Mood: Bold & Confident
+   Motion: Breathing / Pulsing Scale (decorative only)
+   Effects: Gradient Text + Parallax-Style Depth Layers
+   ============================================================ */
+
+/* ---------- Base ---------- */
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    150deg,
+    var(--section-dark-bg) 0%,
+    var(--hero-gradient-from) 45%,
+    var(--hero-gradient-to) 100%
+  );
+  color: var(--text-inverse);
+}
+
+/* ---------- Split-screen bleed panel (left zone darker overlay) ---------- */
+
+.footer-bleed-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.1) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Aurora mesh gradient overlay ---------- */
+
+.footer-mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 90% at 10% 60%, var(--accent-color) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 90% 10%, var(--secondary-color) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 50% at 60% 100%, var(--accent-highlight) 0%, transparent 60%);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Parallax-style depth orbs (breathing/pulsing scale) ---------- */
+/* NOTE: orbs are decorative only — positioned fully inside the footer bounds  */
+
+.footer-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: footerOrbPulse 5s ease-in-out infinite;
+}
+
+.footer-orb--1 {
+  width: 360px;
+  height: 360px;
+  top: -80px;
+  left: -80px;
+  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+  animation-delay: 0s;
+  opacity: 0.12;
+}
+
+.footer-orb--2 {
+  width: 240px;
+  height: 240px;
+  bottom: 30px;
+  right: 6%;
+  background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+  animation-delay: 2s;
+  opacity: 0.15;
+}
+
+.footer-orb--3 {
+  width: 160px;
+  height: 160px;
+  top: 30%;
+  right: 30%;
+  background: radial-gradient(circle, var(--accent-highlight) 0%, transparent 70%);
+  animation-delay: 3.5s;
+  opacity: 0.1;
+}
+
+@keyframes footerOrbPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+}
+
+/* ---------- Layout Container ---------- */
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 90px 48px 70px;
+  gap: 0;
+  align-items: start;
+}
+
+/* ---------- Brand Panel (LEFT / bleed side) ---------- */
+
+.footer-brand {
+  padding-right: 64px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  animation: footerFadeUp 0.9s ease both;
+}
+
+.footer-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 1.1rem;
+  opacity: 0.9;
+}
+
+.footer-brand-name {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0 0 1.4rem;
+  /* Gradient text effect */
+  background: linear-gradient(
+    130deg,
+    var(--text-inverse) 0%,
+    rgba(255, 255, 255, 0.85) 30%,
+    var(--accent-color) 60%,
+    var(--text-inverse) 90%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextShift 6s ease-in-out infinite;
+}
+
+@keyframes gradientTextShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer-accent-bar {
+  width: 56px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--gradient-accent);
+  margin-bottom: 1.5rem;
+  /* Simple opacity pulse — no scale transform */
+  animation: accentBarBreath 3.5s ease-in-out infinite;
+}
+
+@keyframes accentBarBreath {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1; }
+}
+
+.footer-brand-desc {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--text-inverse);
+  opacity: 0.72;
+  max-width: 440px;
+}
+
+/* ---------- Nav Panel (RIGHT) ---------- */
+
+.footer-nav {
+  padding-left: 64px;
+  animation: footerFadeUp 0.9s ease 0.18s both;
+}
+
+.footer-nav-heading {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 1.6rem;
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0 0 2.4rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-link-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-link-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.85rem 0.2rem;
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.78;
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
+  position: relative;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  transform: translateX(7px);
+  color: var(--text-inverse);
+}
+
+.footer-link-pip {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-highlight);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+  /* Subtle opacity pulse on pip — no scale (avoids layout disruption) */
+  animation: pipBreath 4s ease-in-out infinite;
+}
+
+@keyframes pipBreath {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1; }
+}
+
+.footer-link:hover .footer-link-pip {
+  background: var(--accent-color);
+  transform: scale(1.5);
+}
+
+/* ---------- CTA Button ---------- */
+
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.07);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-cta:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--element-depth);
+}
+
+.footer-cta-arrow {
+  transition: transform 0.3s ease;
+  font-style: normal;
+}
+
+.footer-cta:hover .footer-cta-arrow {
+  transform: translateX(5px);
+}
+
+/* ---------- Bottom Copyright Bar ---------- */
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.83rem;
+  color: var(--text-inverse);
+  opacity: 0.45;
+  letter-spacing: 0.02em;
+}
+
+/* Static decorative gradient line — NO animation to prevent cutoff illusion */
+.footer-bottom-accent {
+  width: 40px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--gradient-accent);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ---------- Entrance Animation ---------- */
+
+@keyframes footerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive: Tablet ---------- */
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 60px 24px 48px;
+    gap: 48px;
+  }
+
+  .footer-brand {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 0;
+    padding-bottom: 44px;
+  }
+
+  .footer-nav {
+    padding-left: 0;
+  }
+
+  .footer-bleed-panel {
+    display: none;
+  }
+
+  .footer-bottom-inner {
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .footer-brand-name {
+    font-size: 2.2rem;
+  }
+
+  /* Keep orbs scaled down on mobile */
+  .footer-orb--1 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .footer-orb--2 {
+    width: 160px;
+    height: 160px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 48px 20px 40px;
+  }
+
+  .footer-brand-name {
+    font-size: 1.9rem;
+  }
+}

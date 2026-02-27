@@ -1,0 +1,243 @@
+{
+  "name": "generate_faq_page",
+  "description": "Generate complete faq page content",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "seo": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 60
+          },
+          "metaDescription": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "title",
+          "metaDescription"
+        ]
+      },
+      "componentOrder": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "faqHero",
+            "faqCategories",
+            "generalFaq",
+            "ratesFaq",
+            "applicationFaq",
+            "faqCtaBanner"
+          ]
+        },
+        "minItems": 6,
+        "maxItems": 6
+      },
+      "sections": {
+        "type": "object",
+        "properties": {
+          "faqHero": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "FAQ page headline"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Supportive text about finding answers"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline"
+            ]
+          },
+          "faqCategories": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'Browse by Topic'"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon for category"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Category name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Brief description of what questions are covered"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "categories"
+            ]
+          },
+          "generalFaq": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Category heading like 'General Car Loan Questions'"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question text"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Detailed answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs"
+            ]
+          },
+          "ratesFaq": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Category heading like 'Rates & Terms'"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question about rates or terms"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Detailed answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs"
+            ]
+          },
+          "applicationFaq": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Category heading like 'Application & Approval'"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question about application process"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Detailed answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs"
+            ]
+          },
+          "faqCtaBanner": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Headline like 'Still Have Questions?'"
+              },
+              "description": {
+                "type": "string",
+                "description": "Encouraging text to reach out"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "CTA label"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "CTA URL — must be /contact"
+              }
+            },
+            "required": [
+              "headline",
+              "description",
+              "ctaButtonText",
+              "ctaButtonUrl"
+            ]
+          }
+        },
+        "required": [
+          "faqHero",
+          "faqCategories",
+          "generalFaq",
+          "ratesFaq",
+          "applicationFaq",
+          "faqCtaBanner"
+        ]
+      }
+    },
+    "required": [
+      "seo",
+      "componentOrder",
+      "sections"
+    ]
+  }
+}

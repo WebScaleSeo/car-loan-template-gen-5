@@ -1,0 +1,54 @@
+/* Typography Sizing Variables - Static (not theme-dependent) */
+:root {
+  /* Typography Sizing - Desktop */
+  --car-loan-h1-font-size: 54px;
+  --car-loan-h1-line-height: 60px;
+  --car-loan-h1-font-weight: 700;
+  --car-loan-h1-font-style: normal;
+  
+  --car-loan-h2-font-size: 48px;
+  --car-loan-h2-line-height: 58px;
+  --car-loan-h2-font-weight: 700;
+  --car-loan-h2-font-style: normal;
+  
+  --car-loan-h3-font-size: 34px;
+  --car-loan-h3-line-height: 58px;
+  --car-loan-h3-font-weight: 700;
+  --car-loan-h3-font-style: normal;
+  
+  --car-loan-h4-font-size: 24px;
+  --car-loan-h4-line-height: 32px;
+  --car-loan-h4-font-weight: 600;
+  --car-loan-h4-font-style: normal;
+  
+  --car-loan-body-font-size: 16px;
+  --car-loan-body-line-height: 22px;
+  --car-loan-body-font-weight: 400;
+  --car-loan-body-font-style: normal;
+
+  /* Typography Sizing - Mobile */
+  --car-loan-h1-mobile-font-size: 40px;
+  --car-loan-h1-mobile-line-height: 48px;
+  --car-loan-h1-mobile-font-weight: 700;
+  --car-loan-h1-mobile-font-style: normal;
+  
+  --car-loan-h2-mobile-font-size: 30px;
+  --car-loan-h2-mobile-line-height: 36px;
+  --car-loan-h2-mobile-font-weight: 700;
+  --car-loan-h2-mobile-font-style: normal;
+  
+  --car-loan-h3-mobile-font-size: 24px;
+  --car-loan-h3-mobile-line-height: normal;
+  --car-loan-h3-mobile-font-weight: 700;
+  --car-loan-h3-mobile-font-style: normal;
+  
+  --car-loan-h4-mobile-font-size: 20px;
+  --car-loan-h4-mobile-line-height: normal;
+  --car-loan-h4-mobile-font-weight: 600;
+  --car-loan-h4-mobile-font-style: normal;
+}
+
+/* Utility Classes */
+.bg-peach-accent {
+  background: var(--secondary-color, #FEEEE4);
+}

@@ -1,0 +1,458 @@
+/* =========================================================
+   ContactHero — Cinematic stacked hero, light+gradient bg
+   Mood: dark & moody | Effects: holographic/iridescent
+   Motion: breathing pulse + staggered entrance
+   ========================================================= */
+
+/* ---- Base Section ---- */
+.contactHero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Light + multi-color gradient background (uses extended vars) */
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, var(--element-depth) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, var(--decorative-color) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 85% 60%, var(--element-depth) 0%, transparent 50%),
+    linear-gradient(160deg, var(--bg-page) 0%, #fff 40%, var(--bg-page) 100%);
+}
+
+/* ---- Mesh dot overlay ---- */
+.contactHero-mesh {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--decorative-color) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* ---- Decorative Orbs (breathing/pulsing scale) ---- */
+.contactHero-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(70px);
+  opacity: 1;
+}
+
+.contactHero-orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -180px;
+  left: -100px;
+  background: var(--element-depth);
+  animation: contactHeroPulse 8s ease-in-out infinite;
+}
+
+.contactHero-orb-2 {
+  width: 500px;
+  height: 500px;
+  bottom: -120px;
+  right: -80px;
+  background: var(--decorative-color);
+  animation: contactHeroPulse 10s ease-in-out infinite 2s;
+}
+
+.contactHero-orb-3 {
+  width: 350px;
+  height: 350px;
+  top: 40%;
+  left: 60%;
+  background: var(--element-depth);
+  animation: contactHeroPulse 7s ease-in-out infinite 1s;
+}
+
+@keyframes contactHeroPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.15); opacity: 0.65; }
+}
+
+/* ---- Iridescent shimmer border lines ---- */
+.contactHero-border-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--secondary-color) 20%,
+    var(--accent-highlight) 50%,
+    var(--secondary-color) 80%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: contactHeroShimmer 4s linear infinite;
+}
+
+.contactHero-border-top    { top: 0; }
+.contactHero-border-bottom { bottom: 0; }
+
+@keyframes contactHeroShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---- Inner content (vertical cinematic stack) ---- */
+.contactHero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+  padding: 6rem 2rem;
+}
+
+/* ---- Eyebrow pill ---- */
+.contactHero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  animation: contactHeroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.contactHero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  animation: contactHeroDotPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes contactHeroDotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--element-depth); }
+  50%       { box-shadow: 0 0 0 6px rgba(0, 0, 0, 0); }
+}
+
+/* ---- Headline ---- */
+.contactHero-headline {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.8rem;
+  animation: contactHeroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+/* Animated gradient text — iridescent shift */
+.contactHero-headline-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 35%,
+    var(--accent-highlight) 65%,
+    var(--secondary-color) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: contactHeroGradientShift 6s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes contactHeroGradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- Subheadline ---- */
+.contactHero-subheadline {
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--text-primary);
+  max-width: 680px;
+  margin: 0 auto 2.8rem;
+  animation: contactHeroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+/* ---- CTA Wrap ---- */
+.contactHero-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  animation: contactHeroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+/* ---- Primary CTA button (animated glow + pulse) ---- */
+.contactHero-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow:
+    0 6px 30px var(--element-depth),
+    0 2px 8px var(--shadow-color);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: contactHeroBtnPulse 3.5s ease-in-out infinite 1.5s;
+}
+
+.contactHero-cta-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow:
+    0 12px 45px var(--element-depth),
+    0 4px 12px var(--shadow-color);
+}
+
+/* Shimmer sweep on button */
+.contactHero-cta-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: contactHeroGlowSwipe 3s linear infinite 1s;
+}
+
+@keyframes contactHeroGlowSwipe {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes contactHeroBtnPulse {
+  0%, 100% {
+    box-shadow: 0 6px 30px var(--element-depth), 0 2px 8px var(--shadow-color);
+  }
+  50% {
+    box-shadow: 0 8px 40px var(--element-depth), 0 2px 8px var(--shadow-color);
+  }
+}
+
+.contactHero-cta-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.contactHero-cta-btn:hover .contactHero-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ---- Secondary CTA link ---- */
+.contactHero-cta-secondary {
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contactHero-cta-secondary:hover {
+  color: var(--accent-highlight);
+  border-color: var(--accent-highlight);
+}
+
+/* ---- Testimonial (compact) ---- */
+.contactHero-testimonial {
+  position: relative;
+  animation: contactHeroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+.contactHero-testimonial-inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.6rem 2rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  max-width: 560px;
+  text-align: left;
+  box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+/* Animated iridescent border ring on testimonial card */
+.contactHero-testimonial-border-animated {
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-highlight),
+    var(--secondary-color),
+    var(--accent-highlight)
+  );
+  background-size: 300% 100%;
+  animation: contactHeroIridescent 4s linear infinite;
+  z-index: 0;
+  opacity: 0.55;
+  /* Mask to show border only (not fill) */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  padding: 2px;
+}
+
+@keyframes contactHeroIridescent {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+.contactHero-testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.contactHero-star {
+  color: var(--accent-highlight);
+  font-size: 1rem;
+}
+
+.contactHero-testimonial-quote {
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 0 0 1.1rem;
+}
+
+.contactHero-testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contactHero-testimonial-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  font-size: 0.75rem;
+  font-weight: 800;
+  font-family: var(--font-body, 'Lato', sans-serif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.contactHero-testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contactHero-testimonial-name {
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.contactHero-testimonial-role {
+  font-family: var(--font-body, 'Lato', sans-serif);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* ---- Shared entrance keyframe ---- */
+@keyframes contactHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .contactHero-inner {
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .contactHero-cta-wrap {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contactHero-testimonial-inner {
+    padding: 1.3rem 1.4rem;
+  }
+
+  .contactHero-orb-1 {
+    width: 360px;
+    height: 360px;
+    top: -80px;
+    left: -80px;
+  }
+
+  .contactHero-orb-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -60px;
+    right: -60px;
+  }
+
+  .contactHero-orb-3 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactHero-headline {
+    font-size: 2.4rem;
+  }
+
+  .contactHero-subheadline {
+    font-size: 0.97rem;
+  }
+
+  .contactHero-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

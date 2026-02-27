@@ -1,0 +1,426 @@
+/* =========================================
+   AboutCtaBanner — elegant/refined, L-shaped
+   Swiss grid + stroke typography (decorative) + staggered fade-up
+   Background: IMAGE + GRADIENT layered
+   ========================================= */
+
+/* ---- Section shell ---- */
+.acb-section {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ---- Layered background: stock image ---- */
+.acb-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/image5.webp');
+  background-size: cover;
+  background-position: center 35%;
+  z-index: 0;
+}
+
+/* ---- Dark scrim for text readability ---- */
+.acb-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 1;
+}
+
+/* ---- Aurora multi-color gradient overlay (blended over scrim) ---- */
+.acb-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 15% 50%, var(--element-depth), transparent 60%),
+    radial-gradient(ellipse 55% 60% at 85% 20%, color-mix(in srgb, var(--accent-highlight) 25%, transparent), transparent 55%),
+    linear-gradient(135deg, var(--hero-gradient-from) 0%, transparent 55%, var(--hero-gradient-to) 100%);
+  mix-blend-mode: screen;
+  z-index: 2;
+  opacity: 0.65;
+}
+
+/* ---- Decorative oversized stroke word — editorial background element ---- */
+.acb-deco-stroke-word {
+  position: absolute;
+  bottom: -0.15em;
+  right: -0.05em;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(8rem, 18vw, 16rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.07);
+  color: transparent;
+  z-index: 3;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* ---- Decorative orb glow ---- */
+.acb-orb {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--element-depth) 0%, transparent 70%);
+  top: -120px;
+  right: -120px;
+  z-index: 3;
+  animation: acb-orb-pulse 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes acb-orb-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.08); }
+}
+
+/* ---- Decorative Swiss grid column lines ---- */
+.acb-deco-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.acb-deco-col {
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  height: 100%;
+}
+
+.acb-deco-col--1 { grid-column: 3; }
+.acb-deco-col--2 { grid-column: 7; }
+.acb-deco-col--3 { grid-column: 10; }
+
+/* =========================================
+   Swiss grid main container
+   ========================================= */
+.acb-swiss-grid {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 80px 48px 72px;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 0 40px;
+  align-items: stretch;
+}
+
+/* =========================================
+   LEFT COLUMN — vertical bar of the L
+   ========================================= */
+.acb-left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  animation: acb-fade-up 0.7s ease both;
+  animation-delay: 0.05s;
+}
+
+.acb-vertical-rule {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--accent-highlight) 20%,
+    var(--accent-highlight) 80%,
+    transparent 100%
+  );
+  opacity: 0.55;
+}
+
+.acb-vertical-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  opacity: 0.45;
+  margin: 16px 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.acb-module-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 0;
+}
+
+.acb-module-tag span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  opacity: 0.35;
+}
+
+/* =========================================
+   RIGHT CONTENT COLUMN
+   ========================================= */
+.acb-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ---- Eyebrow row ---- */
+.acb-headline-module {
+  padding-bottom: 32px;
+  animation: acb-fade-up 0.8s ease both;
+  animation-delay: 0.15s;
+}
+
+.acb-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.acb-eyebrow-line {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--accent-highlight);
+  opacity: 0.9;
+}
+
+.acb-eyebrow-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-highlight);
+  opacity: 0.95;
+}
+
+/* ---- Headline — all solid, fully readable ---- */
+.acb-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  display: block;
+  margin: 0;
+  max-width: 820px;
+}
+
+/* Main headline words — solid white, always readable */
+.acb-headline-main {
+  display: inline;
+  color: var(--text-inverse);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Break span for line wrapping */
+.acb-headline-break {
+  display: block;
+}
+
+/* Accent word — solid accent color, readable and visually distinct */
+.acb-headline-accent {
+  display: inline;
+  color: var(--accent-highlight);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================
+   BOTTOM ROW — horizontal bar of the L
+   ========================================= */
+.acb-bottom-row {
+  padding-top: 0;
+  animation: acb-fade-up 0.8s ease both;
+  animation-delay: 0.35s;
+}
+
+.acb-grid-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--accent-highlight) 0%,
+    rgba(255, 255, 255, 0.15) 55%,
+    transparent 100%
+  );
+  margin-bottom: 32px;
+  opacity: 0.6;
+}
+
+.acb-desc-cta-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px 56px;
+  align-items: end;
+}
+
+/* ---- Description module ---- */
+.acb-desc-module {
+  animation: acb-fade-up 0.8s ease both;
+  animation-delay: 0.45s;
+}
+
+.acb-description {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-inverse);
+  opacity: 0.92;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ---- CTA module ---- */
+.acb-cta-module {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+  animation: acb-fade-up 0.8s ease both;
+  animation-delay: 0.58s;
+}
+
+.acb-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 6px 28px var(--shadow-color);
+  white-space: nowrap;
+}
+
+.acb-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.acb-cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 42px var(--shadow-color), 0 0 32px var(--element-depth);
+}
+
+.acb-cta-btn:hover::before {
+  opacity: 1;
+}
+
+.acb-btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.acb-btn-arrow {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+
+.acb-cta-btn:hover .acb-btn-arrow {
+  transform: translateX(5px);
+}
+
+.acb-cta-subline {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  opacity: 0.45;
+}
+
+/* =========================================
+   Entrance Animations — staggered fade-up
+   ========================================= */
+@keyframes acb-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Responsive — Mobile (≤ 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  .acb-swiss-grid {
+    grid-template-columns: 1fr;
+    padding: 56px 24px 52px;
+    gap: 0;
+  }
+
+  .acb-left-col {
+    display: none;
+  }
+
+  .acb-headline {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .acb-desc-cta-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .acb-cta-module {
+    align-items: flex-start;
+  }
+
+  .acb-cta-btn {
+    padding: 14px 28px;
+    font-size: 0.84rem;
+  }
+
+  .acb-deco-stroke-word {
+    font-size: clamp(5rem, 25vw, 8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .acb-swiss-grid {
+    padding: 48px 20px 44px;
+  }
+}

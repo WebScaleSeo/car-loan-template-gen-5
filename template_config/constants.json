@@ -1,0 +1,159 @@
+{
+  "navigation": {
+    "items": [
+      {
+        "label": "Home",
+        "url": "/",
+        "type": "link"
+      },
+      {
+        "label": "About",
+        "url": "/about",
+        "type": "link"
+      },
+      {
+        "label": "FAQ",
+        "url": "/faq",
+        "type": "link"
+      },
+      {
+        "label": "Contact",
+        "url": "/contact",
+        "type": "link"
+      },
+      {
+        "label": "Get Your Quote",
+        "url": "/contact",
+        "type": "cta"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "About Us",
+        "url": "/about"
+      },
+      {
+        "label": "FAQ",
+        "url": "/faq"
+      },
+      {
+        "label": "Contact",
+        "url": "/contact"
+      }
+    ]
+  },
+  "images": {
+    "hero": "/images/image1.webp"
+  },
+  "faviconOptions": [
+    "/icons/favicon.ico"
+  ],
+  "themeOptions": [
+    "theme1",
+    "theme2",
+    "theme3",
+    "theme4",
+    "theme5",
+    "theme6",
+    "theme7",
+    "theme8",
+    "theme9",
+    "theme10",
+    "theme11",
+    "theme12",
+    "theme13",
+    "theme14",
+    "theme15",
+    "theme16",
+    "theme17",
+    "theme18",
+    "theme19",
+    "theme20",
+    "theme21",
+    "theme22",
+    "theme23",
+    "theme24",
+    "theme25",
+    "theme26",
+    "theme27",
+    "theme28",
+    "theme29",
+    "theme30",
+    "theme31",
+    "theme32",
+    "theme33",
+    "theme34",
+    "theme35",
+    "theme36",
+    "theme37",
+    "theme38",
+    "theme39",
+    "theme40",
+    "theme41",
+    "theme42",
+    "theme43",
+    "theme44",
+    "theme45",
+    "theme46",
+    "theme47",
+    "theme48",
+    "theme49",
+    "theme50",
+    "theme51",
+    "theme52",
+    "theme53",
+    "theme54",
+    "theme55",
+    "theme56",
+    "theme57",
+    "theme58",
+    "theme59",
+    "theme60",
+    "theme61",
+    "theme62",
+    "theme63",
+    "theme64",
+    "theme65",
+    "theme66",
+    "theme67",
+    "theme68",
+    "theme69",
+    "theme70",
+    "theme71",
+    "theme72",
+    "theme73",
+    "theme74",
+    "theme75",
+    "theme76",
+    "theme77",
+    "theme78",
+    "theme79",
+    "theme80",
+    "theme81",
+    "theme82",
+    "theme83",
+    "theme84",
+    "theme85",
+    "theme86",
+    "theme87",
+    "theme88",
+    "theme89",
+    "theme90",
+    "theme91",
+    "theme92",
+    "theme93",
+    "theme94",
+    "theme95",
+    "theme96",
+    "theme97",
+    "theme98",
+    "theme99",
+    "theme100"
+  ]
+}

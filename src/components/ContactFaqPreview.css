@@ -1,0 +1,369 @@
+/* ============================================================
+   ContactFaqPreview — Bold ACCENT | Aurora / Northern Lights
+   Zigzag flow · Oversized display type · Reveal entrances
+   ============================================================ */
+
+/* ── Section shell ── */
+.cfp-section {
+  position: relative;
+  background: linear-gradient(
+    150deg,
+    var(--section-dark-bg) 0%,
+    var(--hero-gradient-from) 45%,
+    var(--hero-gradient-to) 100%
+  );
+  overflow: hidden;
+  padding: 7rem 0 6rem;
+  isolation: isolate;
+}
+
+/* ── Aurora decorative blobs (northern lights effect) ── */
+.cfp-aurora {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+}
+
+.cfp-aurora--1 {
+  width: 700px;
+  height: 350px;
+  background: radial-gradient(
+    ellipse,
+    var(--accent-color) 0%,
+    transparent 65%
+  );
+  top: -80px;
+  right: -150px;
+  opacity: 0.45;
+  animation: auroraShift1 9s ease-in-out infinite;
+}
+
+.cfp-aurora--2 {
+  width: 550px;
+  height: 280px;
+  background: radial-gradient(
+    ellipse,
+    var(--secondary-color) 0%,
+    transparent 65%
+  );
+  bottom: -60px;
+  left: -100px;
+  opacity: 0.5;
+  animation: auroraShift2 11s ease-in-out infinite;
+}
+
+.cfp-aurora--3 {
+  width: 400px;
+  height: 220px;
+  background: radial-gradient(
+    ellipse,
+    var(--accent-highlight) 0%,
+    transparent 70%
+  );
+  top: 40%;
+  left: 35%;
+  opacity: 0.3;
+  animation: auroraShift3 13s ease-in-out infinite;
+}
+
+@keyframes auroraShift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-40px, 25px) scale(1.12); }
+}
+@keyframes auroraShift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(30px, -20px) scale(1.08); }
+}
+@keyframes auroraShift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, 15px) scale(1.1); }
+  66%       { transform: translate(-15px, -10px) scale(0.9); }
+}
+
+/* ── Oversized display type watermark ── */
+.cfp-deco-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(140px, 22vw, 320px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── Inner container ── */
+.cfp-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── Header ── */
+.cfp-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: cfpReveal 0.8s ease both;
+}
+
+.cfp-eyebrow {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-highlight);
+  margin-bottom: 1rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--accent-highlight);
+  border-radius: 50px;
+}
+
+.cfp-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  background: linear-gradient(
+    135deg,
+    var(--text-inverse) 30%,
+    var(--accent-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cfp-title-bar {
+  width: 64px;
+  height: 3px;
+  background: var(--gradient-accent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* ── FAQ list ── */
+.cfp-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── FAQ item — zigzag base ── */
+.cfp-faq-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  /* Zigzag: even items anchor left (default) */
+  padding-right: 10%;
+  animation: cfpReveal 0.6s ease both;
+  opacity: 0;
+}
+
+/* Zigzag: odd items anchor right */
+.cfp-faq-item--alt {
+  flex-direction: row-reverse;
+  padding-right: 0;
+  padding-left: 10%;
+}
+
+/* ── Number badge ── */
+.cfp-faq-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.18);
+  min-width: 72px;
+  text-align: center;
+  flex-shrink: 0;
+  padding-top: 0.75rem;
+  transition: -webkit-text-stroke-color 0.3s ease;
+}
+
+.cfp-faq-item--open .cfp-faq-num {
+  -webkit-text-stroke-color: var(--accent-highlight);
+}
+
+/* ── FAQ body (question + answer) ── */
+.cfp-faq-body {
+  flex: 1;
+  border-left: 2px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.35s ease;
+}
+
+.cfp-faq-item--alt .cfp-faq-body {
+  border-left: none;
+  border-right: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.cfp-faq-item--open .cfp-faq-body {
+  border-left-color: var(--accent-highlight);
+}
+
+.cfp-faq-item--alt.cfp-faq-item--open .cfp-faq-body {
+  border-left-color: transparent;
+  border-right-color: var(--accent-highlight);
+}
+
+/* ── Question button ── */
+.cfp-faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.cfp-faq-q:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.cfp-faq-item--open .cfp-faq-q {
+  background: var(--element-depth);
+  border-radius: 8px 8px 0 0;
+}
+
+.cfp-faq-q-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-inverse);
+  line-height: 1.45;
+}
+
+.cfp-faq-icon {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--accent-highlight);
+  flex-shrink: 0;
+  min-width: 24px;
+  text-align: center;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+/* ── Answer panel ── */
+.cfp-faq-answer {
+  padding: 1rem 1.25rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0 0 8px 8px;
+}
+
+.cfp-faq-answer p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.975rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* ── Footer CTA ── */
+.cfp-footer {
+  margin-top: 3.5rem;
+  text-align: center;
+  animation: cfpReveal 0.8s ease 0.6s both;
+  opacity: 0;
+}
+
+.cfp-cta-btn {
+  display: inline-block;
+  padding: 0.9rem 2.75rem;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 28px var(--element-depth);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cfp-cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 40px var(--element-depth);
+}
+
+/* ── Entrance animation ── */
+@keyframes cfpReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cfp-section {
+    padding: 5rem 0 4rem;
+  }
+
+  .cfp-faq-item,
+  .cfp-faq-item--alt {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cfp-faq-num {
+    font-size: 2rem;
+    min-width: auto;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .cfp-faq-item--alt .cfp-faq-body {
+    border-right: none;
+    border-left: 2px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .cfp-faq-item--alt.cfp-faq-item--open .cfp-faq-body {
+    border-left-color: var(--accent-highlight);
+  }
+
+  .cfp-title {
+    font-size: 1.6rem;
+  }
+
+  .cfp-deco-word {
+    font-size: clamp(100px, 30vw, 160px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cfp-inner {
+    padding: 0 1.25rem;
+  }
+
+  .cfp-faq-q-text {
+    font-size: 0.975rem;
+  }
+}

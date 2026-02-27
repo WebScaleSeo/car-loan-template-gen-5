@@ -1,0 +1,322 @@
+[
+  {
+    "name": "Ocean Trust",
+    "colors": {
+      "primary": "#0C2D5E",
+      "secondary": "#1A4A8C",
+      "background": {
+        "page": "#F7F9FC",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#1A1F2B",
+        "secondary": "#4A5568",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#DFE8F5",
+      "accent": "#0E7C46",
+      "extra": {
+        "--hero-gradient-from": "#0C2D5E",
+        "--hero-gradient-to": "#1A4A8C",
+        "--section-dark-bg": "#0A1F3D",
+        "--accent-highlight": "#0E7C46",
+        "--element-depth": "rgba(14, 124, 70, 0.15)",
+        "--badge-bg": "#EBF5FF",
+        "--badge-text": "#0C2D5E",
+        "--decorative-color": "rgba(30, 80, 160, 0.12)",
+        "--hover-highlight": "#0B6538",
+        "--section-divider": "#DFE8F5",
+        "--shadow-color": "rgba(12, 45, 94, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #0C2D5E, #0E7C46)"
+      }
+    }
+  },
+  {
+    "name": "Slate Precision",
+    "colors": {
+      "primary": "#2D3748",
+      "secondary": "#4A5568",
+      "background": {
+        "page": "#F8F9FA",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#1A202C",
+        "secondary": "#4A5568",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#E2E8F0",
+      "accent": "#2B6CB0",
+      "extra": {
+        "--hero-gradient-from": "#2D3748",
+        "--hero-gradient-to": "#4A5568",
+        "--section-dark-bg": "#1A202C",
+        "--accent-highlight": "#2B6CB0",
+        "--element-depth": "rgba(43, 108, 176, 0.15)",
+        "--badge-bg": "#EBF4FF",
+        "--badge-text": "#2D3748",
+        "--decorative-color": "rgba(45, 55, 72, 0.12)",
+        "--hover-highlight": "#225694",
+        "--section-divider": "#E2E8F0",
+        "--shadow-color": "rgba(45, 55, 72, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #2D3748, #2B6CB0)"
+      }
+    }
+  },
+  {
+    "name": "Emerald Authority",
+    "colors": {
+      "primary": "#064E3B",
+      "secondary": "#047857",
+      "background": {
+        "page": "#F7FAF9",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#1B2A25",
+        "secondary": "#4B6358",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#D5E5DE",
+      "accent": "#9B2C2C",
+      "extra": {
+        "--hero-gradient-from": "#064E3B",
+        "--hero-gradient-to": "#047857",
+        "--section-dark-bg": "#032E22",
+        "--accent-highlight": "#9B2C2C",
+        "--element-depth": "rgba(155, 44, 44, 0.15)",
+        "--badge-bg": "#E6F5F0",
+        "--badge-text": "#064E3B",
+        "--decorative-color": "rgba(6, 78, 59, 0.12)",
+        "--hover-highlight": "#822424",
+        "--section-divider": "#D5E5DE",
+        "--shadow-color": "rgba(6, 78, 59, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #064E3B, #9B2C2C)"
+      }
+    }
+  },
+  {
+    "name": "Midnight Luxe",
+    "colors": {
+      "primary": "#1A1035",
+      "secondary": "#2D1F5E",
+      "background": {
+        "page": "#F8F7FC",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#1A1035",
+        "secondary": "#5A5270",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#E4E0F0",
+      "accent": "#9B2C8C",
+      "extra": {
+        "--hero-gradient-from": "#1A1035",
+        "--hero-gradient-to": "#2D1F5E",
+        "--section-dark-bg": "#110A24",
+        "--accent-highlight": "#9B2C8C",
+        "--element-depth": "rgba(155, 44, 140, 0.15)",
+        "--badge-bg": "#F0E6F5",
+        "--badge-text": "#1A1035",
+        "--decorative-color": "rgba(26, 16, 53, 0.12)",
+        "--hover-highlight": "#822475",
+        "--section-divider": "#E4E0F0",
+        "--shadow-color": "rgba(26, 16, 53, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #1A1035, #9B2C8C)"
+      }
+    }
+  },
+  {
+    "name": "Cobalt Drive",
+    "colors": {
+      "primary": "#1E3A8A",
+      "secondary": "#2563EB",
+      "background": {
+        "page": "#F7F9FE",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#1E293B",
+        "secondary": "#475569",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#DBEAFE",
+      "accent": "#B91C1C",
+      "extra": {
+        "--hero-gradient-from": "#1E3A8A",
+        "--hero-gradient-to": "#2563EB",
+        "--section-dark-bg": "#0F1E4A",
+        "--accent-highlight": "#B91C1C",
+        "--element-depth": "rgba(185, 28, 28, 0.15)",
+        "--badge-bg": "#EFF6FF",
+        "--badge-text": "#1E3A8A",
+        "--decorative-color": "rgba(30, 58, 138, 0.12)",
+        "--hover-highlight": "#991B1B",
+        "--section-divider": "#DBEAFE",
+        "--shadow-color": "rgba(30, 58, 138, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #1E3A8A, #B91C1C)"
+      }
+    }
+  },
+  {
+    "name": "Steel Charcoal",
+    "colors": {
+      "primary": "#1F2937",
+      "secondary": "#374151",
+      "background": {
+        "page": "#F9FAFB",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#111827",
+        "secondary": "#4B5563",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#E5E7EB",
+      "accent": "#047857",
+      "extra": {
+        "--hero-gradient-from": "#1F2937",
+        "--hero-gradient-to": "#374151",
+        "--section-dark-bg": "#111827",
+        "--accent-highlight": "#047857",
+        "--element-depth": "rgba(4, 120, 87, 0.15)",
+        "--badge-bg": "#F0FDF4",
+        "--badge-text": "#1F2937",
+        "--decorative-color": "rgba(31, 41, 55, 0.12)",
+        "--hover-highlight": "#065F46",
+        "--section-divider": "#E5E7EB",
+        "--shadow-color": "rgba(31, 41, 55, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #1F2937, #047857)"
+      }
+    }
+  },
+  {
+    "name": "Copper Road",
+    "colors": {
+      "primary": "#7C2D12",
+      "secondary": "#9A3412",
+      "background": {
+        "page": "#FFFAF7",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#292017",
+        "secondary": "#6B5744",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#F0E0D0",
+      "accent": "#1D6A4B",
+      "extra": {
+        "--hero-gradient-from": "#7C2D12",
+        "--hero-gradient-to": "#9A3412",
+        "--section-dark-bg": "#4A1A0A",
+        "--accent-highlight": "#1D6A4B",
+        "--element-depth": "rgba(29, 106, 75, 0.15)",
+        "--badge-bg": "#FFF3EB",
+        "--badge-text": "#7C2D12",
+        "--decorative-color": "rgba(124, 45, 18, 0.12)",
+        "--hover-highlight": "#155A3E",
+        "--section-divider": "#F0E0D0",
+        "--shadow-color": "rgba(124, 45, 18, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #7C2D12, #1D6A4B)"
+      }
+    }
+  },
+  {
+    "name": "Navy Forge",
+    "colors": {
+      "primary": "#0F2441",
+      "secondary": "#1C3D6E",
+      "background": {
+        "page": "#F6F8FB",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#0F2441",
+        "secondary": "#536B86",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#D4DFE9",
+      "accent": "#B45309",
+      "extra": {
+        "--hero-gradient-from": "#0F2441",
+        "--hero-gradient-to": "#1C3D6E",
+        "--section-dark-bg": "#091830",
+        "--accent-highlight": "#B45309",
+        "--element-depth": "rgba(180, 83, 9, 0.15)",
+        "--badge-bg": "#FEF3C7",
+        "--badge-text": "#0F2441",
+        "--decorative-color": "rgba(15, 36, 65, 0.12)",
+        "--hover-highlight": "#92400E",
+        "--section-divider": "#D4DFE9",
+        "--shadow-color": "rgba(15, 36, 65, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #0F2441, #B45309)"
+      }
+    }
+  },
+  {
+    "name": "Granite Velocity",
+    "colors": {
+      "primary": "#3B3B50",
+      "secondary": "#52526B",
+      "background": {
+        "page": "#F8F8FA",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#222233",
+        "secondary": "#5C5C70",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#E0E0E8",
+      "accent": "#7C3AED",
+      "extra": {
+        "--hero-gradient-from": "#3B3B50",
+        "--hero-gradient-to": "#52526B",
+        "--section-dark-bg": "#26263A",
+        "--accent-highlight": "#7C3AED",
+        "--element-depth": "rgba(124, 58, 237, 0.15)",
+        "--badge-bg": "#F0EBFE",
+        "--badge-text": "#3B3B50",
+        "--decorative-color": "rgba(59, 59, 80, 0.12)",
+        "--hover-highlight": "#6D28D9",
+        "--section-divider": "#E0E0E8",
+        "--shadow-color": "rgba(59, 59, 80, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #3B3B50, #7C3AED)"
+      }
+    }
+  },
+  {
+    "name": "Crimson Horizon",
+    "colors": {
+      "primary": "#7F1D1D",
+      "secondary": "#991B1B",
+      "background": {
+        "page": "#FDFAF9",
+        "surface": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#2A1515",
+        "secondary": "#6B4848",
+        "inverse": "#FFFFFF"
+      },
+      "border": "#F0DCDC",
+      "accent": "#1E5A8C",
+      "extra": {
+        "--hero-gradient-from": "#7F1D1D",
+        "--hero-gradient-to": "#991B1B",
+        "--section-dark-bg": "#4A1010",
+        "--accent-highlight": "#1E5A8C",
+        "--element-depth": "rgba(30, 90, 140, 0.15)",
+        "--badge-bg": "#FEF0F0",
+        "--badge-text": "#7F1D1D",
+        "--decorative-color": "rgba(127, 29, 29, 0.12)",
+        "--hover-highlight": "#174874",
+        "--section-divider": "#F0DCDC",
+        "--shadow-color": "rgba(127, 29, 29, 0.2)",
+        "--gradient-accent": "linear-gradient(135deg, #7F1D1D, #1E5A8C)"
+      }
+    }
+  }
+]

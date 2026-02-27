@@ -1,0 +1,26 @@
+{
+  "structure": {
+    "site.global.branding": "parts.foundation.branding",
+    "site.global.seo": "parts.foundation.seo",
+    "site.global.footer": "parts.foundation.footer",
+    "image1_keywords": "parts.foundation.image1_keywords",
+    "image2_keywords": "parts.foundation.image2_keywords",
+    "image3_keywords": "parts.foundation.image3_keywords",
+    "image4_keywords": "parts.foundation.image4_keywords",
+    "image5_keywords": "parts.foundation.image5_keywords",
+    "image6_keywords": "parts.foundation.image6_keywords",
+    "image7_keywords": "parts.foundation.image7_keywords",
+    "image8_keywords": "parts.foundation.image8_keywords",
+    "site.pages.home": "parts.home_page",
+    "site.pages.about": "parts.about_page",
+    "site.pages.faq": "parts.faq_page",
+    "site.pages.contact": "parts.contact_page"
+  },
+  "randomSelections": {
+    "site.theme.current": "constants.themeOptions"
+  },
+  "directAssignments": {
+    "site.global.navigation": "constants.navigation",
+    "site.global.footer.links": "constants.footer.links"
+  }
+}

@@ -1,0 +1,453 @@
+/* ============================================================
+   ContactForm — Brutalist Dark + Aurora Gradient
+   Mood: energetic & dynamic | Spatial: off-center weighted right
+   Effects: brutalist thick borders | Motion: morphing shapes
+   ============================================================ */
+
+.cf-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(150deg, var(--section-dark-bg) 0%, var(--hero-gradient-from) 45%, var(--hero-gradient-to) 100%);
+  padding: 6rem 0 7rem;
+  color: var(--text-inverse);
+}
+
+/* Mesh aurora overlay */
+.cf-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 85% 20%, var(--element-depth), transparent 70%),
+    radial-gradient(ellipse 50% 70% at 15% 90%, rgba(0,0,0,0.3), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Morphing blobs ─────────────────────────────────────────── */
+.cf-blob {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cf-blob-a {
+  width: 520px;
+  height: 520px;
+  top: -180px;
+  right: -120px;
+  background: radial-gradient(circle at center, var(--element-depth), transparent 65%);
+  animation: morphA 9s ease-in-out infinite;
+}
+
+.cf-blob-b {
+  width: 380px;
+  height: 380px;
+  bottom: -120px;
+  left: 5%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 65%);
+  animation: morphB 12s ease-in-out infinite;
+}
+
+.cf-blob-c {
+  width: 250px;
+  height: 250px;
+  top: 40%;
+  left: 30%;
+  background: radial-gradient(circle at center, var(--element-depth), transparent 65%);
+  animation: morphC 7s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes morphA {
+  0%, 100% { border-radius: 50%; transform: scale(1); }
+  33%       { border-radius: 62% 38% 72% 28% / 48% 64% 36% 52%; transform: scale(1.08); }
+  66%       { border-radius: 34% 66% 44% 56% / 62% 32% 68% 38%; transform: scale(0.94); }
+}
+
+@keyframes morphB {
+  0%, 100% { border-radius: 50%; transform: scale(1); }
+  50%       { border-radius: 38% 62% 58% 42% / 52% 42% 58% 48%; transform: scale(1.12); }
+}
+
+@keyframes morphC {
+  0%, 100% { border-radius: 50%; transform: translateX(0) translateY(0); }
+  25%       { border-radius: 44% 56% 48% 52% / 40% 52% 48% 60%; transform: translateX(-18px) translateY(12px); }
+  75%       { border-radius: 56% 44% 52% 48% / 60% 40% 60% 40%; transform: translateX(18px) translateY(-12px); }
+}
+
+/* ── Brutalist vertical grid lines ─────────────────────────── */
+.cf-grid-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cf-grid-lines span {
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Layout: off-center — form weighted right ───────────────── */
+.cf-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ── LEFT editorial column ──────────────────────────────────── */
+.cf-left {
+  padding-top: 1.5rem;
+  animation: slideLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.cf-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  background: var(--accent-highlight);
+  border: 3px solid var(--text-inverse);
+  padding: 0.35rem 1rem 0.3rem;
+  margin-bottom: 2rem;
+}
+
+.cf-title {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text-inverse);
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.cf-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 2.5rem;
+  max-width: 360px;
+}
+
+/* Brutalist oversized stroke number */
+.cf-stroke-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(6rem, 10vw, 9rem);
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--accent-highlight);
+  letter-spacing: -0.05em;
+  margin-bottom: 2.5rem;
+  opacity: 0.6;
+  user-select: none;
+}
+
+/* Benefit bullets */
+.cf-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cf-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--text-inverse);
+  border-left: 4px solid var(--accent-highlight);
+  padding-left: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.cf-arrow {
+  color: var(--accent-highlight);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+/* ── RIGHT form column ──────────────────────────────────────── */
+.cf-right {
+  animation: slideRight 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Brutalist form container with offset-shadow effect */
+.cf-form-wrap {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 4px solid var(--text-inverse);
+  padding: 2.75rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Brutalist offset accent shadow */
+.cf-form-offset {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--accent-highlight);
+  z-index: -1;
+  pointer-events: none;
+  transition: bottom 0.2s ease, right 0.2s ease;
+}
+
+.cf-form-wrap:hover .cf-form-offset {
+  bottom: -14px;
+  right: -14px;
+}
+
+/* ── Form fields grid ───────────────────────────────────────── */
+.cf-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.cf-full {
+  grid-column: 1 / -1;
+}
+
+.cf-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  animation: fieldReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  opacity: 0;
+}
+
+@keyframes fieldReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cf-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cf-required {
+  color: var(--accent-highlight);
+  margin-left: 0.15rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Brutalist inputs — no border-radius */
+.cf-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.07);
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0;
+  color: var(--text-inverse);
+  padding: 0.85rem 1rem;
+  font-size: 0.93rem;
+  font-family: 'Lato', sans-serif;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cf-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.cf-input:focus {
+  border-color: var(--accent-highlight);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Select arrow — using a white SVG */
+.cf-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.75rem;
+}
+
+.cf-select option {
+  background: var(--section-dark-bg);
+  color: var(--text-inverse);
+}
+
+.cf-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* ── Submit button ──────────────────────────────────────────── */
+.cf-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--accent-highlight);
+  color: var(--text-inverse);
+  border: 4px solid var(--text-inverse);
+  border-radius: 0;
+  padding: 1.1rem 1.5rem 1.1rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cf-submit:hover {
+  background: var(--hover-highlight);
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--text-inverse);
+}
+
+.cf-submit:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+.cf-btn-arrow {
+  font-size: 1.3rem;
+  transition: transform 0.2s ease;
+}
+
+.cf-submit:hover .cf-btn-arrow {
+  transform: translateX(6px);
+}
+
+/* ── Privacy note ───────────────────────────────────────────── */
+.cf-privacy {
+  font-size: 0.76rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+/* ── Success state ──────────────────────────────────────────── */
+.cf-success {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  animation: fieldReveal 0.6s ease both;
+}
+
+.cf-success-ring {
+  width: 64px;
+  height: 64px;
+  border: 4px solid var(--accent-highlight);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--accent-highlight);
+  margin: 0 auto 1.5rem;
+}
+
+.cf-success h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text-inverse);
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.cf-success p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .cf-inner {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cf-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .cf-left {
+    padding-top: 0;
+  }
+
+  .cf-stroke-num {
+    font-size: 5rem;
+  }
+
+  .cf-title {
+    font-size: 2rem;
+  }
+
+  .cf-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .cf-form-wrap {
+    padding: 2rem 1.5rem;
+  }
+
+  .cf-blob-a {
+    width: 320px;
+    height: 320px;
+  }
+
+  .cf-blob-b {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cf-section {
+    padding: 4rem 0 5rem;
+  }
+
+  .cf-form-wrap {
+    padding: 1.5rem 1.25rem;
+  }
+}

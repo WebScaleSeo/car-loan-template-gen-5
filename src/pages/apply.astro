@@ -1,0 +1,52 @@
+---
+/**
+ * /apply — Lead capture page
+ *
+ * Renders the embed_code stored at siteConfig.site.pages.apply.embedCode.
+ * This page is permanent in the skeleton and is only "active" when a
+ * lead form has been configured for the build (form_embed_code on the
+ * website_builds record). If no embed code is present the visitor is
+ * redirected to the home page.
+ *
+ * The embed_code is injected via Astro's set:html on a <Fragment>, which
+ * means every tag — including <script src="..."> — is written directly
+ * into the built HTML output. The browser then loads and executes the
+ * form provider's JS naturally, with no React useEffect tricks needed.
+ *
+ * PROTECTED FILE: do not edit or delete. scaffold-builder.js never
+ * regenerates pages that already exist in the skeleton.
+ */
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+import siteConfig from '../../siteConfig.json';
+
+const { global: globalData } = siteConfig.site;
+const applyPage = (siteConfig.site.pages as any)?.apply;
+const embedCode: string | null = applyPage?.embedCode ?? null;
+
+if (!embedCode) {
+  return Astro.redirect('/');
+}
+
+const seo = {
+  title: applyPage?.seo?.title ?? 'Apply Now',
+  metaDescription: applyPage?.seo?.metaDescription ?? ''
+};
+---
+
+<Layout seo={seo} canonicalPath="/apply">
+  <Header navigation={globalData.navigation} branding={globalData.branding} client:load />
+  <main class="apply-page-main">
+    <Fragment set:html={embedCode} />
+  </main>
+  <Footer footer={globalData.footer} client:load />
+</Layout>
+
+<style>
+  .apply-page-main {
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+</style>

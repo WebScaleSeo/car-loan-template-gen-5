@@ -1,0 +1,310 @@
+/* =====================================================
+   TeamOverview — Light + Gradient | Midnight Luxe
+   Mood: Inviting & Approachable
+   Layout: Grid-breaking overlap
+   FX: Typographic scale contrast + animated borders
+   Motion: Staggered element cascade (safe fade-ins)
+   ===================================================== */
+
+/* ---------- Keyframes (safe — settle to static positions) ---------- */
+
+@keyframes toFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderFlow {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+@keyframes barPulse {
+  0%, 100% { width: 60px; }
+  50%       { width: 120px; }
+}
+
+@keyframes blobDrift {
+  0%, 100% { transform: scale(1) translateY(0px); }
+  50%       { transform: scale(1.06) translateY(-10px); }
+}
+
+/* ---------- Section root ---------- */
+
+.team-overview {
+  position: relative;
+  background: var(--bg-page);
+  padding-bottom: 10rem;
+  /* NO overflow: hidden — would clip overlapping content */
+}
+
+/* ---------- Decorative background blobs ---------- */
+
+.to-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.to-blob--1 {
+  width: 480px;
+  height: 480px;
+  top: -80px;
+  right: -120px;
+  background: radial-gradient(circle, var(--element-depth) 0%, transparent 65%);
+  animation: blobDrift 8s ease-in-out infinite;
+}
+
+.to-blob--2 {
+  width: 320px;
+  height: 320px;
+  bottom: 120px;
+  left: -100px;
+  background: radial-gradient(circle, var(--decorative-color) 0%, transparent 65%);
+  animation: blobDrift 10s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* ---------- Hero band (dark gradient) ---------- */
+
+.to-hero {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0 8rem;
+  background: linear-gradient(
+    135deg,
+    var(--hero-gradient-from) 0%,
+    var(--hero-gradient-to) 55%,
+    var(--accent-highlight) 100%
+  );
+  overflow: hidden;
+}
+
+/* Dot-grid texture overlay */
+.to-hero__dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.to-hero__inner {
+  position: relative;
+  z-index: 2;
+  animation: toFadeUp 0.8s 0.05s ease both;
+}
+
+/* Tiny eyebrow — typographic scale contrast (small) */
+.to-eyebrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+/* Massive headline — typographic scale contrast (large) */
+.to-title {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 900;
+  color: var(--text-inverse);
+  line-height: 1.06;
+  max-width: 700px;
+  margin: 0 0 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+/* Animated accent bar */
+.to-accent-bar {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--text-inverse),
+    var(--accent-highlight),
+    var(--text-inverse)
+  );
+  background-size: 200% 100%;
+  animation: barPulse 3s ease-in-out infinite, borderFlow 4s ease infinite;
+  width: 60px;
+}
+
+/* ---------- Body — overlaps the hero (grid-breaking) ---------- */
+
+.to-body {
+  position: relative;
+  z-index: 3;
+  margin-top: -4.5rem;
+}
+
+/* ---------- Description card ---------- */
+
+.to-desc {
+  position: relative;
+  background: var(--bg-surface);
+  border-radius: 16px;
+  padding: 2rem 2.4rem 2rem 2.8rem;
+  box-shadow: 0 20px 56px var(--shadow-color);
+  max-width: 860px;
+  margin: 0 auto 2.8rem;
+  animation: toFadeUp 0.75s 0.2s ease both;
+}
+
+/* Left accent stripe */
+.to-desc__stripe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-accent);
+  border-radius: 16px 0 0 16px;
+}
+
+.to-desc__text {
+  color: var(--text-primary);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ---------- Team card grid ---------- */
+
+.to-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  /* align-items: start so cards are their natural height — no text clipping */
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+/* Card outer — staggered entrance animation only */
+.to-card {
+  animation: toFadeUp 0.7s calc(var(--card-idx, 0) * 0.14s + 0.35s) ease both;
+}
+
+/* Gradient border shell — animated via background-position (no layout impact) */
+.to-card__border {
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    var(--hero-gradient-from),
+    var(--accent-highlight),
+    var(--secondary-color),
+    var(--accent-highlight),
+    var(--hero-gradient-from)
+  );
+  background-size: 300% 300%;
+  animation: borderFlow 6s calc(var(--card-idx, 0) * 0.8s) ease infinite;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.to-card:hover .to-card__border {
+  box-shadow: 0 20px 56px var(--shadow-color);
+  transform: translateY(-4px);
+}
+
+/* Card white surface — NO height/overflow constraints */
+.to-card__inner {
+  background: var(--bg-surface);
+  border-radius: 14px;
+  padding: 1.8rem 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Oversized number — typographic scale contrast decoration */
+.to-card__num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.25;
+  user-select: none;
+  margin-bottom: -0.2rem;
+  flex-shrink: 0;
+}
+
+.to-card__role {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.to-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.78;
+  color: var(--text-secondary);
+  margin: 0;
+  /* Explicit word-wrap to prevent overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* NO max-height, NO overflow: hidden — text must show fully */
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .to-hero {
+    padding: 3.5rem 0 7rem;
+  }
+
+  .to-title {
+    font-size: 2.2rem;
+  }
+
+  .to-body {
+    margin-top: -3.5rem;
+  }
+
+  .to-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .to-desc {
+    padding: 1.5rem 1.6rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .to-hero {
+    padding: 2.5rem 0 6rem;
+  }
+
+  .to-title {
+    font-size: 1.9rem;
+  }
+
+  .to-desc {
+    padding: 1.2rem 1.3rem 1.2rem 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .to-card__inner {
+    padding: 1.4rem 1.4rem 1.2rem;
+  }
+
+  .to-card__num {
+    font-size: 2.8rem;
+  }
+}

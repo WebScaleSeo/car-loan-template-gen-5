@@ -1,0 +1,363 @@
+/* ============================================================
+   HowItWorks — Sleek Futuristic | NEUTRAL + PATTERN
+   Full-bleed floating panels, typographic scale contrast,
+   ribbon/banner accents, staggered fade-up entrance
+   ============================================================ */
+
+/* ─── Section wrapper ─────────────────────────────────────── */
+.hiw-section {
+  position: relative;
+  background-color: var(--bg-page);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, var(--badge-bg) 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg-page) 0%, var(--badge-bg) 100%);
+  padding: 6rem 1.5rem 7rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ─── Dot-grid pattern overlay ────────────────────────────── */
+.hiw-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, var(--decorative-color) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+/* ─── Center radial glow ──────────────────────────────────── */
+.hiw-glow-center {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 30%,
+    var(--element-depth) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Top ribbon banner (full-bleed) ──────────────────────── */
+.hiw-top-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-accent);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ─── Mid-section decorative band ─────────────────────────── */
+.hiw-mid-band {
+  position: absolute;
+  top: 340px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-color) 20%,
+    var(--accent-highlight) 50%,
+    var(--border-color) 80%,
+    transparent 100%
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Inner content column ────────────────────────────────── */
+.hiw-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ─── Section header ──────────────────────────────────────── */
+.hiw-header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+  animation: fadeUpIn 0.65s ease both;
+  animation-delay: 0.05s;
+}
+
+/* Eyebrow — label flanked by ruled lines */
+.hiw-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hiw-eyebrow__line {
+  display: block;
+  width: 60px;
+  height: 1.5px;
+  background: var(--gradient-accent);
+  flex-shrink: 0;
+}
+
+.hiw-eyebrow__label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  color: var(--accent-highlight);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Section title — gradient text for premium feel */
+.hiw-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.025em;
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--secondary-color) 50%,
+    var(--accent-highlight) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.hiw-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ─── Steps grid (2×2 on desktop) ────────────────────────── */
+.hiw-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ─── Individual step panel — floating card ───────────────── */
+.hiw-step-panel {
+  background: var(--bg-surface);
+  border-radius: 20px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+
+  /* Dramatic layered shadows = floating effect */
+  box-shadow:
+    0 2px 4px var(--shadow-color),
+    0 8px 24px var(--shadow-color),
+    0 24px 64px rgba(0, 0, 0, 0.12),
+    0 0 0 1px var(--border-color);
+
+  /* Staggered fade-up entrance */
+  opacity: 0;
+  animation: fadeUpIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.hiw-step-panel:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 4px 8px var(--shadow-color),
+    0 16px 40px var(--shadow-color),
+    0 40px 80px rgba(0, 0, 0, 0.15),
+    0 0 0 1px var(--accent-highlight);
+}
+
+/* Left accent ribbon strip — always visible */
+.hiw-step-ribbon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--gradient-accent);
+  border-radius: 20px 0 0 20px;
+}
+
+/* ─── Inner layout: number + content side by side ─────────── */
+.hiw-step-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 2.25rem 2.25rem 2rem 2rem;
+  min-height: 100%;
+}
+
+/* ─── Giant step numeral — typographic scale contrast ─────── */
+.hiw-step-numeral {
+  display: block;
+  font-size: clamp(4rem, 6vw, 6rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  flex-shrink: 0;
+  width: 5.5rem;
+  margin-right: 1.5rem;
+  margin-top: -0.1em;
+
+  /* Outline/stroke style — editorial typographic technique */
+  background: linear-gradient(
+    145deg,
+    var(--primary-color) 0%,
+    var(--accent-highlight) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Subtle decorative fill behind the number */
+  position: relative;
+}
+
+/* Ghost outline behind numeral for depth */
+.hiw-step-numeral::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  -webkit-text-stroke: 1px var(--border-color);
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+}
+
+/* ─── Step body ───────────────────────────────────────────── */
+.hiw-step-body {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.25rem;
+}
+
+/* Tiny "STEP" label above title */
+.hiw-step-micro {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-highlight);
+  margin-bottom: 0.5rem;
+}
+
+/* Step title */
+.hiw-step-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.015em;
+}
+
+/* Step description */
+.hiw-step-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Bottom decorative underline — gradient line */
+.hiw-step-underline {
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-highlight) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hiw-step-panel:hover .hiw-step-underline {
+  opacity: 1;
+}
+
+/* ─── Entrance animation ──────────────────────────────────── */
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive — tablet (641–1023px) ────────────────────── */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .hiw-step-numeral {
+    font-size: 3.75rem;
+    width: 4.5rem;
+  }
+
+  .hiw-step-inner {
+    padding: 2rem 2rem 1.75rem 1.75rem;
+  }
+}
+
+/* ─── Responsive — mobile (<640px) ───────────────────────── */
+@media (max-width: 640px) {
+  .hiw-section {
+    padding: 4.5rem 1.25rem 5.5rem;
+  }
+
+  .hiw-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hiw-step-inner {
+    padding: 1.75rem 1.5rem 1.5rem 1.75rem;
+    gap: 0;
+  }
+
+  .hiw-step-numeral {
+    font-size: 3.5rem;
+    width: 4rem;
+    margin-right: 1.25rem;
+  }
+
+  .hiw-step-title {
+    font-size: 1.1rem;
+  }
+
+  .hiw-title {
+    font-size: 2.2rem;
+  }
+
+  .hiw-header {
+    margin-bottom: 3rem;
+  }
+
+  .hiw-mid-band {
+    top: auto;
+    bottom: 50%;
+  }
+}

@@ -1,0 +1,423 @@
+/* =============================================
+   RatesFaq — ACCENT | Asymmetric Split | Brutalist + Depth
+   ============================================= */
+
+/* ---------- Keyframes ---------- */
+@keyframes rfFloatA {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-28px) scale(1.06); }
+}
+
+@keyframes rfFloatB {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(22px) scale(0.94); }
+}
+
+@keyframes rfFloatC {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(-20px) scale(1.04); }
+}
+
+@keyframes rfFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rfSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rfPulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--element-depth); }
+  50% { box-shadow: 0 0 32px 8px var(--element-depth); }
+}
+
+@keyframes rfAccentBarGrow {
+  from { width: 0; }
+  to { width: 64px; }
+}
+
+/* ---------- Section shell ---------- */
+.ratesFaq-section {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+  background:
+    linear-gradient(135deg, var(--hero-gradient-from) 0%, var(--secondary-color) 55%, var(--accent-color) 100%);
+}
+
+/* Depth layer: subtle noise-like dot grid overlay */
+.ratesFaq-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Depth layer: diagonal color split plane */
+.ratesFaq-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 100%;
+  background: rgba(0,0,0,0.18);
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Floating decorative orbs ---------- */
+.rf-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rf-orb--1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+  opacity: 0.18;
+  top: -120px;
+  right: -80px;
+  animation: rfFloatA 9s ease-in-out infinite;
+}
+
+.rf-orb--2 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+  opacity: 0.22;
+  bottom: -80px;
+  left: 10%;
+  animation: rfFloatB 12s ease-in-out infinite;
+}
+
+.rf-orb--3 {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 38%;
+  transform: translateY(-50%);
+  animation: rfFloatC 7s ease-in-out infinite;
+}
+
+/* ---------- Grid lines (brutalist raw) ---------- */
+.rf-grid-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rf-grid-line {
+  position: absolute;
+  background: rgba(255,255,255,0.05);
+}
+
+.rf-grid-line--v1 {
+  left: 40%;
+  top: 0;
+  width: 3px;
+  height: 100%;
+}
+
+.rf-grid-line--v2 {
+  left: 25%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255,255,255,0.03);
+}
+
+.rf-grid-line--h1 {
+  top: 40%;
+  left: 0;
+  width: 42%;
+  height: 3px;
+}
+
+/* ---------- Inner layout ---------- */
+.rf-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  gap: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+/* ---------- LEFT PANEL ---------- */
+.rf-left-panel {
+  position: relative;
+  padding: 2rem 3rem 2rem 1rem;
+  animation: rfSlideInLeft 0.7s ease both;
+}
+
+.rf-label-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.rf-heading {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text-inverse);
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+/* Oversized stroke text as decorative background element */
+.rf-stroke-text {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0.5rem;
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.08);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  z-index: -1;
+}
+
+.rf-left-copy {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.72);
+  margin: 0 0 2.5rem;
+  max-width: 300px;
+}
+
+/* Count badge — brutalist block */
+.rf-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border: 4px solid var(--accent-color);
+  padding: 1rem 1.4rem;
+  background: rgba(0,0,0,0.25);
+  margin-bottom: 2rem;
+  animation: rfPulseGlow 4s ease-in-out infinite;
+}
+
+.rf-count-num {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-inverse);
+  font-family: var(--font-heading, serif);
+}
+
+.rf-count-label {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rf-accent-bar {
+  width: 64px;
+  height: 6px;
+  background: var(--gradient-accent);
+  margin-top: 0.5rem;
+  animation: rfAccentBarGrow 1s 0.4s ease both;
+}
+
+/* ---------- RIGHT PANEL ---------- */
+.rf-right-panel {
+  padding: 0 0 2rem 2.5rem;
+  border-left: 5px solid rgba(255,255,255,0.15);
+}
+
+/* ---------- FAQ Items ---------- */
+.rf-faq-item {
+  border: 4px solid rgba(255,255,255,0.12);
+  border-left: 6px solid var(--accent-highlight);
+  margin-bottom: 1rem;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+  animation: rfFadeUp 0.55s ease both;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.rf-faq-item:hover {
+  border-color: rgba(255,255,255,0.28);
+  border-left-color: var(--accent-color);
+  background: rgba(0,0,0,0.38);
+  transform: translateX(4px);
+}
+
+.rf-faq-item--open {
+  border-color: rgba(255,255,255,0.3);
+  border-left-color: var(--accent-color);
+  background: rgba(0,0,0,0.35);
+}
+
+/* Question button */
+.rf-faq-question {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-inverse);
+  line-height: 1.35;
+}
+
+.rf-faq-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  min-width: 2rem;
+  opacity: 0.9;
+}
+
+.rf-faq-qtext {
+  font-size: 1.05rem;
+  font-weight: 700;
+  flex: 1;
+  color: var(--text-inverse);
+}
+
+.rf-faq-icon {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  line-height: 1;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.rf-faq-item--open .rf-faq-icon {
+  color: var(--text-inverse);
+  transform: rotate(0deg);
+}
+
+/* Answer */
+.rf-faq-answer-wrapper {
+  border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.rf-faq-answer {
+  padding: 1.2rem 1.4rem 1.4rem 4rem;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .rf-inner {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+
+  .ratesFaq-section::after {
+    width: 100%;
+    height: 280px;
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+    top: 0;
+    left: 0;
+  }
+
+  .rf-left-panel {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .rf-right-panel {
+    padding: 0;
+    border-left: none;
+    border-top: 5px solid rgba(255,255,255,0.15);
+    padding-top: 2rem;
+  }
+
+  .rf-stroke-text {
+    font-size: 5rem;
+    bottom: -1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ratesFaq-section {
+    padding: 4rem 0;
+  }
+
+  .rf-heading {
+    font-size: 2.2rem;
+  }
+
+  .rf-faq-question {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .rf-faq-answer {
+    padding: 1rem;
+  }
+
+  .rf-count-badge {
+    padding: 0.8rem 1rem;
+  }
+
+  .rf-count-num {
+    font-size: 2.4rem;
+  }
+
+  .rf-orb--1 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .rf-orb--2 {
+    width: 160px;
+    height: 160px;
+  }
+}

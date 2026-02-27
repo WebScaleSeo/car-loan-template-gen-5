@@ -1,0 +1,363 @@
+/* ============================================================
+   HomeCtaBanner — Dark + Pattern | L-shaped layout
+   Gradient border glow + animated borders | Pulsing glow accents
+   ============================================================ */
+
+/* ---------- Section base ---------- */
+.cta-banner-section {
+  position: relative;
+  background: var(--section-dark-bg);
+  overflow: hidden;
+}
+
+/* ---------- Dot pattern layer ---------- */
+.cta-dot-layer {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- Ambient glow blobs ---------- */
+.cta-ambient-left {
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--element-depth) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+  animation: ambient-pulse 6s ease-in-out infinite alternate;
+}
+
+.cta-ambient-right {
+  position: absolute;
+  bottom: -80px;
+  right: -60px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--decorative-color) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+  animation: ambient-pulse 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ambient-pulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.15); }
+}
+
+/* ---------- Animated gradient border frame ---------- */
+.cta-border-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-highlight),
+    var(--secondary-color),
+    var(--hero-gradient-from),
+    var(--accent-highlight)
+  );
+  background-size: 300% 300%;
+  animation: border-sweep 5s linear infinite;
+  box-shadow:
+    0 0 30px var(--element-depth),
+    0 0 60px var(--decorative-color),
+    0 20px 60px var(--shadow-color);
+}
+
+@keyframes border-sweep {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- Inner content area ---------- */
+.cta-border-inner {
+  background: linear-gradient(135deg, var(--hero-gradient-from) 0%, var(--secondary-color) 60%, var(--hero-gradient-to) 100%);
+  border-radius: 18px;
+  padding: 3.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle diagonal shine across the inner surface */
+.cta-border-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* ---------- L-shaped grid ---------- */
+.cta-l-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0 3.5rem;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+}
+
+/* LEFT COLUMN — tall vertical bar of the L */
+.cta-text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  animation: fade-up 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+/* RIGHT COLUMN — shorter, stacked (deco top, action bottom) */
+.cta-right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  animation: fade-up 0.7s ease both;
+  animation-delay: 0.25s;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Eyebrow label ---------- */
+.cta-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-highlight);
+  border: 1px solid var(--accent-highlight);
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+  width: fit-content;
+}
+
+/* ---------- Headline ---------- */
+.cta-headline {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-inverse);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Gradient accent on last word using a background-clip trick on a span */
+.cta-headline em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--accent-highlight), var(--gradient-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Decorative pulsing rings (top-right area) ---------- */
+.cta-deco-rings {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.cta-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-highlight);
+}
+
+.cta-ring--outer {
+  width: 140px;
+  height: 140px;
+  opacity: 0.15;
+  animation: ring-pulse 3s ease-in-out infinite;
+}
+
+.cta-ring--mid {
+  width: 96px;
+  height: 96px;
+  opacity: 0.3;
+  animation: ring-pulse 3s ease-in-out infinite 0.5s;
+}
+
+.cta-ring--inner {
+  width: 54px;
+  height: 54px;
+  opacity: 0.5;
+  animation: ring-pulse 3s ease-in-out infinite 1s;
+  border-color: var(--accent-highlight);
+  background: var(--element-depth);
+}
+
+.cta-pulse-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-highlight);
+  animation: dot-pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 12px var(--accent-highlight), 0 0 24px var(--element-depth);
+}
+
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.45; transform: translate(-50%, -50%) scale(1.06); }
+}
+
+@keyframes ring-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.6; }
+}
+
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 8px var(--accent-highlight), 0 0 20px var(--element-depth); opacity: 0.85; }
+  50% { box-shadow: 0 0 18px var(--accent-highlight), 0 0 40px var(--element-depth), 0 0 60px var(--decorative-color); opacity: 1; }
+}
+
+/* ---------- Action block (description + CTA) ---------- */
+.cta-action-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.cta-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: 400px;
+}
+
+/* ---------- CTA button ---------- */
+.cta-btn-wrap {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-size: 0.97rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: btn-glow-pulse 2.5s ease-in-out infinite;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 30px var(--element-depth), 0 8px 30px var(--shadow-color);
+}
+
+.cta-btn-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.cta-btn:hover .cta-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Pulsing glow halo behind button */
+.cta-btn-glow-halo {
+  position: absolute;
+  inset: -4px;
+  border-radius: 14px;
+  background: var(--gradient-accent);
+  filter: blur(16px);
+  opacity: 0.45;
+  z-index: 0;
+  animation: halo-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes btn-glow-pulse {
+  0%, 100% { box-shadow: 0 0 12px var(--element-depth); }
+  50%       { box-shadow: 0 0 24px var(--element-depth), 0 0 48px var(--decorative-color); }
+}
+
+@keyframes halo-pulse {
+  0%, 100% { opacity: 0.35; filter: blur(14px); }
+  50%       { opacity: 0.6;  filter: blur(22px); }
+}
+
+/* ---------- Responsive — mobile ---------- */
+@media (max-width: 900px) {
+  .cta-l-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .cta-right-column {
+    flex-direction: column-reverse;
+  }
+
+  .cta-deco-rings {
+    display: none;
+  }
+
+  .cta-border-inner {
+    padding: 2.5rem 2rem;
+  }
+
+  .cta-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-border-inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-btn-wrap {
+    width: 100%;
+  }
+}

@@ -1,0 +1,346 @@
+/* =====================================================
+   KeyBenefits — Dark + Gradient
+   Mood: artsy & expressive | Spatial: depth-layered
+   Motion: rotating gradient shifts
+   Effects: animated borders + oversized display type
+   ===================================================== */
+
+/* ---- Section shell ---- */
+.keyBenefits-section {
+  position: relative;
+  padding: 7rem 0 8rem;
+  overflow: hidden;
+  background: var(--section-dark-bg);
+}
+
+/* ---- Background system (depth layer 0) ---- */
+.kb-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Aurora / mesh gradient — rotating gradient shifts */
+.kb-bg-aurora {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 15% 15%, var(--hero-gradient-to), transparent 65%),
+    radial-gradient(ellipse 70% 60% at 85% 85%, var(--accent-highlight), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, var(--secondary-color), transparent 55%),
+    var(--section-dark-bg);
+  background-size: 300% 300%;
+  animation: auroraShift 18s ease infinite;
+  opacity: 0.9;
+}
+
+/* Glowing orbs — decorative depth elements */
+.kb-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.kb-orb-1 {
+  width: 560px;
+  height: 560px;
+  top: -140px;
+  left: -140px;
+  background: var(--secondary-color);
+  opacity: 0.35;
+  animation: orbPulse 10s ease-in-out infinite;
+}
+
+.kb-orb-2 {
+  width: 420px;
+  height: 420px;
+  bottom: -80px;
+  right: -80px;
+  background: var(--accent-highlight);
+  opacity: 0.2;
+  animation: orbPulse 13s ease-in-out infinite 3s;
+}
+
+.kb-orb-3 {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  background: var(--primary-color);
+  opacity: 0.25;
+  animation: orbPulse 8s ease-in-out infinite 1.5s;
+}
+
+/* Subtle dot-grid texture */
+.kb-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 1;
+}
+
+/* ---- Oversized decorative display type (depth layer 1) ---- */
+.kb-display-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(130px, 22vw, 300px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.05);
+  text-stroke: 1.5px rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+/* ---- Content layer ---- */
+.kb-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* ---- Section header ---- */
+.kb-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  animation: fadeUpIn 0.8s ease both;
+}
+
+.kb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-highlight);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.45rem 1.25rem;
+  border-radius: 100px;
+  margin-bottom: 1.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.kb-title {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(
+    140deg,
+    var(--text-inverse) 30%,
+    rgba(255, 255, 255, 0.7) 60%,
+    var(--accent-highlight) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.kb-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-inverse);
+  opacity: 0.85;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ---- Benefits grid ---- */
+.kb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* ---- Card ---- */
+.kb-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 2px;   /* space for the animated border */
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeUpIn 0.65s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.kb-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Animated gradient border — rotates via background-position shift */
+.kb-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-highlight),
+    var(--secondary-color),
+    var(--hero-gradient-from),
+    var(--accent-highlight),
+    var(--secondary-color)
+  );
+  background-size: 300% 300%;
+  animation: borderCycle 5s linear infinite;
+  z-index: 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.kb-card:hover .kb-card-border {
+  opacity: 1;
+  animation-duration: 2.5s;
+}
+
+/* Card inner (sits above the border layer) */
+.kb-card-inner {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background 0.3s ease;
+}
+
+.kb-card:hover .kb-card-inner {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Icon ---- */
+.kb-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px var(--element-depth);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kb-card:hover .kb-icon {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px var(--element-depth);
+}
+
+.kb-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-inverse);
+}
+
+/* ---- Card typography ---- */
+.kb-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-inverse);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.kb-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-inverse);
+  opacity: 0.85;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* =====================================================
+   KEYFRAMES
+   ===================================================== */
+
+/* Rotating gradient shifts — aurora movement */
+@keyframes auroraShift {
+  0%   { background-position: 0% 0%; }
+  25%  { background-position: 100% 0%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Animated border cycling */
+@keyframes borderCycle {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Decorative orb breathing */
+@keyframes orbPulse {
+  0%,  100% { transform: scale(1);    opacity: 0.35; }
+  50%        { transform: scale(1.18); opacity: 0.5;  }
+}
+
+/* Entrance animation — safe: settles to final static position */
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1024px) {
+  .kb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .keyBenefits-section {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .kb-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .kb-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .kb-display-word {
+    font-size: 90px;
+    opacity: 0.6;
+  }
+
+  .kb-card-inner {
+    padding: 1.5rem;
+  }
+}

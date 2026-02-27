@@ -1,0 +1,461 @@
+/* ============================================================
+   FaqHero — Stacked Cinematic Hero
+   Background: Multi-color mesh gradient (GRADIENT treatment)
+   Mood: geometric + structured | Motion: typewriter + radial burst
+   ============================================================ */
+
+/* ── Root section ─────────────────────────────────────────── */
+.faqHero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--hero-gradient-from);
+}
+
+/* ── Background layer 1: deep linear base ─────────────────── */
+.faqHero-bg-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    var(--section-dark-bg) 0%,
+    var(--hero-gradient-from) 35%,
+    var(--hero-gradient-to) 70%,
+    var(--section-dark-bg) 100%
+  );
+  z-index: 0;
+}
+
+/* ── Background layer 2: aurora/mesh radial glows ─────────── */
+.faqHero-bg-mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 10% 35%, var(--accent-color), transparent 55%),
+    radial-gradient(ellipse 45% 65% at 90% 25%, var(--secondary-color), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 55% 85%, var(--accent-highlight), transparent 50%);
+  opacity: 0.38;
+  z-index: 1;
+  animation: faqMeshFloat 10s ease-in-out infinite alternate;
+}
+
+/* ── Background layer 3: radial burst entrance ────────────── */
+.faqHero-bg-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%) scale(0);
+  background: radial-gradient(circle, var(--accent-highlight), transparent 68%);
+  opacity: 0;
+  z-index: 2;
+  animation: faqBurstIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+/* ── Background layer 4: geometric dot grid ───────────────── */
+.faqHero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 3;
+  opacity: 0.22;
+}
+
+/* ── Decorative oversized "FAQ" watermark (top-right) ──────── */
+.faqHero-deco-word {
+  position: absolute;
+  top: -0.08em;
+  right: -0.04em;
+  font-size: clamp(180px, 28vw, 420px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--text-inverse);
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 4;
+  animation: faqDecoReveal 2s ease-out 0.6s forwards;
+}
+
+/* ── Geometric accent bars — bold color blocking ──────────── */
+.faqHero-bar-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--gradient-accent);
+  z-index: 5;
+}
+
+.faqHero-corner-tl {
+  position: absolute;
+  top: 32px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid var(--accent-highlight);
+  border-left: 2px solid var(--accent-highlight);
+  opacity: 0.5;
+  z-index: 5;
+  animation: faqCornerFade 1s ease-out 0.8s both;
+}
+
+.faqHero-corner-br {
+  position: absolute;
+  bottom: 56px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-bottom: 2px solid var(--accent-highlight);
+  border-right: 2px solid var(--accent-highlight);
+  opacity: 0.35;
+  z-index: 5;
+  animation: faqCornerFade 1s ease-out 1s both;
+}
+
+/* ── Main content ─────────────────────────────────────────── */
+.faqHero-inner {
+  position: relative;
+  z-index: 10;
+  max-width: 860px;
+  width: 100%;
+  padding: 120px 56px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Label row ────────────────────────────────────────────── */
+.faqHero-label-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: faqFadeUp 0.7s ease-out 0.5s forwards;
+}
+
+.faqHero-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  padding: 6px 18px;
+  border: 1px solid var(--accent-highlight);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.faqHero-label-rule {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-highlight), transparent);
+}
+
+/* ── Headline wrapper (for typewriter cursor placement) ──── */
+.faqHero-headline-wrap {
+  position: relative;
+  display: block;
+  margin: 0 0 30px;
+  opacity: 0;
+  animation: faqFadeUp 0.8s ease-out 0.75s forwards;
+}
+
+/* ── Headline ─────────────────────────────────────────────── */
+.faqHero-headline {
+  font-size: clamp(48px, 7.5vw, 88px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--text-inverse);
+  margin: 0;
+  display: inline;
+}
+
+/* CSS typewriter cursor — blinks after headline fades in */
+.faqHero-typewriter-cursor {
+  display: inline-block;
+  color: var(--accent-highlight);
+  font-size: clamp(48px, 7.5vw, 88px);
+  font-weight: 100;
+  line-height: 1.04;
+  margin-left: 4px;
+  vertical-align: baseline;
+  opacity: 0;
+  /* Start blinking after the headline appears */
+  animation: faqCursorBlink 0.75s step-end 1.4s 6, faqCursorFadeOut 0.3s ease-out 6s forwards;
+}
+
+/* ── Sub-headline ─────────────────────────────────────────── */
+.faqHero-subheadline {
+  font-size: clamp(16px, 1.85vw, 18.5px);
+  line-height: 1.75;
+  color: var(--text-inverse);
+  opacity: 0;
+  max-width: 640px;
+  margin: 0 0 44px;
+  animation: faqFadeUp 0.8s ease-out 1.05s forwards;
+}
+
+/* ── CTA row ──────────────────────────────────────────────── */
+.faqHero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: faqFadeUp 0.8s ease-out 1.2s forwards;
+}
+
+/* Primary button */
+.faqHero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 3px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 28px var(--element-depth);
+}
+
+.faqHero-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-highlight), var(--primary-color));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.faqHero-btn-primary span,
+.faqHero-btn-primary svg {
+  position: relative;
+  z-index: 1;
+}
+
+.faqHero-btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 48px var(--element-depth);
+}
+
+.faqHero-btn-primary:hover::after {
+  opacity: 1;
+}
+
+/* Ghost / secondary button */
+.faqHero-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-inverse);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 15px 28px;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 3px;
+  text-decoration: none;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.faqHero-btn-ghost:hover {
+  border-color: var(--accent-highlight);
+  color: var(--accent-highlight);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ── Trust / credibility badges ───────────────────────────── */
+.faqHero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0;
+  animation: faqFadeUp 0.8s ease-out 1.4s forwards;
+}
+
+.faqHero-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.faqHero-trust-badge:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--accent-highlight);
+  transform: translateY(-3px);
+}
+
+.faqHero-badge-icon {
+  font-size: 18px;
+  color: var(--accent-highlight);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.faqHero-badge-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-inverse);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.faqHero-badge-desc {
+  font-size: 10.5px;
+  color: var(--text-inverse);
+  opacity: 0.68;
+  white-space: nowrap;
+}
+
+/* ── Bottom accent rule ───────────────────────────────────── */
+.faqHero-bottom-rule {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+  z-index: 5;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+
+@keyframes faqFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes faqDecoReveal {
+  from { opacity: 0; }
+  to   { opacity: 0.045; }
+}
+
+@keyframes faqCornerFade {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: inherit;
+    transform: scale(1);
+  }
+}
+
+@keyframes faqBurstIn {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.14;
+  }
+}
+
+@keyframes faqCursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes faqCursorFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes faqMeshFloat {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.06) translate(-18px, 10px); }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .faqHero-inner {
+    padding: 88px 24px 80px;
+  }
+
+  .faqHero-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .faqHero-btn-primary,
+  .faqHero-btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .faqHero-trust-row {
+    gap: 10px;
+  }
+
+  .faqHero-trust-badge {
+    padding: 10px 16px;
+  }
+
+  .faqHero-deco-word {
+    font-size: clamp(120px, 40vw, 200px);
+    opacity: 0;
+    animation: faqDecoReveal 2s ease-out 0.6s forwards;
+  }
+
+  .faqHero-typewriter-cursor {
+    font-size: clamp(48px, 7.5vw, 88px);
+  }
+}
+
+@media (max-width: 480px) {
+  .faqHero-trust-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .faqHero-trust-badge {
+    justify-content: center;
+  }
+
+  .faqHero-label-row {
+    justify-content: center;
+  }
+
+  .faqHero-label-rule {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+:3000 {
+    root * /srv
+    encode gzip
+    file_server
+    try_files {path} {path}.html /index.html
+}

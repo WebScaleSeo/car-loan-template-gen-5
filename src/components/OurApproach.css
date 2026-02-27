@@ -1,0 +1,519 @@
+/* ─────────────────────────────────────────────────
+   OurApproach — Neutral + Pattern | Zigzag Flow
+   Bright & optimistic · blend-mode overlays
+   Bold color blocking · bouncing attention indicators
+───────────────────────────────────────────────── */
+
+/* ══ Section shell ══ */
+.oa-section {
+  position: relative;
+  padding: 7rem 0 8rem;
+  background-color: var(--bg-page);
+  overflow: hidden;
+}
+
+/* ══ Dot-grid pattern ══ */
+.oa-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, var(--decorative-color) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ══ Decorative blend-mode blobs ══ */
+.oa-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.oa-blob--1 {
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  right: -120px;
+  background: var(--element-depth);
+  opacity: 0.9;
+  animation: blobFloat 9s ease-in-out infinite;
+}
+
+.oa-blob--2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: -100px;
+  background: var(--element-depth);
+  opacity: 0.7;
+  animation: blobFloat 11s ease-in-out infinite reverse;
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.08) translateY(-12px); }
+}
+
+/* ══ Inner container ══ */
+.oa-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ══════════════════════════
+   HEADER
+══════════════════════════ */
+.oa-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 5rem;
+  animation: oaFadeUp 0.7s ease both;
+}
+
+/* Eyebrow pill with bouncing dots */
+.oa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--badge-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 999px;
+  padding: 8px 20px 8px 14px;
+  margin-bottom: 1.5rem;
+}
+
+.oa-eyebrow-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--badge-text);
+  margin-left: 6px;
+}
+
+/* Bouncing dot indicators */
+.oa-dot {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--accent-highlight);
+  animation: dotBounce 1.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.oa-dot--1 {
+  width: 8px;
+  height: 8px;
+}
+
+.oa-dot--2 {
+  width: 6px;
+  height: 6px;
+  background: var(--secondary-color);
+  opacity: 0.75;
+  animation-delay: 0.2s;
+}
+
+.oa-dot--3 {
+  width: 4px;
+  height: 4px;
+  background: var(--accent-color);
+  opacity: 0.5;
+  animation-delay: 0.4s;
+}
+
+@keyframes dotBounce {
+  0%, 100% { transform: translateY(0); }
+  45%       { transform: translateY(-6px); }
+  70%       { transform: translateY(-2px); }
+}
+
+/* Gradient heading */
+.oa-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.oa-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════
+   ZIGZAG ROWS
+══════════════════════════ */
+.oa-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Each row: icon-panel | connector | card */
+.oa-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  opacity: 0;
+  animation: oaFadeUp 0.55s ease forwards;
+}
+
+/* Flipped row: card | connector | icon-panel */
+.oa-row--flip {
+  flex-direction: row-reverse;
+}
+
+@keyframes oaFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══ Icon panel — bold color block ══ */
+.oa-icon-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2.75rem 2rem;
+  border-radius: 20px;
+  width: 260px;
+  flex-shrink: 0;
+  min-height: 200px;
+  overflow: hidden;
+  color: var(--text-inverse);
+  box-shadow: 0 16px 48px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oa-icon-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px var(--shadow-color);
+}
+
+/* Color variants */
+.oa-panel-a {
+  background: var(--gradient-accent);
+}
+
+.oa-panel-b {
+  background: linear-gradient(140deg, var(--secondary-color), var(--accent-highlight));
+}
+
+.oa-panel-c {
+  background: linear-gradient(140deg, var(--hero-gradient-to), var(--accent-color));
+}
+
+/* Blend-mode shimmer on panel */
+.oa-panel-shimmer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(255, 255, 255, 0.28) 0%,
+    transparent 60%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Subtle chevron texture on panel */
+.oa-icon-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 14px
+  );
+  pointer-events: none;
+}
+
+/* Step number */
+.oa-step-num {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text-inverse);
+  opacity: 0.22;
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon circle */
+.oa-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.oa-icon-panel:hover .oa-icon-wrap {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.oa-icon-wrap svg {
+  width: 30px;
+  height: 30px;
+  color: var(--text-inverse);
+}
+
+/* Panel label — title on colored block */
+.oa-panel-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-inverse);
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin: 0;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  max-width: 160px;
+}
+
+/* ══ Connector with bouncing arrow ══ */
+.oa-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 64px;
+  flex-shrink: 0;
+  padding: 1rem 0;
+}
+
+.oa-connector-line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--border-color) 20%,
+    var(--border-color) 80%,
+    transparent 100%
+  );
+}
+
+.oa-arrow-bounce {
+  color: var(--accent-highlight);
+  animation: arrowBounce 1.3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--badge-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  margin: 8px 0;
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.18); }
+}
+
+/* ══ Content card ══ */
+.oa-card {
+  flex: 1;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2.5rem 2.75rem 2.5rem 3.25rem;
+  position: relative;
+  box-shadow: 0 6px 32px var(--shadow-color);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.oa-card:hover {
+  box-shadow: 0 16px 52px var(--element-depth);
+  transform: translateY(-3px);
+}
+
+/* Decorative large background number — kept inside bounds */
+.oa-card-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 6.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--border-color);
+  pointer-events: none;
+  letter-spacing: -0.05em;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Left accent bar */
+.oa-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  background: var(--gradient-accent);
+}
+
+.oa-card-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.9rem;
+  line-height: 1.25;
+  position: relative;
+  z-index: 1;
+}
+
+.oa-card-body {
+  font-size: 0.97rem;
+  line-height: 1.78;
+  color: var(--text-secondary);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════════════════
+   RESPONSIVE — TABLET
+══════════════════════════ */
+@media (max-width: 900px) {
+  .oa-icon-panel {
+    width: 220px;
+    min-height: 180px;
+    padding: 2rem 1.5rem;
+  }
+
+  .oa-connector {
+    width: 52px;
+  }
+
+  .oa-card {
+    padding: 2rem 2rem 2rem 2.5rem;
+  }
+}
+
+/* ══════════════════════════
+   RESPONSIVE — MOBILE
+══════════════════════════ */
+@media (max-width: 700px) {
+  .oa-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+
+  .oa-header {
+    margin-bottom: 3rem;
+  }
+
+  /* Stack to single column on mobile */
+  .oa-row,
+  .oa-row--flip {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .oa-icon-panel {
+    flex-direction: row;
+    width: 100%;
+    min-height: auto;
+    padding: 1.5rem 1.75rem;
+    gap: 1.25rem;
+    border-radius: 16px 16px 0 0;
+    justify-content: flex-start;
+  }
+
+  .oa-step-num {
+    font-size: 2.2rem;
+  }
+
+  .oa-panel-label {
+    text-align: left;
+    max-width: none;
+  }
+
+  .oa-connector {
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    padding: 0 1rem;
+  }
+
+  .oa-connector-line {
+    flex: 1;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--border-color) 20%,
+      var(--border-color) 80%,
+      transparent 100%
+    );
+  }
+
+  .oa-arrow-bounce {
+    width: 30px;
+    height: 30px;
+    margin: 0 8px;
+  }
+
+  .oa-card {
+    border-radius: 0 0 16px 16px;
+    padding: 1.75rem 1.75rem 1.75rem 2.25rem;
+  }
+
+  .oa-card-num {
+    font-size: 5rem;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .oa-rows {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .oa-container {
+    padding: 0 1.25rem;
+  }
+
+  .oa-card-title {
+    font-size: 1.25rem;
+  }
+}

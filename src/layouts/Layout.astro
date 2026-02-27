@@ -1,0 +1,87 @@
+---
+import siteConfig from '../../siteConfig.json';
+import cloudflareConfig from '../../cloudflareConfig.json';
+import palettes from '../../palettes.json';
+import fontsArr from '../../fonts.json';
+import '../index.css';
+
+const global = siteConfig.site.global;
+const { seo, canonicalPath } = Astro.props;
+const pageTitle = seo?.title || global.seo.defaultTitle;
+const pageDescription = seo?.metaDescription || global.seo.defaultDescription;
+const siteName = global.seo.siteName;
+const domain = cloudflareConfig.domain || 'placeholder.com';
+const canonical = canonicalPath ? `https://${domain}${canonicalPath}` : `https://${domain}${Astro.url.pathname}`;
+
+// Resolve theme from siteConfig.site.theme.current (e.g. "theme1" → index 0)
+// palette index = (themeNumber - 1) % palettes.length
+// font index   = (themeNumber - 1) % fontsArr.length
+const themeNumber = parseInt((siteConfig.site.theme?.current || 'theme1').replace('theme', ''), 10) || 1;
+const paletteIdx = (themeNumber - 1) % (palettes.length || 1);
+const fontIdx = (themeNumber - 1) % (fontsArr.length || 1);
+const palette = palettes[paletteIdx]?.colors || {};
+const font = fontsArr[fontIdx] || { heading: 'Inter', body: 'Inter' };
+
+// Build CSS variables from resolved palette + font
+// Start with the 9 base variables, then append any extra palette-specific variables
+const extraVars = Object.entries(palette.extra || {})
+  .map(([k, v]) => `  ${k}: ${v};`)
+  .join('\n');
+const cssVars = `:root {
+  --primary-color: ${palette.primary || '#3B82F6'};
+  --secondary-color: ${palette.secondary || '#1E293B'};
+  --accent-color: ${palette.accent || '#8B5CF6'};
+  --bg-page: ${palette.background?.page || '#FFFFFF'};
+  --bg-surface: ${palette.background?.surface || '#F8FAFC'};
+  --text-primary: ${palette.text?.primary || '#1E293B'};
+  --text-secondary: ${palette.text?.secondary || '#64748B'};
+  --text-inverse: ${palette.text?.inverse || '#FFFFFF'};
+  --border-color: ${palette.border || '#E2E8F0'};
+  --font-heading: '${font.heading}', sans-serif;
+  --font-body: '${font.body}', sans-serif;${extraVars ? '\n' + extraVars : ''}
+}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={pageDescription} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={`https://fonts.googleapis.com/css2?family=${encodeURIComponent(font.heading)}:wght@400;600;700&family=${encodeURIComponent(font.body)}:wght@400;500;600;700&display=swap`} rel="stylesheet" />
+    <title>{pageTitle}</title>
+    <style set:html={cssVars}></style>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": siteName,
+      "url": `https://${domain}`,
+      "description": pageDescription
+    })}></script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": global.navigation.items.map((item, index) => ({
+        "@type": "SiteNavigationElement",
+        "position": index + 1,
+        "name": item.label,
+        "url": `https://${domain}${item.url}`
+      }))
+    })}></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

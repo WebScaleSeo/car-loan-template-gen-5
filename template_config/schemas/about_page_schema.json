@@ -1,0 +1,247 @@
+{
+  "name": "generate_about_page",
+  "description": "Generate complete about page content",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "seo": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 60
+          },
+          "metaDescription": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "title",
+          "metaDescription"
+        ]
+      },
+      "componentOrder": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "aboutHero",
+            "missionStatement",
+            "ourApproach",
+            "coreValues",
+            "teamOverview",
+            "aboutCtaBanner"
+          ]
+        },
+        "minItems": 6,
+        "maxItems": 6
+      },
+      "sections": {
+        "type": "object",
+        "properties": {
+          "aboutHero": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "About page headline"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Sentence about the company's purpose"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline"
+            ]
+          },
+          "missionStatement": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'Our Mission'"
+              },
+              "missionText": {
+                "type": "string",
+                "description": "Full mission statement paragraph"
+              },
+              "visionText": {
+                "type": "string",
+                "description": "Vision statement paragraph about the future of car lending"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "missionText",
+              "visionText"
+            ]
+          },
+          "ourApproach": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for approach section"
+              },
+              "sectionDescription": {
+                "type": "string",
+                "description": "Introductory paragraph about the approach"
+              },
+              "approachPillars": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Pillar title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Explanation of this aspect of the approach"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionDescription",
+              "approachPillars"
+            ]
+          },
+          "coreValues": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for values section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Intro sentence about values"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "description": "Value name (e.g., 'Transparency')"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "What this value means in practice"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "values"
+            ]
+          },
+          "teamOverview": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for team section"
+              },
+              "description": {
+                "type": "string",
+                "description": "Paragraph describing the team's expertise, background, and commitment without naming specific individuals"
+              },
+              "teamHighlights": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "type": "string",
+                      "description": "Team role description (e.g., 'Experienced Loan Advisors')"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "What this part of the team does for clients"
+                    }
+                  },
+                  "required": [
+                    "role",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "description",
+              "teamHighlights"
+            ]
+          },
+          "aboutCtaBanner": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Action-oriented headline"
+              },
+              "description": {
+                "type": "string",
+                "description": "Supporting text"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "CTA label"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "CTA URL — must be /contact"
+              }
+            },
+            "required": [
+              "headline",
+              "description",
+              "ctaButtonText",
+              "ctaButtonUrl"
+            ]
+          }
+        },
+        "required": [
+          "aboutHero",
+          "missionStatement",
+          "ourApproach",
+          "coreValues",
+          "teamOverview",
+          "aboutCtaBanner"
+        ]
+      }
+    },
+    "required": [
+      "seo",
+      "componentOrder",
+      "sections"
+    ]
+  }
+}

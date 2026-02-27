@@ -1,0 +1,1398 @@
+{
+  "site": {
+    "branding": {
+      "name": "DriveWay Finance",
+      "tagline": "Your Road to Smarter Car Loans",
+      "brandNameCore": "DriveWay",
+      "brandNameQualifier": "Finance"
+    },
+    "colorPalettes": [
+      {
+        "name": "Ocean Trust",
+        "colors": {
+          "primary": "#0C2D5E",
+          "secondary": "#1A4A8C",
+          "background": {
+            "page": "#F7F9FC",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#1A1F2B",
+            "secondary": "#4A5568",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#DFE8F5",
+          "accent": "#0E7C46",
+          "extra": {
+            "--hero-gradient-from": "#0C2D5E",
+            "--hero-gradient-to": "#1A4A8C",
+            "--section-dark-bg": "#0A1F3D",
+            "--accent-highlight": "#0E7C46",
+            "--element-depth": "rgba(14, 124, 70, 0.15)",
+            "--badge-bg": "#EBF5FF",
+            "--badge-text": "#0C2D5E",
+            "--decorative-color": "rgba(30, 80, 160, 0.12)",
+            "--hover-highlight": "#0B6538",
+            "--section-divider": "#DFE8F5",
+            "--shadow-color": "rgba(12, 45, 94, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #0C2D5E, #0E7C46)"
+          }
+        }
+      },
+      {
+        "name": "Slate Precision",
+        "colors": {
+          "primary": "#2D3748",
+          "secondary": "#4A5568",
+          "background": {
+            "page": "#F8F9FA",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#1A202C",
+            "secondary": "#4A5568",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#E2E8F0",
+          "accent": "#2B6CB0",
+          "extra": {
+            "--hero-gradient-from": "#2D3748",
+            "--hero-gradient-to": "#4A5568",
+            "--section-dark-bg": "#1A202C",
+            "--accent-highlight": "#2B6CB0",
+            "--element-depth": "rgba(43, 108, 176, 0.15)",
+            "--badge-bg": "#EBF4FF",
+            "--badge-text": "#2D3748",
+            "--decorative-color": "rgba(45, 55, 72, 0.12)",
+            "--hover-highlight": "#225694",
+            "--section-divider": "#E2E8F0",
+            "--shadow-color": "rgba(45, 55, 72, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #2D3748, #2B6CB0)"
+          }
+        }
+      },
+      {
+        "name": "Emerald Authority",
+        "colors": {
+          "primary": "#064E3B",
+          "secondary": "#047857",
+          "background": {
+            "page": "#F7FAF9",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#1B2A25",
+            "secondary": "#4B6358",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#D5E5DE",
+          "accent": "#9B2C2C",
+          "extra": {
+            "--hero-gradient-from": "#064E3B",
+            "--hero-gradient-to": "#047857",
+            "--section-dark-bg": "#032E22",
+            "--accent-highlight": "#9B2C2C",
+            "--element-depth": "rgba(155, 44, 44, 0.15)",
+            "--badge-bg": "#E6F5F0",
+            "--badge-text": "#064E3B",
+            "--decorative-color": "rgba(6, 78, 59, 0.12)",
+            "--hover-highlight": "#822424",
+            "--section-divider": "#D5E5DE",
+            "--shadow-color": "rgba(6, 78, 59, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #064E3B, #9B2C2C)"
+          }
+        }
+      },
+      {
+        "name": "Midnight Luxe",
+        "colors": {
+          "primary": "#1A1035",
+          "secondary": "#2D1F5E",
+          "background": {
+            "page": "#F8F7FC",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#1A1035",
+            "secondary": "#5A5270",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#E4E0F0",
+          "accent": "#9B2C8C",
+          "extra": {
+            "--hero-gradient-from": "#1A1035",
+            "--hero-gradient-to": "#2D1F5E",
+            "--section-dark-bg": "#110A24",
+            "--accent-highlight": "#9B2C8C",
+            "--element-depth": "rgba(155, 44, 140, 0.15)",
+            "--badge-bg": "#F0E6F5",
+            "--badge-text": "#1A1035",
+            "--decorative-color": "rgba(26, 16, 53, 0.12)",
+            "--hover-highlight": "#822475",
+            "--section-divider": "#E4E0F0",
+            "--shadow-color": "rgba(26, 16, 53, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #1A1035, #9B2C8C)"
+          }
+        }
+      },
+      {
+        "name": "Cobalt Drive",
+        "colors": {
+          "primary": "#1E3A8A",
+          "secondary": "#2563EB",
+          "background": {
+            "page": "#F7F9FE",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#1E293B",
+            "secondary": "#475569",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#DBEAFE",
+          "accent": "#B91C1C",
+          "extra": {
+            "--hero-gradient-from": "#1E3A8A",
+            "--hero-gradient-to": "#2563EB",
+            "--section-dark-bg": "#0F1E4A",
+            "--accent-highlight": "#B91C1C",
+            "--element-depth": "rgba(185, 28, 28, 0.15)",
+            "--badge-bg": "#EFF6FF",
+            "--badge-text": "#1E3A8A",
+            "--decorative-color": "rgba(30, 58, 138, 0.12)",
+            "--hover-highlight": "#991B1B",
+            "--section-divider": "#DBEAFE",
+            "--shadow-color": "rgba(30, 58, 138, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #1E3A8A, #B91C1C)"
+          }
+        }
+      },
+      {
+        "name": "Steel Charcoal",
+        "colors": {
+          "primary": "#1F2937",
+          "secondary": "#374151",
+          "background": {
+            "page": "#F9FAFB",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#111827",
+            "secondary": "#4B5563",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#E5E7EB",
+          "accent": "#047857",
+          "extra": {
+            "--hero-gradient-from": "#1F2937",
+            "--hero-gradient-to": "#374151",
+            "--section-dark-bg": "#111827",
+            "--accent-highlight": "#047857",
+            "--element-depth": "rgba(4, 120, 87, 0.15)",
+            "--badge-bg": "#F0FDF4",
+            "--badge-text": "#1F2937",
+            "--decorative-color": "rgba(31, 41, 55, 0.12)",
+            "--hover-highlight": "#065F46",
+            "--section-divider": "#E5E7EB",
+            "--shadow-color": "rgba(31, 41, 55, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #1F2937, #047857)"
+          }
+        }
+      },
+      {
+        "name": "Copper Road",
+        "colors": {
+          "primary": "#7C2D12",
+          "secondary": "#9A3412",
+          "background": {
+            "page": "#FFFAF7",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#292017",
+            "secondary": "#6B5744",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#F0E0D0",
+          "accent": "#1D6A4B",
+          "extra": {
+            "--hero-gradient-from": "#7C2D12",
+            "--hero-gradient-to": "#9A3412",
+            "--section-dark-bg": "#4A1A0A",
+            "--accent-highlight": "#1D6A4B",
+            "--element-depth": "rgba(29, 106, 75, 0.15)",
+            "--badge-bg": "#FFF3EB",
+            "--badge-text": "#7C2D12",
+            "--decorative-color": "rgba(124, 45, 18, 0.12)",
+            "--hover-highlight": "#155A3E",
+            "--section-divider": "#F0E0D0",
+            "--shadow-color": "rgba(124, 45, 18, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #7C2D12, #1D6A4B)"
+          }
+        }
+      },
+      {
+        "name": "Navy Forge",
+        "colors": {
+          "primary": "#0F2441",
+          "secondary": "#1C3D6E",
+          "background": {
+            "page": "#F6F8FB",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#0F2441",
+            "secondary": "#536B86",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#D4DFE9",
+          "accent": "#B45309",
+          "extra": {
+            "--hero-gradient-from": "#0F2441",
+            "--hero-gradient-to": "#1C3D6E",
+            "--section-dark-bg": "#091830",
+            "--accent-highlight": "#B45309",
+            "--element-depth": "rgba(180, 83, 9, 0.15)",
+            "--badge-bg": "#FEF3C7",
+            "--badge-text": "#0F2441",
+            "--decorative-color": "rgba(15, 36, 65, 0.12)",
+            "--hover-highlight": "#92400E",
+            "--section-divider": "#D4DFE9",
+            "--shadow-color": "rgba(15, 36, 65, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #0F2441, #B45309)"
+          }
+        }
+      },
+      {
+        "name": "Granite Velocity",
+        "colors": {
+          "primary": "#3B3B50",
+          "secondary": "#52526B",
+          "background": {
+            "page": "#F8F8FA",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#222233",
+            "secondary": "#5C5C70",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#E0E0E8",
+          "accent": "#7C3AED",
+          "extra": {
+            "--hero-gradient-from": "#3B3B50",
+            "--hero-gradient-to": "#52526B",
+            "--section-dark-bg": "#26263A",
+            "--accent-highlight": "#7C3AED",
+            "--element-depth": "rgba(124, 58, 237, 0.15)",
+            "--badge-bg": "#F0EBFE",
+            "--badge-text": "#3B3B50",
+            "--decorative-color": "rgba(59, 59, 80, 0.12)",
+            "--hover-highlight": "#6D28D9",
+            "--section-divider": "#E0E0E8",
+            "--shadow-color": "rgba(59, 59, 80, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #3B3B50, #7C3AED)"
+          }
+        }
+      },
+      {
+        "name": "Crimson Horizon",
+        "colors": {
+          "primary": "#7F1D1D",
+          "secondary": "#991B1B",
+          "background": {
+            "page": "#FDFAF9",
+            "surface": "#FFFFFF"
+          },
+          "text": {
+            "primary": "#2A1515",
+            "secondary": "#6B4848",
+            "inverse": "#FFFFFF"
+          },
+          "border": "#F0DCDC",
+          "accent": "#1E5A8C",
+          "extra": {
+            "--hero-gradient-from": "#7F1D1D",
+            "--hero-gradient-to": "#991B1B",
+            "--section-dark-bg": "#4A1010",
+            "--accent-highlight": "#1E5A8C",
+            "--element-depth": "rgba(30, 90, 140, 0.15)",
+            "--badge-bg": "#FEF0F0",
+            "--badge-text": "#7F1D1D",
+            "--decorative-color": "rgba(127, 29, 29, 0.12)",
+            "--hover-highlight": "#174874",
+            "--section-divider": "#F0DCDC",
+            "--shadow-color": "rgba(127, 29, 29, 0.2)",
+            "--gradient-accent": "linear-gradient(135deg, #7F1D1D, #1E5A8C)"
+          }
+        }
+      }
+    ],
+    "seo": {
+      "defaultTitle": "DriveWay Finance — Smarter Car Loans, Better Rates",
+      "defaultDescription": "DriveWay Finance helps you secure affordable car loans with competitive rates, a simple application process, and expert guidance every step of the way.",
+      "siteName": "DriveWay Finance"
+    },
+    "navigation": {
+      "items": [
+        {
+          "label": "Home",
+          "url": "/",
+          "type": "link"
+        },
+        {
+          "label": "About",
+          "url": "/about",
+          "type": "link"
+        },
+        {
+          "label": "FAQ",
+          "url": "/faq",
+          "type": "link"
+        },
+        {
+          "label": "Contact",
+          "url": "/contact",
+          "type": "link"
+        },
+        {
+          "label": "Get Your Quote",
+          "url": "/contact",
+          "type": "cta"
+        }
+      ]
+    },
+    "footer": {
+      "branding": {
+        "name": "DriveWay Finance",
+        "description": "Helping drivers secure affordable, transparent car loans. We guide you through every step — from application to approval — so you can focus on finding your perfect vehicle."
+      },
+      "links": [
+        {
+          "label": "Home",
+          "url": "/"
+        },
+        {
+          "label": "About Us",
+          "url": "/about"
+        },
+        {
+          "label": "FAQ",
+          "url": "/faq"
+        },
+        {
+          "label": "Contact",
+          "url": "/contact"
+        }
+      ],
+      "copyright": "© 2026 DriveWay Finance. All rights reserved."
+    }
+  },
+  "pages": {
+    "home": {
+      "seo": {
+        "title": "DriveWay Finance — Affordable Car Loans Made Simple",
+        "metaDescription": "Get behind the wheel faster with DriveWay Finance. Competitive car loan rates, a streamlined application, and dedicated support to help you drive away happy."
+      },
+      "componentOrder": [
+        "heroSection",
+        "keyBenefits",
+        "howItWorks",
+        "loanTypesOverview",
+        "testimonialShowcase",
+        "whyChooseUs",
+        "homeFaqPreview",
+        "homeCtaBanner"
+      ],
+      "componentDefinitions": {
+        "heroSection": {
+          "purpose": "Immediately communicates the core value proposition — helping visitors secure affordable car loans — and drives them to take the first step toward getting a quote.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Bold, attention-grabbing headline about getting a car loan"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Supporting sentence expanding on the promise of better rates and simple process"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "Primary CTA button label (e.g., 'Get Your Free Quote')"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "URL for CTA button — must be /contact"
+              },
+              "secondaryCtaText": {
+                "type": "string",
+                "description": "Secondary link text (e.g., 'Learn How It Works')"
+              },
+              "secondaryCtaUrl": {
+                "type": "string",
+                "description": "URL for secondary link — must be /about"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline",
+              "ctaButtonText",
+              "ctaButtonUrl",
+              "secondaryCtaText",
+              "secondaryCtaUrl"
+            ]
+          }
+        },
+        "keyBenefits": {
+          "purpose": "Highlights the primary advantages of choosing DriveWay Finance for a car loan — such as competitive rates, flexible terms, and fast approval — building immediate confidence.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for the benefits section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro text for the benefits"
+              },
+              "benefits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier (e.g., 'percent', 'clock', 'shield')"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Benefit title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "One-to-two sentence description of this benefit"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "benefits"
+            ]
+          }
+        },
+        "howItWorks": {
+          "purpose": "Explains the straightforward car loan application process in clear sequential steps so visitors know exactly what to expect.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'How It Works'"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief explanatory intro"
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stepNumber": {
+                      "type": "string",
+                      "description": "Step number (e.g., '01')"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Short title for this step"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Explanation of what happens in this step"
+                    }
+                  },
+                  "required": [
+                    "stepNumber",
+                    "title",
+                    "description"
+                  ]
+                }
+              },
+              "ctaText": {
+                "type": "string",
+                "description": "CTA button text after steps"
+              },
+              "ctaUrl": {
+                "type": "string",
+                "description": "CTA button URL — must be /contact"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "steps",
+              "ctaText",
+              "ctaUrl"
+            ]
+          }
+        },
+        "loanTypesOverview": {
+          "purpose": "Showcases the different types of car loans available — new car, used car, refinancing — so visitors can find the option that fits their situation.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for loan types section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro about loan flexibility"
+              },
+              "loanTypes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier (e.g., 'car', 'refresh', 'key')"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Loan type name (e.g., 'New Car Loans')"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Description of this loan type and who it's for"
+                    },
+                    "ctaText": {
+                      "type": "string",
+                      "description": "Link text like 'Learn More'"
+                    },
+                    "ctaUrl": {
+                      "type": "string",
+                      "description": "URL — must be /contact"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description",
+                    "ctaText",
+                    "ctaUrl"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "loanTypes"
+            ]
+          }
+        },
+        "testimonialShowcase": {
+          "purpose": "Builds trust and social proof by sharing real customer experiences and satisfaction with the car loan process.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for testimonial section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro about customer satisfaction"
+              },
+              "testimonials": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "description": "Customer testimonial quote"
+                    },
+                    "authorName": {
+                      "type": "string",
+                      "description": "First name + last initial (e.g., 'Sarah M.')"
+                    },
+                    "loanType": {
+                      "type": "string",
+                      "description": "Brief descriptor of what loan type (e.g., 'New Car Loan')"
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "authorName",
+                    "loanType"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "testimonials"
+            ]
+          }
+        },
+        "whyChooseUs": {
+          "purpose": "Communicates the unique differentiators of DriveWay Finance over traditional banks and other lenders, reinforcing the value proposition.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'Why DriveWay Finance?'"
+              },
+              "sectionDescription": {
+                "type": "string",
+                "description": "Paragraph explaining the overall advantage"
+              },
+              "differentiators": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "description": "Differentiator title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Explanation of this advantage"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionDescription",
+              "differentiators"
+            ]
+          }
+        },
+        "homeFaqPreview": {
+          "purpose": "Addresses the most common quick questions about car loans to reduce hesitation and encourage visitors to move forward.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for FAQ preview"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Common car loan question"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Concise answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              },
+              "viewAllText": {
+                "type": "string",
+                "description": "Link text to full FAQ page"
+              },
+              "viewAllUrl": {
+                "type": "string",
+                "description": "URL — must be /faq"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "faqs",
+              "viewAllText",
+              "viewAllUrl"
+            ]
+          }
+        },
+        "homeCtaBanner": {
+          "purpose": "Provides a final compelling call to action at the bottom of the homepage to capture visitors who have scrolled through all content and are ready to act.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Motivating headline to take action"
+              },
+              "description": {
+                "type": "string",
+                "description": "Supporting text about ease of getting started"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "CTA button label"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "CTA button URL — must be /contact"
+              }
+            },
+            "required": [
+              "headline",
+              "description",
+              "ctaButtonText",
+              "ctaButtonUrl"
+            ]
+          }
+        }
+      }
+    },
+    "about": {
+      "seo": {
+        "title": "About DriveWay Finance — Our Mission & Approach",
+        "metaDescription": "Learn about DriveWay Finance's mission to make car loans accessible, transparent, and affordable. Discover our approach, values, and commitment to your success."
+      },
+      "componentOrder": [
+        "aboutHero",
+        "missionStatement",
+        "ourApproach",
+        "coreValues",
+        "teamOverview",
+        "aboutCtaBanner"
+      ],
+      "componentDefinitions": {
+        "aboutHero": {
+          "purpose": "Introduces the About page with a compelling narrative about DriveWay Finance's purpose and commitment to car buyers.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "About page headline"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Sentence about the company's purpose"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline"
+            ]
+          }
+        },
+        "missionStatement": {
+          "purpose": "Communicates the company's core mission — making car financing simple, fair, and accessible for all types of buyers.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'Our Mission'"
+              },
+              "missionText": {
+                "type": "string",
+                "description": "Full mission statement paragraph"
+              },
+              "visionText": {
+                "type": "string",
+                "description": "Vision statement paragraph about the future of car lending"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "missionText",
+              "visionText"
+            ]
+          }
+        },
+        "ourApproach": {
+          "purpose": "Explains the company's distinctive approach to car lending — transparency, personalized service, and finding the right fit for each borrower.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for approach section"
+              },
+              "sectionDescription": {
+                "type": "string",
+                "description": "Introductory paragraph about the approach"
+              },
+              "approachPillars": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Pillar title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Explanation of this aspect of the approach"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionDescription",
+              "approachPillars"
+            ]
+          }
+        },
+        "coreValues": {
+          "purpose": "Presents the guiding principles that shape every interaction and loan decision at DriveWay Finance.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for values section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Intro sentence about values"
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "description": "Value name (e.g., 'Transparency')"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "What this value means in practice"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "values"
+            ]
+          }
+        },
+        "teamOverview": {
+          "purpose": "Describes the expertise and dedication of the DriveWay Finance team using role descriptions rather than specific individuals.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for team section"
+              },
+              "description": {
+                "type": "string",
+                "description": "Paragraph describing the team's expertise, background, and commitment without naming specific individuals"
+              },
+              "teamHighlights": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "type": "string",
+                      "description": "Team role description (e.g., 'Experienced Loan Advisors')"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "What this part of the team does for clients"
+                    }
+                  },
+                  "required": [
+                    "role",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "description",
+              "teamHighlights"
+            ]
+          }
+        },
+        "aboutCtaBanner": {
+          "purpose": "Encourages visitors who have learned about the company to take the next step and reach out for a personalized quote.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Action-oriented headline"
+              },
+              "description": {
+                "type": "string",
+                "description": "Supporting text"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "CTA label"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "CTA URL — must be /contact"
+              }
+            },
+            "required": [
+              "headline",
+              "description",
+              "ctaButtonText",
+              "ctaButtonUrl"
+            ]
+          }
+        }
+      }
+    },
+    "faq": {
+      "seo": {
+        "title": "Car Loan FAQ — Your Questions Answered | DriveWay Finance",
+        "metaDescription": "Find answers to common questions about car loans, interest rates, credit requirements, refinancing, and more. DriveWay Finance makes car lending clear."
+      },
+      "componentOrder": [
+        "faqHero",
+        "faqCategories",
+        "generalFaq",
+        "ratesFaq",
+        "applicationFaq",
+        "faqCtaBanner"
+      ],
+      "componentDefinitions": {
+        "faqHero": {
+          "purpose": "Introduces the FAQ page and reassures visitors that their questions about car loans will be thoroughly answered.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "FAQ page headline"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Supportive text about finding answers"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline"
+            ]
+          }
+        },
+        "faqCategories": {
+          "purpose": "Provides quick navigation to different FAQ categories so visitors can jump directly to topics relevant to them.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'Browse by Topic'"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon for category"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Category name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Brief description of what questions are covered"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "categories"
+            ]
+          }
+        },
+        "generalFaq": {
+          "purpose": "Answers fundamental questions about car loans — what they are, who qualifies, and what documents are needed.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Category heading like 'General Car Loan Questions'"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question text"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Detailed answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs"
+            ]
+          }
+        },
+        "ratesFaq": {
+          "purpose": "Addresses common questions about interest rates, loan terms, monthly payments, and factors that influence pricing.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Category heading like 'Rates & Terms'"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question about rates or terms"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Detailed answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs"
+            ]
+          }
+        },
+        "applicationFaq": {
+          "purpose": "Walks visitors through common questions about the application process, approval timelines, and what to expect after applying.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Category heading like 'Application & Approval'"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question about application process"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Detailed answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs"
+            ]
+          }
+        },
+        "faqCtaBanner": {
+          "purpose": "Invites visitors who still have unanswered questions to reach out directly, capturing leads from engaged FAQ readers.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Headline like 'Still Have Questions?'"
+              },
+              "description": {
+                "type": "string",
+                "description": "Encouraging text to reach out"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "CTA label"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "CTA URL — must be /contact"
+              }
+            },
+            "required": [
+              "headline",
+              "description",
+              "ctaButtonText",
+              "ctaButtonUrl"
+            ]
+          }
+        }
+      }
+    },
+    "contact": {
+      "seo": {
+        "title": "Contact DriveWay Finance — Get Your Car Loan Quote",
+        "metaDescription": "Ready to explore your car loan options? Contact DriveWay Finance today. Fill out our quick form and a loan specialist will get back to you promptly."
+      },
+      "componentOrder": [
+        "contactHero",
+        "contactForm",
+        "contactReassurance",
+        "contactFaqPreview"
+      ],
+      "componentDefinitions": {
+        "contactHero": {
+          "purpose": "Welcomes visitors to the contact page and sets expectations for what will happen when they reach out.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Contact page headline"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Brief description of what to expect after reaching out"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline"
+            ]
+          }
+        },
+        "contactForm": {
+          "purpose": "Collects visitor information and loan inquiry details so the DriveWay Finance team can provide a personalized response.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "formTitle": {
+                "type": "string",
+                "description": "Form heading"
+              },
+              "formDescription": {
+                "type": "string",
+                "description": "Brief instructions for filling out the form"
+              },
+              "fields": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fieldName": {
+                      "type": "string",
+                      "description": "Field identifier (e.g., 'fullName', 'email')"
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "User-facing label"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Input type (text, email, tel, textarea, select)"
+                    },
+                    "placeholder": {
+                      "type": "string",
+                      "description": "Placeholder text"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "Whether this field is required"
+                    }
+                  },
+                  "required": [
+                    "fieldName",
+                    "label",
+                    "type",
+                    "placeholder",
+                    "required"
+                  ]
+                }
+              },
+              "submitButtonText": {
+                "type": "string",
+                "description": "Submit button label"
+              },
+              "privacyNote": {
+                "type": "string",
+                "description": "Brief privacy assurance text below the form"
+              }
+            },
+            "required": [
+              "formTitle",
+              "formDescription",
+              "fields",
+              "submitButtonText",
+              "privacyNote"
+            ]
+          }
+        },
+        "contactReassurance": {
+          "purpose": "Builds confidence in reaching out by highlighting what makes the experience of working with DriveWay Finance positive and risk-free.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'What to Expect'"
+              },
+              "reassurancePoints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Reassurance point title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Brief explanation"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "reassurancePoints"
+            ]
+          }
+        },
+        "contactFaqPreview": {
+          "purpose": "Addresses quick questions visitors may have before submitting the form, reducing friction and form abandonment.",
+          "dataSchema": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for mini FAQ"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Question text"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Concise answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              },
+              "viewAllText": {
+                "type": "string",
+                "description": "Link text to full FAQ page"
+              },
+              "viewAllUrl": {
+                "type": "string",
+                "description": "URL — must be /faq"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "faqs",
+              "viewAllText",
+              "viewAllUrl"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

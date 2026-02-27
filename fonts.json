@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Poppins Modern",
+    "heading": "Poppins",
+    "body": "Poppins",
+    "headingFile": "/fonts/poppins-bold.woff2",
+    "bodyFile": "/fonts/poppins-regular.woff2"
+  },
+  {
+    "id": 2,
+    "name": "Classic Serif",
+    "heading": "Playfair Display",
+    "body": "Inter",
+    "headingFile": "/fonts/playfair-display-v39-latin-700.woff2",
+    "bodyFile": "/fonts/inter-v19-latin-regular.woff2"
+  },
+  {
+    "id": 3,
+    "name": "Elegant Garamond",
+    "heading": "EB Garamond",
+    "body": "Inter",
+    "headingFile": "/fonts/eb-garamond-v31-latin-600.woff2",
+    "bodyFile": "/fonts/inter-v19-latin-regular.woff2"
+  },
+  {
+    "id": 4,
+    "name": "Bold Oswald",
+    "heading": "Oswald",
+    "body": "Lato",
+    "headingFile": "/fonts/oswald-v56-latin-700.woff2",
+    "bodyFile": "/fonts/lato-v24-latin-700.woff2"
+  },
+  {
+    "id": 5,
+    "name": "Friendly Nunito",
+    "heading": "Nunito Sans",
+    "body": "Karla",
+    "headingFile": "/fonts/nunito-sans-v18-latin-700.woff2",
+    "bodyFile": "/fonts/karla-v32-latin-regular.woff2"
+  },
+  {
+    "id": 6,
+    "name": "Clean Manrope",
+    "heading": "Manrope",
+    "body": "Inter",
+    "headingFile": "/fonts/manrope-v19-latin-700.woff2",
+    "bodyFile": "/fonts/inter-v19-latin-regular.woff2"
+  },
+  {
+    "id": 7,
+    "name": "Literary Baskerville",
+    "heading": "Libre Baskerville",
+    "body": "Karla",
+    "headingFile": "/fonts/libre-baskerville-v16-latin-700.woff2",
+    "bodyFile": "/fonts/karla-v32-latin-regular.woff2"
+  },
+  {
+    "id": 8,
+    "name": "Karla Duo",
+    "heading": "Karla",
+    "body": "Karla",
+    "headingFile": "/fonts/karla-v32-latin-700.woff2",
+    "bodyFile": "/fonts/karla-v32-latin-regular.woff2"
+  },
+  {
+    "id": 9,
+    "name": "Playfair Lato",
+    "heading": "Playfair Display",
+    "body": "Lato",
+    "headingFile": "/fonts/playfair-display-v39-latin-700.woff2",
+    "bodyFile": "/fonts/lato-v24-latin-700.woff2"
+  },
+  {
+    "id": 10,
+    "name": "Oswald Poppins",
+    "heading": "Oswald",
+    "body": "Poppins",
+    "headingFile": "/fonts/oswald-v56-latin-700.woff2",
+    "bodyFile": "/fonts/poppins-regular.woff2"
+  }
+]

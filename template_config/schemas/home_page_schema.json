@@ -1,0 +1,408 @@
+{
+  "name": "generate_home_page",
+  "description": "Generate complete home page content",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "seo": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 60
+          },
+          "metaDescription": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "title",
+          "metaDescription"
+        ]
+      },
+      "componentOrder": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "heroSection",
+            "keyBenefits",
+            "howItWorks",
+            "loanTypesOverview",
+            "testimonialShowcase",
+            "whyChooseUs",
+            "homeFaqPreview",
+            "homeCtaBanner"
+          ]
+        },
+        "minItems": 8,
+        "maxItems": 8
+      },
+      "sections": {
+        "type": "object",
+        "properties": {
+          "heroSection": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Bold, attention-grabbing headline about getting a car loan"
+              },
+              "subheadline": {
+                "type": "string",
+                "description": "Supporting sentence expanding on the promise of better rates and simple process"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "Primary CTA button label (e.g., 'Get Your Free Quote')"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "URL for CTA button — must be /contact"
+              },
+              "secondaryCtaText": {
+                "type": "string",
+                "description": "Secondary link text (e.g., 'Learn How It Works')"
+              },
+              "secondaryCtaUrl": {
+                "type": "string",
+                "description": "URL for secondary link — must be /about"
+              }
+            },
+            "required": [
+              "headline",
+              "subheadline",
+              "ctaButtonText",
+              "ctaButtonUrl",
+              "secondaryCtaText",
+              "secondaryCtaUrl"
+            ]
+          },
+          "keyBenefits": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for the benefits section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro text for the benefits"
+              },
+              "benefits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier (e.g., 'percent', 'clock', 'shield')"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Benefit title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "One-to-two sentence description of this benefit"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "benefits"
+            ]
+          },
+          "howItWorks": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'How It Works'"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief explanatory intro"
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "stepNumber": {
+                      "type": "string",
+                      "description": "Step number (e.g., '01')"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Short title for this step"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Explanation of what happens in this step"
+                    }
+                  },
+                  "required": [
+                    "stepNumber",
+                    "title",
+                    "description"
+                  ]
+                }
+              },
+              "ctaText": {
+                "type": "string",
+                "description": "CTA button text after steps"
+              },
+              "ctaUrl": {
+                "type": "string",
+                "description": "CTA button URL — must be /contact"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "steps",
+              "ctaText",
+              "ctaUrl"
+            ]
+          },
+          "loanTypesOverview": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for loan types section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro about loan flexibility"
+              },
+              "loanTypes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "iconName": {
+                      "type": "string",
+                      "description": "Icon identifier (e.g., 'car', 'refresh', 'key')"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "Loan type name (e.g., 'New Car Loans')"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Description of this loan type and who it's for"
+                    },
+                    "ctaText": {
+                      "type": "string",
+                      "description": "Link text like 'Learn More'"
+                    },
+                    "ctaUrl": {
+                      "type": "string",
+                      "description": "URL — must be /contact"
+                    }
+                  },
+                  "required": [
+                    "iconName",
+                    "title",
+                    "description",
+                    "ctaText",
+                    "ctaUrl"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "loanTypes"
+            ]
+          },
+          "testimonialShowcase": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for testimonial section"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro about customer satisfaction"
+              },
+              "testimonials": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "description": "Customer testimonial quote"
+                    },
+                    "authorName": {
+                      "type": "string",
+                      "description": "First name + last initial (e.g., 'Sarah M.')"
+                    },
+                    "loanType": {
+                      "type": "string",
+                      "description": "Brief descriptor of what loan type (e.g., 'New Car Loan')"
+                    }
+                  },
+                  "required": [
+                    "quote",
+                    "authorName",
+                    "loanType"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "testimonials"
+            ]
+          },
+          "whyChooseUs": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading like 'Why DriveWay Finance?'"
+              },
+              "sectionDescription": {
+                "type": "string",
+                "description": "Paragraph explaining the overall advantage"
+              },
+              "differentiators": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "description": "Differentiator title"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Explanation of this advantage"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "description"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionDescription",
+              "differentiators"
+            ]
+          },
+          "homeFaqPreview": {
+            "type": "object",
+            "properties": {
+              "sectionTitle": {
+                "type": "string",
+                "description": "Heading for FAQ preview"
+              },
+              "sectionSubtitle": {
+                "type": "string",
+                "description": "Brief intro"
+              },
+              "faqs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "question": {
+                      "type": "string",
+                      "description": "Common car loan question"
+                    },
+                    "answer": {
+                      "type": "string",
+                      "description": "Concise answer"
+                    }
+                  },
+                  "required": [
+                    "question",
+                    "answer"
+                  ]
+                }
+              },
+              "viewAllText": {
+                "type": "string",
+                "description": "Link text to full FAQ page"
+              },
+              "viewAllUrl": {
+                "type": "string",
+                "description": "URL — must be /faq"
+              }
+            },
+            "required": [
+              "sectionTitle",
+              "sectionSubtitle",
+              "faqs",
+              "viewAllText",
+              "viewAllUrl"
+            ]
+          },
+          "homeCtaBanner": {
+            "type": "object",
+            "properties": {
+              "headline": {
+                "type": "string",
+                "description": "Motivating headline to take action"
+              },
+              "description": {
+                "type": "string",
+                "description": "Supporting text about ease of getting started"
+              },
+              "ctaButtonText": {
+                "type": "string",
+                "description": "CTA button label"
+              },
+              "ctaButtonUrl": {
+                "type": "string",
+                "description": "CTA button URL — must be /contact"
+              }
+            },
+            "required": [
+              "headline",
+              "description",
+              "ctaButtonText",
+              "ctaButtonUrl"
+            ]
+          }
+        },
+        "required": [
+          "heroSection",
+          "keyBenefits",
+          "howItWorks",
+          "loanTypesOverview",
+          "testimonialShowcase",
+          "whyChooseUs",
+          "homeFaqPreview",
+          "homeCtaBanner"
+        ]
+      }
+    },
+    "required": [
+      "seo",
+      "componentOrder",
+      "sections"
+    ]
+  }
+}

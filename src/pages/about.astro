@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import AboutHero from '../components/AboutHero';
+import MissionStatement from '../components/MissionStatement';
+import OurApproach from '../components/OurApproach';
+import CoreValues from '../components/CoreValues';
+import TeamOverview from '../components/TeamOverview';
+import AboutCtaBanner from '../components/AboutCtaBanner';
+
+import siteConfig from '../../siteConfig.json';
+import cloudflareConfig from '../../cloudflareConfig.json';
+const { global, pages } = siteConfig.site;
+const pageData = pages.about;
+const seo = { title: pageData.seo.title, metaDescription: pageData.seo.metaDescription };
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": seo.title,
+  "description": seo.metaDescription
+})}></script>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": `https://${cloudflareConfig.domain || 'placeholder.com'}/` },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": `https://${cloudflareConfig.domain || 'placeholder.com'}/about` }
+  ]
+})}></script>
+
+<Layout seo={seo} canonicalPath="/about">
+  <Header navigation={global.navigation} branding={global.branding} />
+  <main>
+    <AboutHero data={pageData.sections.aboutHero} client:load />
+    <MissionStatement data={pageData.sections.missionStatement} client:load />
+    <OurApproach data={pageData.sections.ourApproach} client:load />
+    <CoreValues data={pageData.sections.coreValues} client:load />
+    <TeamOverview data={pageData.sections.teamOverview} client:load />
+    <AboutCtaBanner data={pageData.sections.aboutCtaBanner} client:load />
+  </main>
+  <Footer footer={global.footer} />
+</Layout>

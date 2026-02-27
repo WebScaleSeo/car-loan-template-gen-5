@@ -1,0 +1,222 @@
+{
+  "name": "generate_site_foundation",
+  "description": "Generate site foundation: branding, SEO, footer content, and image keywords",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "branding": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Full brand name"
+          },
+          "tagline": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A concise value proposition"
+          },
+          "brandNameCore": {
+            "type": "string",
+            "description": "Core part of brand name"
+          },
+          "brandNameQualifier": {
+            "type": "string",
+            "description": "Business type qualifier"
+          }
+        },
+        "required": [
+          "name",
+          "tagline",
+          "brandNameCore",
+          "brandNameQualifier"
+        ]
+      },
+      "seo": {
+        "type": "object",
+        "properties": {
+          "defaultTitle": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 60,
+            "description": "Default page title"
+          },
+          "defaultDescription": {
+            "type": "string",
+            "minLength": 50,
+            "maxLength": 160,
+            "description": "Default meta description"
+          },
+          "siteName": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Site name for branding consistency"
+          }
+        },
+        "required": [
+          "defaultTitle",
+          "defaultDescription",
+          "siteName"
+        ]
+      },
+      "footer": {
+        "type": "object",
+        "properties": {
+          "branding": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "description"
+            ]
+          },
+          "copyright": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "branding",
+          "copyright"
+        ]
+      },
+      "accessibility": {
+        "type": "object",
+        "properties": {
+          "toggleMobileMenu": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Accessibility label for mobile menu"
+          }
+        },
+        "required": [
+          "toggleMobileMenu"
+        ]
+      },
+      "buttons": {
+        "type": "object",
+        "properties": {
+          "applyNow": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Primary CTA button text"
+          }
+        },
+        "required": [
+          "applyNow"
+        ]
+      },
+      "contact": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Primary contact phone number"
+          }
+        },
+        "required": [
+          "phone"
+        ]
+      },
+      "image1_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 1 generation keywords"
+      },
+      "image2_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 2 generation keywords"
+      },
+      "image3_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 3 generation keywords"
+      },
+      "image4_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 4 generation keywords"
+      },
+      "image5_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 5 generation keywords"
+      },
+      "image6_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 6 generation keywords"
+      },
+      "image7_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 7 generation keywords"
+      },
+      "image8_keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Image 8 generation keywords"
+      }
+    },
+    "required": [
+      "branding",
+      "seo",
+      "footer",
+      "accessibility",
+      "buttons",
+      "contact",
+      "image1_keywords",
+      "image2_keywords",
+      "image3_keywords",
+      "image4_keywords",
+      "image5_keywords",
+      "image6_keywords",
+      "image7_keywords",
+      "image8_keywords"
+    ]
+  }
+}

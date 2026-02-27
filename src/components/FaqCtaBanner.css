@@ -1,0 +1,463 @@
+/* ============================================================
+   FaqCtaBanner — IMAGE + GRADIENT | asymmetric split | corporate-creative
+   ============================================================ */
+
+/* ---- Root section ---- */
+.faq-cta-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+
+/* ---- Background: stock image ---- */
+.faq-cta-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/image4.webp');
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 0;
+}
+
+/* ---- Dark scrim for readability ---- */
+.faq-cta-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 1;
+}
+
+/* ---- Aurora gradient layered over image ---- */
+.faq-cta-aurora {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 70% at 10% 60%, var(--element-depth), transparent 65%),
+    radial-gradient(ellipse 55% 80% at 85% 20%, var(--element-depth), transparent 55%),
+    linear-gradient(140deg, var(--hero-gradient-from) 0%, transparent 45%, var(--hero-gradient-to) 100%);
+  opacity: 0.9;
+  z-index: 2;
+}
+
+/* ---- Decorative: large ring ---- */
+.faq-cta-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 3;
+  pointer-events: none;
+}
+.ring-lg {
+  width: 420px;
+  height: 420px;
+  top: -130px;
+  right: 5%;
+  border-color: rgba(255, 255, 255, 0.07);
+  animation: faqRingPulse 6s ease-in-out infinite;
+}
+.ring-sm {
+  width: 220px;
+  height: 220px;
+  bottom: -60px;
+  left: 8%;
+  border-color: rgba(255, 255, 255, 0.06);
+  animation: faqRingPulse 8s ease-in-out infinite reverse;
+}
+
+/* ---- Decorative: diamond shape ---- */
+.faq-cta-diamond {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: var(--gradient-accent);
+  opacity: 0.12;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  top: 18%;
+  right: 28%;
+  z-index: 3;
+  pointer-events: none;
+  animation: faqRingPulse 7s ease-in-out infinite 1s;
+}
+
+/* ---- Decorative: subtle dot grid ---- */
+.faq-cta-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Inner layout — asymmetric split: 1.15fr + 0.85fr
+   ============================================================ */
+.faq-cta-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 3rem 7rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ============================================================
+   LEFT: content panel
+   ============================================================ */
+.faq-cta-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+  color: var(--accent-highlight);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: faqFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.1s;
+}
+.eyebrow-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-highlight);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
+  animation: faqDotPulse 2.4s ease-in-out infinite;
+}
+
+.faq-cta-headline {
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.14;
+  color: var(--text-inverse);
+  margin: 0 0 1.5rem;
+  opacity: 0;
+  animation: faqFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.25s;
+}
+
+.faq-cta-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 2.75rem;
+  max-width: 560px;
+  opacity: 0;
+  animation: faqFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.42s;
+}
+
+/* ---- CTA Button: gradient bg + gradient border glow + clip-path chamfer ---- */
+.faq-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.05rem 2.25rem;
+  background: var(--gradient-accent);
+  color: var(--text-inverse);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  /* chamfered corner via clip-path */
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0 0 18px var(--element-depth),
+    0 6px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  animation: faqFadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.58s;
+}
+
+/* Gradient border glow ring behind button */
+.faq-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-highlight),
+    var(--secondary-color),
+    var(--accent-highlight)
+  );
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.faq-cta-btn-glow {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 32px var(--element-depth),
+    0 0 56px var(--element-depth),
+    0 14px 36px rgba(0, 0, 0, 0.4);
+}
+.faq-cta-btn:hover::before { opacity: 1; }
+.faq-cta-btn:hover .faq-cta-btn-glow { opacity: 1; }
+
+.faq-cta-btn-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+.faq-cta-btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.faq-cta-btn:hover .faq-cta-btn-icon {
+  transform: translateX(5px);
+}
+
+/* ============================================================
+   RIGHT: visual panel
+   ============================================================ */
+.faq-cta-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  opacity: 0;
+  animation: faqFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards 0.7s;
+}
+
+/* ---- Frosted glass feature card ---- */
+.faq-cta-feature-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
+  box-shadow:
+    0 0 28px var(--element-depth),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.faq-cta-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 40px var(--element-depth),
+    0 12px 28px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Top gradient bar on card */
+.faq-cta-card-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-highlight), transparent);
+}
+
+/* Card icon circle */
+.faq-cta-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 18px var(--element-depth);
+}
+.faq-cta-icon-wrap svg {
+  width: 26px;
+  height: 26px;
+  color: var(--text-inverse);
+}
+
+.faq-cta-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.faq-cta-card-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+.faq-cta-card-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-inverse);
+  line-height: 1.2;
+}
+
+/* ---- Floating benefit pills ---- */
+.faq-cta-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-cta-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.15rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+.faq-cta-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-highlight);
+  transform: translateX(6px);
+}
+.pill-check {
+  color: var(--accent-highlight);
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-shadow: 0 0 8px var(--accent-highlight);
+}
+
+/* ---- Decorative hexagon accent shape ---- */
+.faq-cta-accent-hex {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, var(--accent-highlight), var(--hero-gradient-to));
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Angled bottom divider (clip-path)
+   ============================================================ */
+.faq-cta-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--bg-page);
+  clip-path: polygon(0 55%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 8;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes faqFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes faqRingPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%       { opacity: 0.85; transform: scale(1.04); }
+}
+
+@keyframes faqDotPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255,255,255,0.1), 0 0 0 0 var(--accent-highlight); }
+  50%       { box-shadow: 0 0 0 5px rgba(255,255,255,0.05), 0 0 12px 4px var(--element-depth); }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1024px) {
+  .faq-cta-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4.5rem 2rem 5.5rem;
+  }
+  .faq-cta-description {
+    max-width: 100%;
+  }
+  .faq-cta-visual {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .faq-cta-feature-card {
+    flex: 0 0 100%;
+  }
+  .faq-cta-pills {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .faq-cta-accent-hex {
+    top: -10px;
+    right: 0;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-cta-banner {
+    min-height: auto;
+  }
+  .faq-cta-inner {
+    padding: 3.5rem 1.25rem 5rem;
+    gap: 2.5rem;
+  }
+  .faq-cta-headline {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+  }
+  .faq-cta-description {
+    font-size: 0.95rem;
+  }
+  .faq-cta-visual {
+    flex-direction: column;
+  }
+  .faq-cta-pills {
+    flex-direction: column;
+  }
+  .faq-cta-pill {
+    width: 100%;
+  }
+  .faq-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
