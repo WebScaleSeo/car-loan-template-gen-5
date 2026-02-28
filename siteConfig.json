@@ -2,15 +2,40 @@
   "site": {
     "global": {
       "branding": {
-        "name": "DriveWay Finance",
-        "tagline": "Your Road to Smarter Car Loans",
-        "brandNameCore": "DriveWay",
-        "brandNameQualifier": "Finance"
+        "name": "AutoRate Refresh",
+        "tagline": "Lower Your Payments. Drive With Confidence.",
+        "brandNameCore": "AutoRate",
+        "brandNameQualifier": "Refresh"
       },
       "seo": {
-        "defaultTitle": "DriveWay Finance — Smarter Car Loans, Better Rates",
-        "defaultDescription": "DriveWay Finance helps you secure affordable car loans with competitive rates, a simple application process, and expert guidance every step of the way.",
-        "siteName": "DriveWay Finance"
+        "defaultTitle": "Refinance Car Loan Easily | AutoRate Refresh Competitive Car",
+        "defaultDescription": "Refinance car loan with AutoRate Refresh and unlock lower rates, fast approvals, and a hassle-free process. Experience trusted service designed to help you save",
+        "siteName": "AutoRate Refresh"
+      },
+      "footer": {
+        "branding": {
+          "name": "AutoRate Refresh",
+          "description": "AutoRate Refresh is dedicated to helping drivers refinance car loan options with ease, transparency, and outstanding support."
+        },
+        "copyright": "© 2024 AutoRate Refresh. All rights reserved.",
+        "links": [
+          {
+            "label": "Home",
+            "url": "/"
+          },
+          {
+            "label": "About Us",
+            "url": "/about"
+          },
+          {
+            "label": "FAQ",
+            "url": "/faq"
+          },
+          {
+            "label": "Contact",
+            "url": "/contact"
+          }
+        ]
       },
       "navigation": {
         "items": [
@@ -40,47 +65,13 @@
             "type": "cta"
           }
         ]
-      },
-      "footer": {
-        "branding": {
-          "name": "DriveWay Finance",
-          "description": "Helping drivers secure affordable, transparent car loans. We guide you through every step — from application to approval — so you can focus on finding your perfect vehicle."
-        },
-        "links": [
-          {
-            "label": "Home",
-            "url": "/"
-          },
-          {
-            "label": "About Us",
-            "url": "/about"
-          },
-          {
-            "label": "FAQ",
-            "url": "/faq"
-          },
-          {
-            "label": "Contact",
-            "url": "/contact"
-          }
-        ],
-        "copyright": "© 2026 DriveWay Finance. All rights reserved."
-      },
-      "accessibility": {
-        "toggleMobileMenu": "Toggle mobile menu"
-      },
-      "buttons": {
-        "applyNow": "Get Your Quote"
-      },
-      "contact": {
-        "phone": "(555) 000-0000"
       }
     },
     "pages": {
       "home": {
         "seo": {
-          "title": "DriveWay Finance — Affordable Car Loans Made Simple",
-          "metaDescription": "Get behind the wheel faster with DriveWay Finance. Competitive car loan rates, a streamlined application, and dedicated support to help you drive away happy."
+          "title": "Refinance Car Loan for Better Rates & Fast Approval | DriveW",
+          "metaDescription": "Refinance car loan easily with DriveWay Finance. Enjoy competitive rates, a simple application, and quick approval. See how much you could save today."
         },
         "componentOrder": [
           "heroSection",
@@ -94,203 +85,155 @@
         ],
         "sections": {
           "heroSection": {
-            "headline": "Drive Away Today With a Loan You'll Love",
-            "subheadline": "DriveWay Finance connects you with competitive car loan rates and flexible terms — so you can focus on finding the perfect vehicle, not stressing about financing.",
+            "headline": "Refinance Car Loan and Save More Every Month",
+            "subheadline": "Unlock lower payments and flexible terms with a quick, stress-free process designed just for you.",
             "ctaButtonText": "Get Your Free Quote",
             "ctaButtonUrl": "/contact",
             "secondaryCtaText": "Learn How It Works",
             "secondaryCtaUrl": "/about"
           },
           "keyBenefits": {
-            "sectionTitle": "Smarter Car Financing Starts Here",
-            "sectionSubtitle": "We've built DriveWay Finance around what matters most to borrowers — transparency, speed, and terms that actually work for your budget.",
+            "sectionTitle": "Why Refinance Your Car Loan?",
+            "sectionSubtitle": "Discover the advantages of refinancing with us.",
             "benefits": [
               {
                 "iconName": "percent",
-                "title": "Competitive Interest Rates",
-                "description": "We work hard to match you with loan options featuring low, competitive rates. A better rate means lower monthly payments and less paid over the life of your loan."
+                "title": "Competitive Rates",
+                "description": "Take advantage of some of the best refinance car loan rates available, helping you lower your monthly payments or pay off your loan faster."
               },
               {
                 "iconName": "clock",
-                "title": "Fast Approval Process",
-                "description": "Our streamlined application takes just minutes to complete, and you can receive a lending decision quickly — so you're never left waiting when the right car comes along."
-              },
-              {
-                "iconName": "sliders",
-                "title": "Flexible Loan Terms",
-                "description": "Choose a repayment timeline that fits your financial situation. We offer a range of term lengths designed to keep your monthly payment comfortable and manageable."
+                "title": "Fast, Simple Approval",
+                "description": "Our streamlined application lets you check your options and receive a decision in as little as one business day."
               },
               {
                 "iconName": "shield",
-                "title": "Transparent, No-Surprise Process",
-                "description": "We believe in full clarity from day one — no hidden fees, no confusing fine print. You'll always know exactly what you're agreeing to before you sign."
-              },
-              {
-                "iconName": "user-check",
-                "title": "All Credit Profiles Welcome",
-                "description": "Whether your credit is excellent, fair, or a work in progress, we're here to help you explore your financing options without judgment."
-              },
-              {
-                "iconName": "headset",
-                "title": "Dedicated Loan Specialists",
-                "description": "Our knowledgeable team is available to guide you every step of the way — from your first question to your final signature."
+                "title": "Trusted Guidance",
+                "description": "Work with a dedicated advisor who helps you understand your refinance car loan choices every step of the way."
               }
             ]
           },
           "howItWorks": {
             "sectionTitle": "How It Works",
-            "sectionSubtitle": "Getting a car loan through DriveWay Finance is simple, fast, and completely straightforward. Here's exactly what to expect from start to finish.",
+            "sectionSubtitle": "Refinancing your car loan is easier than you might think.",
             "steps": [
               {
                 "stepNumber": "01",
-                "title": "Submit Your Application",
-                "description": "Fill out our quick and secure online application form with basic details about yourself, the vehicle you're interested in, and the loan amount you need. It only takes a few minutes."
+                "title": "Start Your Application",
+                "description": "Share a few details about your current auto loan and vehicle—no impact on your credit score to check your options."
               },
               {
                 "stepNumber": "02",
-                "title": "Review Your Loan Options",
-                "description": "Once we've reviewed your application, we'll present you with personalised loan options that match your profile — including rate, term length, and estimated monthly payment — so you can make an informed choice."
+                "title": "Review Your Offers",
+                "description": "Compare refinance car loan offers tailored to your needs, including potential savings and new payment options."
               },
               {
                 "stepNumber": "03",
-                "title": "Choose the Right Fit",
-                "description": "Compare your offers side by side and select the loan that best suits your budget and goals. Our specialists are on hand to answer any questions before you decide."
-              },
-              {
-                "stepNumber": "04",
-                "title": "Get Approved and Drive Away",
-                "description": "Once you've accepted your loan offer and completed verification, funds are arranged so you can finalize your vehicle purchase and hit the road with confidence."
+                "title": "Finalize and Save",
+                "description": "Choose your preferred offer and let us handle the paperwork. Enjoy lower payments or shorter terms with your new loan."
               }
             ],
-            "ctaText": "Start Your Application Now",
+            "ctaText": "Get Started Today",
             "ctaUrl": "/contact"
           },
           "loanTypesOverview": {
-            "sectionTitle": "Loan Options Built Around Your Needs",
-            "sectionSubtitle": "Whether you're buying new, shopping used, or looking to reduce what you're paying on an existing loan, DriveWay Finance has a solution designed for your situation.",
+            "sectionTitle": "Flexible Refinance Car Loan Options",
+            "sectionSubtitle": "We offer solutions that fit a wide range of needs.",
             "loanTypes": [
               {
+                "iconName": "refresh",
+                "title": "Standard Refinance",
+                "description": "Ideal if you're looking for a better rate or to lower your monthly payment. This option is perfect for drivers who want to save on interest over the life of their loan.",
+                "ctaText": "Learn More",
+                "ctaUrl": "/contact"
+              },
+              {
                 "iconName": "car",
-                "title": "New Car Loans",
-                "description": "Ready to drive off the lot in something fresh off the production line? Our new car loans offer competitive rates and terms tailored to the full purchase price of your brand-new vehicle.",
-                "ctaText": "Apply for a New Car Loan",
+                "title": "Cash-Out Refinance",
+                "description": "Access extra cash by refinancing your current auto loan for more than you owe. Use the difference for home improvements, paying down debt, or other expenses.",
+                "ctaText": "Learn More",
                 "ctaUrl": "/contact"
               },
               {
                 "iconName": "key",
-                "title": "Used Car Loans",
-                "description": "Get the value you're looking for without the new-car price tag. Our used car loan options help you finance a quality pre-owned vehicle with flexible terms that keep payments affordable.",
-                "ctaText": "Apply for a Used Car Loan",
-                "ctaUrl": "/contact"
-              },
-              {
-                "iconName": "refresh",
-                "title": "Car Loan Refinancing",
-                "description": "Already have a car loan but feel like you're paying too much? Refinancing through DriveWay Finance could lower your interest rate, reduce your monthly payment, or both.",
-                "ctaText": "Explore Refinancing Options",
-                "ctaUrl": "/contact"
-              },
-              {
-                "iconName": "briefcase",
-                "title": "Business Vehicle Loans",
-                "description": "Need to add a vehicle to your business fleet or finance a work vehicle? We offer business-focused car loan solutions that keep your operations moving without straining your cash flow.",
-                "ctaText": "Apply for a Business Vehicle Loan",
+                "title": "Lease Buyout Loans",
+                "description": "Ready to own your leased vehicle? Our lease buyout loans make it easy to transition from leasing to ownership on terms that work for you.",
+                "ctaText": "Learn More",
                 "ctaUrl": "/contact"
               }
             ]
           },
           "testimonialShowcase": {
-            "sectionTitle": "What Our Customers Are Saying",
-            "sectionSubtitle": "Real drivers, real stories. Hear from people who used DriveWay Finance to get behind the wheel of the car they wanted.",
+            "sectionTitle": "What Our Customers Say",
+            "sectionSubtitle": "Real stories from people who refinanced their car loans with us.",
             "testimonials": [
               {
-                "quote": "I was nervous about applying because my credit history isn't perfect, but the DriveWay Finance team made the whole process feel completely manageable. I got approved and picked up my car within the week — couldn't be happier.",
-                "authorName": "Marcus T.",
-                "loanType": "Used Car Loan"
+                "quote": "I was able to refinance my car loan at a much lower rate and cut my monthly payment by $60. The process was fast and straightforward.",
+                "authorName": "Lisa J.",
+                "loanType": "Refinance Car Loan"
               },
               {
-                "quote": "The application was so straightforward. I filled everything out online, had my options in front of me within hours, and the rate I got was better than what my bank offered. I'll definitely be coming back when it's time to upgrade.",
-                "authorName": "Priya S.",
-                "loanType": "New Car Loan"
+                "quote": "DriveWay Finance made refinancing my auto loan simple. I got approved quickly and saved over $1,000 in interest.",
+                "authorName": "Michael T.",
+                "loanType": "Standard Refinance"
               },
               {
-                "quote": "I'd been overpaying on my old loan for years and didn't realize how easy it was to refinance. DriveWay Finance walked me through every step and I ended up with a noticeably lower monthly payment. Wish I'd done it sooner.",
-                "authorName": "James R.",
-                "loanType": "Car Loan Refinancing"
-              },
-              {
-                "quote": "As a first-time car buyer, I had no idea where to start. The team answered every single one of my questions patiently and helped me understand exactly what I was signing up for. I felt confident the whole way through.",
-                "authorName": "Aisha K.",
-                "loanType": "New Car Loan"
+                "quote": "I used the cash-out refinance option to cover some unexpected expenses. It was an easy experience with helpful support along the way.",
+                "authorName": "Sonia K.",
+                "loanType": "Cash-Out Refinance"
               }
             ]
           },
           "whyChooseUs": {
             "sectionTitle": "Why DriveWay Finance?",
-            "sectionDescription": "Traditional banks and dealership financing often leave borrowers with limited choices, opaque terms, and rates that don't reflect their true profile. DriveWay Finance was created to change that — putting smarter, fairer car loan options directly in your hands with a process built around your needs, not ours.",
+            "sectionDescription": "At DriveWay Finance, we focus on making refinance car loan solutions accessible, transparent, and tailored to you. We’re committed to helping you save money, simplify your payments, and get the support you need at every step.",
             "differentiators": [
               {
-                "title": "We Work for You, Not the Lender",
-                "description": "Unlike dealership finance offices that prioritize their own margins, our goal is to find the best possible loan terms for your specific financial situation — period."
+                "title": "Personalized Service",
+                "description": "You’ll get one-on-one guidance from advisors who care about your financial goals and help you make informed decisions."
               },
               {
-                "title": "No Obligation to Proceed",
-                "description": "Getting a quote with DriveWay Finance costs you nothing and commits you to nothing. Explore your options freely before making any decisions."
+                "title": "No Hidden Fees",
+                "description": "We’re upfront about costs so you can refinance your car loan with complete confidence and no surprises."
               },
               {
-                "title": "Online-First Convenience",
-                "description": "Apply from your couch, your office, or anywhere in between. Our fully digital application means there's no need to visit a branch or sit through a high-pressure sales pitch."
-              },
-              {
-                "title": "Straightforward, Honest Advice",
-                "description": "We explain your loan options in plain language — no jargon, no fine-print surprises. We want you to feel informed and confident, not confused."
-              },
-              {
-                "title": "Support Throughout the Process",
-                "description": "Our team doesn't disappear after you submit your application. We're with you from your first inquiry right through to the day you get your keys."
+                "title": "Proven Results",
+                "description": "Thousands have trusted us to help them achieve lower rates and more manageable payments on their auto loans."
               }
             ]
           },
           "homeFaqPreview": {
-            "sectionTitle": "Common Questions About Car Loans",
-            "sectionSubtitle": "Wondering how car financing works or what to expect? Here are answers to the questions we hear most often.",
+            "sectionTitle": "Frequently Asked Questions",
+            "sectionSubtitle": "Answers to common refinance car loan questions.",
             "faqs": [
               {
-                "question": "What credit score do I need to qualify for a car loan?",
-                "answer": "There's no single minimum credit score requirement. We work with borrowers across a wide range of credit profiles, from excellent to fair or limited credit history. The stronger your credit, the more competitive your rate is likely to be, but we encourage you to apply regardless of where you stand."
+                "question": "Can I refinance my car loan if I have bad credit?",
+                "answer": "Yes, we work with a variety of lenders to help people with all types of credit histories secure a refinance car loan."
               },
               {
-                "question": "How much can I borrow for a car loan?",
-                "answer": "The amount you can borrow depends on factors like your income, credit profile, the value of the vehicle, and the loan term you choose. Once you complete your application, we'll present options that reflect what you're eligible for."
+                "question": "How soon can I refinance my current auto loan?",
+                "answer": "You can typically refinance as soon as you have all required documents and meet basic lender criteria."
               },
               {
-                "question": "Will applying affect my credit score?",
-                "answer": "Our initial quote process is designed to have minimal impact on your credit. We'll let you know clearly at each stage what type of credit check is involved so there are no surprises."
-              },
-              {
-                "question": "How long does car loan approval take?",
-                "answer": "Many applicants receive a lending decision quickly after submitting their application. In some cases, additional documentation may be needed, but our team works efficiently to keep the process as fast as possible."
-              },
-              {
-                "question": "Can I refinance my existing car loan through DriveWay Finance?",
-                "answer": "Absolutely. If you're currently paying a high interest rate on an existing loan, refinancing could reduce your monthly payments and the total interest you pay. Simply apply through our contact page and indicate that you're looking to refinance."
+                "question": "Will refinancing affect my credit score?",
+                "answer": "Checking your options won’t impact your score. A hard inquiry only occurs if you move forward with an application."
               }
             ],
-            "viewAllText": "View All Frequently Asked Questions",
+            "viewAllText": "See All FAQs",
             "viewAllUrl": "/faq"
           },
           "homeCtaBanner": {
-            "headline": "Your Next Car Is Closer Than You Think",
-            "description": "Getting started takes just a few minutes. Complete our simple online application today and let DriveWay Finance find the car loan terms that fit your life — not the other way around.",
-            "ctaButtonText": "Get My Free Quote Today",
+            "headline": "Ready to Refinance Your Car Loan?",
+            "description": "Get a free, personalized quote in minutes. No obligation—just straightforward advice on how much you could save.",
+            "ctaButtonText": "Start My Free Quote",
             "ctaButtonUrl": "/contact"
           }
         }
       },
       "about": {
         "seo": {
-          "title": "About DriveWay Finance — Our Mission & Approach",
-          "metaDescription": "Learn about DriveWay Finance's mission to make car loans accessible, transparent, and affordable. Discover our approach, values, and commitment to your success."
+          "title": "About Us – Your Trusted Refinance Car Loan Experts",
+          "metaDescription": "Discover how our team helps you refinance car loan with confidence. Learn about our mission, values, and the dedicated experts behind our quick approvals and re"
         },
         "componentOrder": [
           "aboutHero",
@@ -302,109 +245,87 @@
         ],
         "sections": {
           "aboutHero": {
-            "headline": "We're Changing the Way You Finance Your Next Car",
-            "subheadline": "DriveWay Finance was built on a simple belief — every driver deserves a car loan that works for their life, their budget, and their future, without the confusion or pressure that too often comes with it."
+            "headline": "Your Partner in Smart Car Loan Refinancing",
+            "subheadline": "We make it easy for you to refinance car loan with competitive rates, fast approval, and a team that truly cares about your financial goals."
           },
           "missionStatement": {
             "sectionTitle": "Our Mission",
-            "missionText": "At DriveWay Finance, our mission is to make car financing simple, fair, and genuinely accessible — whether you're buying your first vehicle, upgrading to something better, or rebuilding your credit history. We cut through the industry jargon, eliminate unnecessary hurdles, and connect borrowers with loan options that are honestly matched to their financial situation. Every decision we make is guided by one question: does this actually help the person in front of us get behind the wheel with confidence?",
-            "visionText": "We envision a future where securing a car loan is as straightforward as the drive itself — where borrowers of every background have equal access to competitive rates, clear terms, and honest guidance. We're working toward a lending landscape where no one feels trapped by fine print, pressured by timelines, or left wondering if they got a fair deal. That's the standard we hold ourselves to, and we won't stop until it's the industry standard too."
+            "missionText": "Our mission is to empower drivers to refinance car loan with clarity, confidence, and convenience. We believe that everyone deserves access to fair rates and a hassle-free process, so you can save money and take control of your finances without stress.",
+            "visionText": "We envision a future where refinancing your car loan is as simple as a few clicks—transparent, accessible, and tailored to your unique needs. By continually innovating and listening to our customers, we’re shaping a smarter, more reliable car lending experience for all."
           },
           "ourApproach": {
-            "sectionTitle": "How We Do Things Differently",
-            "sectionDescription": "DriveWay Finance isn't just another loan provider running applications through a system. We've built our entire process around the borrower — from the first inquiry to the final signature — because we know that how you get a car loan matters just as much as the loan itself.",
+            "sectionTitle": "How We Help You Refinance Car Loan",
+            "sectionDescription": "Every driver’s situation is unique. That’s why we’ve built our approach around real people, not just numbers. Here’s what sets us apart when you’re ready to refinance car loan:",
             "approachPillars": [
               {
+                "iconName": "rate-tag",
+                "title": "Competitive Rates",
+                "description": "We scan a wide network of lenders to help you refinance car loan at rates that fit your budget, so you keep more of your hard-earned money."
+              },
+              {
+                "iconName": "lightning-bolt",
+                "title": "Quick Approvals",
+                "description": "Our streamlined process means you get answers fast—often the same day—so you can move forward without delay."
+              },
+              {
                 "iconName": "shield-check",
-                "title": "Radical Transparency",
-                "description": "We believe you should understand every line of your loan agreement before you sign it. Our advisors walk you through your rate, term, total cost, and any applicable fees in plain language — no surprises at the dealership, no hidden conditions buried in the fine print."
-              },
-              {
-                "iconName": "user-circle",
-                "title": "Personalized Loan Matching",
-                "description": "No two borrowers are exactly alike, and neither are their ideal loan structures. We assess your full financial picture — income, credit profile, trade-in situation, and monthly budget — to match you with financing options that genuinely fit, rather than pushing a one-size-fits-all product."
-              },
-              {
-                "iconName": "clock",
-                "title": "Efficient, Respectful Process",
-                "description": "We respect your time. Our streamlined application process is designed to move quickly and remove friction at every stage, so you spend less time waiting and more time driving the vehicle you actually want."
-              },
-              {
-                "iconName": "trending-up",
-                "title": "Credit-Inclusive Lending",
-                "description": "We work with borrowers across the full credit spectrum — prime, near-prime, and those working to rebuild. Rather than turning people away based on a number, we focus on finding pathways to approval that set our clients up for long-term financial success."
-              },
-              {
-                "iconName": "headset",
-                "title": "Guidance You Can Count On",
-                "description": "Our loan advisors are here to educate, not just to close a deal. From explaining the difference between loan terms to helping you understand how a down payment affects your rate, we give you the knowledge to make a confident, informed decision."
+                "title": "Reliability",
+                "description": "We’re here for you at every step. From your first question to the final signature, you can count on us for honest answers and dependable support."
               }
             ]
           },
           "coreValues": {
-            "sectionTitle": "The Values That Drive Us",
-            "sectionSubtitle": "Every conversation we have, every loan we structure, and every decision we make is rooted in a set of principles we refuse to compromise on.",
+            "sectionTitle": "Our Core Values",
+            "sectionSubtitle": "The principles that guide every refinance car loan we help arrange.",
             "values": [
               {
                 "title": "Transparency",
-                "description": "We tell you what you need to know, even when it's complicated. Clear rates, honest terms, and straightforward communication are non-negotiable at every stage of the lending process."
-              },
-              {
-                "title": "Fairness",
-                "description": "We evaluate every application on its full merits, not just a credit score. Every borrower deserves a fair shot at competitive financing, and we fight to make that a reality."
-              },
-              {
-                "title": "Empowerment",
-                "description": "We don't just hand you a loan — we equip you with the understanding to own your financial decision. An informed borrower is always a better-positioned borrower."
+                "description": "We believe in clear communication and no hidden surprises. You’ll always know where you stand."
               },
               {
                 "title": "Integrity",
-                "description": "We only recommend products and terms we'd be comfortable explaining to a family member. If it's not right for you, we'll say so — and help you find what is."
+                "description": "Doing the right thing for our customers comes first, every single time."
               },
               {
-                "title": "Accessibility",
-                "description": "Whether you're a first-time buyer, a seasoned car owner, or someone rebuilding after financial hardship, DriveWay Finance is built to serve you — not just the easy applications."
+                "title": "Customer-First Mindset",
+                "description": "Your goals drive our process. We listen carefully so we can tailor solutions that make sense for you."
               },
               {
-                "title": "Accountability",
-                "description": "We stand behind every interaction and every loan we help facilitate. If something isn't right, we make it right — that's a commitment we take personally."
+                "title": "Efficiency",
+                "description": "Your time matters. That’s why we focus on making the refinance car loan process quick and straightforward."
               }
             ]
           },
           "teamOverview": {
-            "sectionTitle": "The People Behind Your Loan",
-            "description": "DriveWay Finance is powered by a team of automotive finance professionals, lending specialists, and client advocates who collectively bring deep expertise in car loans, consumer credit, and borrower support. Our team was assembled with a single purpose in mind: to create the kind of car financing experience that people actually want to talk about — one defined by honesty, speed, and genuine care for the outcome. We don't hire order-takers. We hire problem-solvers who understand that behind every application is a real person with real goals.",
+            "sectionTitle": "Meet the Team Behind Your Refinance Car Loan",
+            "description": "Our team brings together years of experience in auto finance, technology, and customer service. Every member is passionate about helping drivers like you refinance car loan with ease. We’re committed to staying up-to-date on industry trends so we can offer the best advice and solutions—no matter your credit or vehicle type.",
             "teamHighlights": [
               {
                 "role": "Experienced Loan Advisors",
-                "description": "Our loan advisors bring hands-on expertise in automotive financing and work one-on-one with each client to evaluate loan options, explain terms, and structure deals that align with real budgets and long-term financial goals."
+                "description": "Guide you through each step, explaining your options in plain language so you can make informed decisions."
               },
               {
-                "role": "Credit Specialists",
-                "description": "Our credit specialists are skilled at navigating complex credit profiles, identifying the strongest available lending pathways, and advocating for borrowers who may have been turned away elsewhere."
+                "role": "Customer Success Specialists",
+                "description": "Support you from application to approval, making sure your questions are answered promptly and thoroughly."
               },
               {
-                "role": "Client Support Team",
-                "description": "From your first inquiry to your final payment, our support team is available to answer questions, resolve concerns, and ensure the entire financing experience remains smooth and stress-free."
-              },
-              {
-                "role": "Compliance & Lending Operations",
-                "description": "Our operations team ensures that every loan processed through DriveWay Finance meets the highest standards of regulatory compliance, documentation accuracy, and responsible lending practice."
+                "role": "Lending Network Experts",
+                "description": "Connect you with trusted lenders who offer the most competitive terms when you refinance car loan."
               }
             ]
           },
           "aboutCtaBanner": {
-            "headline": "Ready to Find the Car Loan That's Right for You?",
-            "description": "Now that you know who we are and what we stand for, let's start working on your financing. Reach out to a DriveWay Finance advisor today and get a personalized loan quote with no pressure and no obligation.",
-            "ctaButtonText": "Get My Personalized Quote",
+            "headline": "Ready to Refinance Car Loan? Let’s Get Started!",
+            "description": "Take the first step toward lower payments and a smoother financial journey. Our friendly experts are here to help—reach out today.",
+            "ctaButtonText": "Contact Our Team",
             "ctaButtonUrl": "/contact"
           }
         }
       },
       "faq": {
         "seo": {
-          "title": "Car Loan FAQ — Your Questions Answered | DriveWay Finance",
-          "metaDescription": "Find answers to common questions about car loans, interest rates, credit requirements, refinancing, and more. DriveWay Finance makes car lending clear."
+          "title": "Refinance Car Loan FAQ – Everything You Need to Know",
+          "metaDescription": "Get clear answers to your top refinance car loan questions. Learn about rates, eligibility, the application process, and how refinancing can save you money."
         },
         "componentOrder": [
           "faqHero",
@@ -416,41 +337,26 @@
         ],
         "sections": {
           "faqHero": {
-            "headline": "Got Questions? We've Got Answers.",
-            "subheadline": "Navigating car loans doesn't have to be complicated. Browse our frequently asked questions to get clear, straightforward answers on everything from interest rates and eligibility to the application process — so you can hit the road with confidence."
+            "headline": "Refinance Car Loan FAQ",
+            "subheadline": "Have questions about how to refinance your car loan? Find straightforward answers and expert tips to help you make the best financial decision."
           },
           "faqCategories": {
             "sectionTitle": "Browse by Topic",
             "categories": [
               {
                 "iconName": "car",
-                "title": "General Car Loans",
-                "description": "New to car financing? Start here for answers on how car loans work, who qualifies, and what to expect from the lending process."
+                "title": "General Questions",
+                "description": "Learn the basics of how to refinance a car loan and what it means for you."
               },
               {
                 "iconName": "percent",
                 "title": "Rates & Terms",
-                "description": "Understand how interest rates are determined, what loan term lengths mean for your wallet, and how to secure the most competitive deal."
+                "description": "Understand interest rates, loan terms, and how refinancing can affect your payments."
               },
               {
-                "iconName": "clipboard-list",
-                "title": "Application & Approval",
-                "description": "Find out how to apply, what happens after you submit, and how long it takes to get approved for your car loan."
-              },
-              {
-                "iconName": "shield-check",
-                "title": "Credit & Eligibility",
-                "description": "Learn how your credit score impacts your loan options and what borrowers with all credit backgrounds can expect from DriveWay Finance."
-              },
-              {
-                "iconName": "refresh-cw",
-                "title": "Refinancing",
-                "description": "Already have a car loan? Discover how refinancing works and whether switching to a new loan could lower your monthly payments."
-              },
-              {
-                "iconName": "dollar-sign",
-                "title": "Payments & Payoff",
-                "description": "Get answers about making payments, paying off your loan early, and managing your account throughout the life of your loan."
+                "iconName": "document",
+                "title": "Application Process",
+                "description": "Get details on how to apply, what documents you’ll need, and what to expect during approval."
               }
             ]
           },
@@ -458,28 +364,16 @@
             "sectionTitle": "General Car Loan Questions",
             "faqs": [
               {
-                "question": "What is a car loan and how does it work?",
-                "answer": "A car loan is a type of secured financing that allows you to purchase a vehicle by borrowing money from a lender and repaying it over a set period of time with interest. The vehicle itself serves as collateral for the loan. Each month, you make a fixed payment that covers both the principal — the amount you borrowed — and the interest charged by the lender. Once all payments are made, you own the vehicle outright."
+                "question": "What does it mean to refinance a car loan?",
+                "answer": "To refinance a car loan means replacing your current auto loan with a new one, usually from a different lender. The goal is often to secure a lower interest rate, reduce your monthly payment, or change your loan terms. This process can help you save money over the life of your loan or adjust your payment schedule to better fit your needs."
               },
               {
-                "question": "What types of vehicles can I finance through DriveWay Finance?",
-                "answer": "DriveWay Finance can help you finance a wide range of vehicles, including new cars, used cars, certified pre-owned vehicles, trucks, SUVs, and vans. Eligibility may vary based on the vehicle's age, mileage, and overall condition. We recommend contacting us directly if you have questions about a specific vehicle type or model year."
+                "question": "Who should consider refinancing their car loan?",
+                "answer": "You might consider refinancing if your credit score has improved since you took out your original loan, if interest rates have dropped, or if you want to lower your monthly payment. Refinancing can also be a good option if you’re looking to pay off your loan faster or adjust the length of your term."
               },
               {
-                "question": "Do I need a down payment to get a car loan?",
-                "answer": "A down payment is not always required, but putting money down upfront can work in your favor. A larger down payment reduces the total amount you need to borrow, which can lower your monthly payment and reduce the overall interest you pay over the life of the loan. It can also improve your chances of approval if you have a limited credit history."
-              },
-              {
-                "question": "What documents do I need to apply for a car loan?",
-                "answer": "While requirements can vary, most car loan applications require proof of identity (such as a driver's license or government-issued ID), proof of income (such as recent pay stubs or tax returns), proof of residence (such as a utility bill or lease agreement), and information about the vehicle you intend to purchase. Having these documents ready before you apply can help speed up the process significantly."
-              },
-              {
-                "question": "Can I use a car loan to buy a vehicle from a private seller?",
-                "answer": "Yes, in many cases DriveWay Finance can help you secure financing for a private party vehicle purchase. Private sale loans may have slightly different requirements than dealership purchases, such as additional documentation about the vehicle's title and condition. Reach out to our team to discuss the specifics of your situation."
-              },
-              {
-                "question": "Is there a minimum or maximum loan amount?",
-                "answer": "Loan minimums and maximums can vary based on the lender, your creditworthiness, and the value of the vehicle being purchased. During the application process, DriveWay Finance will work to match you with financing options that align with your budget and the vehicle you have in mind. If you have a specific amount in mind, our team can help determine what's available to you."
+                "question": "Will refinancing my car loan affect my credit score?",
+                "answer": "Refinancing a car loan typically involves a hard inquiry on your credit report, which may cause a small, temporary dip in your score. However, if refinancing helps you make on-time payments and manage debt more effectively, it could benefit your credit in the long run."
               }
             ]
           },
@@ -487,28 +381,16 @@
             "sectionTitle": "Rates & Terms",
             "faqs": [
               {
-                "question": "What interest rate can I expect on a car loan?",
-                "answer": "Your interest rate — also called the Annual Percentage Rate (APR) — is determined by several factors including your credit score, loan term length, the age of the vehicle, and the lender's current offerings. Borrowers with strong credit histories typically qualify for lower rates, while those with less-than-perfect credit may see higher rates. DriveWay Finance works to connect you with competitive options based on your unique financial profile."
+                "question": "How are refinance car loan rates determined?",
+                "answer": "Refinance car loan rates are based on several factors, including your credit score, income, the age and mileage of your vehicle, and current market rates. Lenders also consider the amount you still owe and the value of your car. Shopping around and comparing offers can help you find the most competitive rate."
               },
               {
-                "question": "What loan term lengths are available?",
-                "answer": "Car loan terms typically range from 24 months to 84 months. Shorter terms mean higher monthly payments but less interest paid overall, while longer terms offer lower monthly payments but can cost more in interest over time. The right loan term depends on your monthly budget and your long-term financial goals. Our team can help you compare options side by side."
+                "question": "Can I change my loan term when I refinance?",
+                "answer": "Yes, when you refinance your car loan, you can usually choose a new repayment term. This means you might select a shorter term to pay off your loan faster and save on interest, or a longer term to lower your monthly payments. It's important to weigh the pros and cons of each option based on your financial goals."
               },
               {
-                "question": "Is my interest rate fixed or variable?",
-                "answer": "Most car loans offered through DriveWay Finance come with a fixed interest rate, meaning your rate — and therefore your monthly payment — stays the same for the entire life of the loan. This makes budgeting easier and protects you from market fluctuations. Variable rate car loans do exist in some cases, so it's important to review your loan agreement carefully before signing."
-              },
-              {
-                "question": "What factors most influence my car loan rate?",
-                "answer": "Several key factors affect your car loan interest rate: your credit score and credit history, your income and debt-to-income ratio, the loan term you choose, the age and mileage of the vehicle, and the amount of your down payment. Improving your credit score before applying, making a larger down payment, and choosing a shorter loan term are some of the most effective ways to qualify for a lower rate."
-              },
-              {
-                "question": "How is my monthly payment calculated?",
-                "answer": "Your monthly car loan payment is calculated based on the total loan amount (vehicle price minus any down payment or trade-in value), the interest rate, and the loan term. A higher loan amount, a higher interest rate, or a longer repayment period will all affect how much you pay each month. You can use our online loan calculator to estimate your potential monthly payment before you apply."
-              },
-              {
-                "question": "Are there any fees associated with a car loan?",
-                "answer": "Depending on the lender and loan type, there may be fees such as origination fees, prepayment penalties, or late payment fees. At DriveWay Finance, we believe in transparent lending — we encourage all applicants to review the full loan disclosure documents so there are no surprises. Always ask about any potential fees before finalizing your loan agreement."
+                "question": "Are there any fees associated with refinancing?",
+                "answer": "Some lenders charge fees for refinancing a car loan, such as application or title transfer fees. However, many lenders offer no-fee refinancing options. Always review the terms carefully so you understand any costs involved and factor them into your savings calculation."
               }
             ]
           },
@@ -516,47 +398,31 @@
             "sectionTitle": "Application & Approval",
             "faqs": [
               {
-                "question": "How do I apply for a car loan with DriveWay Finance?",
-                "answer": "Applying is simple and can be done entirely online. Just fill out our secure application form with your personal, financial, and vehicle information. The process typically takes only a few minutes. Once submitted, our team will review your application and work to match you with suitable financing options as quickly as possible."
+                "question": "How do I apply to refinance my car loan?",
+                "answer": "Applying to refinance your car loan is simple. Start by gathering basic information about your current loan and vehicle. Then fill out an online application with details like your income, employment status, and desired loan terms. Most lenders provide quick decisions—sometimes within minutes."
               },
               {
-                "question": "Will applying for a car loan affect my credit score?",
-                "answer": "When you submit a full loan application, lenders typically perform a hard credit inquiry, which can have a small, temporary impact on your credit score. However, if you're rate-shopping across multiple lenders within a short window of time (typically 14 to 45 days), credit bureaus often treat these inquiries as a single inquiry to minimize the impact. Pre-qualification, where available, usually involves only a soft inquiry that does not affect your score."
+                "question": "What documents will I need for refinancing?",
+                "answer": "You’ll typically need proof of income (like pay stubs), proof of insurance, identification, and information about your current car loan. Some lenders may also request details about your vehicle such as the VIN and mileage. Having these documents ready can help speed up the process."
               },
               {
                 "question": "How long does the approval process take?",
-                "answer": "Many applicants receive a loan decision within one business day, and in some cases, approval can come within just a few hours. The timeline may vary depending on the complexity of your application, the completeness of your documentation, and the specific lender involved. DriveWay Finance strives to make the process as fast and seamless as possible so you can focus on finding your vehicle."
-              },
-              {
-                "question": "What happens after I'm approved?",
-                "answer": "Once approved, you'll receive your loan offer with details including the approved loan amount, interest rate, loan term, and monthly payment. You'll have the opportunity to review all terms before accepting. After you accept and finalize the agreement, funds are typically disbursed directly to the dealership or seller, and you'll receive instructions on how to make your first payment."
-              },
-              {
-                "question": "Can I get pre-approved before choosing a vehicle?",
-                "answer": "Yes, and we highly recommend it. Getting pre-approved for a car loan gives you a clear picture of your budget before you start shopping, strengthens your negotiating position at the dealership, and speeds up the final purchase process. Pre-approval does not obligate you to accept the loan — it simply gives you a head start."
-              },
-              {
-                "question": "What if my application is denied?",
-                "answer": "A denial doesn't have to be the end of the road. If your application is not approved, we encourage you to ask for specific reasons so you can work on improving those areas — whether that means building your credit score, reducing existing debt, or saving for a larger down payment. DriveWay Finance is committed to helping all applicants understand their options and find a path forward, even if that takes a little more time."
-              },
-              {
-                "question": "Can I apply with a co-borrower or co-signer?",
-                "answer": "Yes. Applying with a co-borrower or co-signer who has a strong credit history can significantly improve your chances of approval and may help you qualify for a lower interest rate. A co-borrower shares responsibility for repaying the loan, while a co-signer agrees to step in if the primary borrower defaults. Both parties should fully understand their obligations before proceeding."
+                "answer": "Approval times for refinance car loans vary by lender, but many decisions are made within one business day. In some cases, you could receive an answer in just a few minutes. After approval, finalizing paperwork and paying off your old loan is usually completed within a week."
               }
             ]
           },
           "faqCtaBanner": {
-            "headline": "Still Have Questions? We're Here to Help.",
-            "description": "Can't find what you're looking for? Our car loan specialists are ready to walk you through your options, explain the process in plain language, and help you make the decision that's right for you. Don't hesitate — reach out today and let DriveWay Finance put you in the driver's seat.",
-            "ctaButtonText": "Contact Our Team",
+            "headline": "Still Have Questions?",
+            "description": "Our team is here to help with any questions about how to refinance your car loan. Reach out for personalized advice and guidance.",
+            "ctaButtonText": "Contact Us",
             "ctaButtonUrl": "/contact"
           }
         }
       },
       "contact": {
         "seo": {
-          "title": "Contact DriveWay Finance — Get Your Car Loan Quote",
-          "metaDescription": "Ready to explore your car loan options? Contact DriveWay Finance today. Fill out our quick form and a loan specialist will get back to you promptly."
+          "title": "Contact Us | Refinance Car Loan Support & Guidance",
+          "metaDescription": "Have questions about how to refinance car loan? Reach out to our expert team for quick answers, personalized support, and a hassle-free experience. We're here, "
         },
         "componentOrder": [
           "contactHero",
@@ -566,148 +432,132 @@
         ],
         "sections": {
           "contactHero": {
-            "headline": "Let's Get You Behind the Wheel",
-            "subheadline": "Whether you're financing your first car or refinancing an existing loan, our team is ready to help. Reach out today and expect a personalized response from a DriveWay Finance specialist within one business day."
+            "headline": "Get in Touch with Your Car Loan Refinance Experts",
+            "subheadline": "Whether you're just starting to explore your options or ready to refinance car loan, our experienced team is here to answer your questions and guide you every step of the way."
           },
           "contactForm": {
-            "formTitle": "Tell Us About Your Loan Needs",
-            "formDescription": "Fill out the form below and a DriveWay Finance advisor will follow up with loan options tailored to your situation. All fields marked with an asterisk are required.",
+            "formTitle": "Contact Our Team",
+            "formDescription": "Fill out the form below and a dedicated specialist will get back to you promptly. Please provide as much detail as possible so we can help you refinance car loan with ease.",
             "fields": [
               {
                 "fieldName": "fullName",
                 "label": "Full Name",
                 "type": "text",
-                "placeholder": "e.g. Jane Smith",
+                "placeholder": "Enter your full name",
                 "required": true
               },
               {
                 "fieldName": "email",
                 "label": "Email Address",
                 "type": "email",
-                "placeholder": "e.g. youremail@example.com",
+                "placeholder": "you@example.com",
                 "required": true
               },
               {
                 "fieldName": "phone",
                 "label": "Phone Number",
                 "type": "tel",
-                "placeholder": "e.g. (555) 000-0000",
-                "required": false
-              },
-              {
-                "fieldName": "loanType",
-                "label": "What Are You Looking For?",
-                "type": "select",
-                "placeholder": "Select a loan type",
-                "required": true
-              },
-              {
-                "fieldName": "estimatedLoanAmount",
-                "label": "Estimated Loan Amount",
-                "type": "select",
-                "placeholder": "Select a loan range",
-                "required": false
-              },
-              {
-                "fieldName": "creditRange",
-                "label": "Approximate Credit Score Range",
-                "type": "select",
-                "placeholder": "Select your credit range",
+                "placeholder": "(555) 123-4567",
                 "required": false
               },
               {
                 "fieldName": "message",
-                "label": "Additional Details or Questions",
+                "label": "How can we help?",
                 "type": "textarea",
-                "placeholder": "Tell us more about your situation — the type of vehicle you're considering, your timeline, or any questions you have.",
-                "required": false
+                "placeholder": "Tell us about your refinance car loan needs or ask a question.",
+                "required": true
               }
             ],
-            "submitButtonText": "Send My Inquiry",
-            "privacyNote": "Your information is kept strictly confidential and will never be sold to third parties. By submitting this form, you agree to be contacted by a DriveWay Finance advisor regarding your inquiry."
+            "submitButtonText": "Send Message",
+            "privacyNote": "Your information is kept private and secure. We’ll only use your details to assist you with your refinance car loan inquiry."
           },
           "contactReassurance": {
-            "sectionTitle": "What to Expect When You Reach Out",
+            "sectionTitle": "What to Expect When You Contact Us",
             "reassurancePoints": [
               {
                 "iconName": "clock",
-                "title": "Fast, Friendly Response",
-                "description": "We don't believe in leaving you waiting. A dedicated DriveWay Finance advisor will review your inquiry and get back to you within one business day with clear, straightforward guidance."
+                "title": "Prompt Responses",
+                "description": "We know time matters when you want to refinance car loan, so we strive to reply quickly—often within one business day."
               },
               {
-                "iconName": "shield-check",
-                "title": "No Pressure, No Obligations",
-                "description": "Reaching out costs you nothing. There's no commitment required to explore your car loan options — just honest advice to help you make the smartest financing decision."
+                "iconName": "shield",
+                "title": "Confidential & Secure",
+                "description": "Every question and detail you share is treated with the utmost respect and privacy throughout your refinance car loan journey."
               },
               {
-                "iconName": "user-circle",
-                "title": "Personalized Loan Guidance",
-                "description": "We take the time to understand your credit profile, budget, and vehicle goals before recommending a loan path — because cookie-cutter advice doesn't get you the best rate."
-              },
-              {
-                "iconName": "lock-closed",
-                "title": "Your Data Stays Secure",
-                "description": "Every piece of information you share with us is protected by industry-standard encryption and handled with complete confidentiality. We never sell or share your personal data."
-              },
-              {
-                "iconName": "document-text",
-                "title": "Soft Credit Check Available",
-                "description": "Want to explore your eligibility without impacting your credit score? We can start your rate review with a soft inquiry so you can compare options risk-free before committing."
-              },
-              {
-                "iconName": "chat-bubble",
-                "title": "Real People, Real Answers",
-                "description": "You won't get lost in automated responses. Our loan specialists are real people who understand the car financing process and are here to answer every question you have."
+                "iconName": "handshake",
+                "title": "No-Obligation Guidance",
+                "description": "We’re happy to answer questions and provide insights about how to refinance car loan, with no pressure or obligation."
               }
             ]
           },
           "contactFaqPreview": {
-            "sectionTitle": "Quick Answers Before You Reach Out",
+            "sectionTitle": "Frequently Asked Questions",
             "faqs": [
               {
-                "question": "Will contacting DriveWay Finance affect my credit score?",
-                "answer": "Not at all. Simply reaching out or submitting a general inquiry will never trigger a hard credit pull. A hard inquiry only occurs when you formally proceed with a loan application, and we'll always let you know before that happens."
+                "question": "How long does it take to refinance car loan?",
+                "answer": "Most applicants receive an approval decision within 24–48 hours after submitting their information."
               },
               {
-                "question": "How quickly will I hear back after submitting the form?",
-                "answer": "We aim to respond to all inquiries within one business day. If you submit your form over a weekend or holiday, you can expect a follow-up the next working business day."
-              },
-              {
-                "question": "Can I get a car loan if my credit score isn't perfect?",
-                "answer": "Yes. We work with borrowers across a wide range of credit profiles, including those with fair or rebuilding credit. Our team will explore the best available options for your specific financial situation."
-              },
-              {
-                "question": "What information should I have ready when I contact you?",
-                "answer": "Having a general idea of the vehicle you want, your estimated budget, and your approximate credit score range will help us give you faster, more accurate guidance — though we can assist even if you're still early in the process."
-              },
-              {
-                "question": "Do you offer refinancing for an existing car loan?",
-                "answer": "Absolutely. If you're looking to lower your monthly payment or secure a better interest rate on a current auto loan, our refinancing options may be able to help. Include your refinancing details in the message field and we'll take it from there."
+                "question": "Will checking my refinance car loan options affect my credit score?",
+                "answer": "Reviewing rate options does not impact your credit; only submitting a full application may result in a soft inquiry."
               }
             ],
-            "viewAllText": "View All Frequently Asked Questions",
+            "viewAllText": "See all FAQs",
             "viewAllUrl": "/faq"
           }
+        }
+      },
+      "apply": {
+        "embedCode": "<div style=\"width:100%;height:500px;\" data-fillout-id=\"ixTzrYyxmBus\" data-fillout-embed-type=\"standard\" data-fillout-inherit-parameters data-fillout-dynamic-resize></div><script src=\"https://server.fillout.com/embed/v1/\"></script>",
+        "seo": {
+          "title": "Apply Now — AutoRate Refresh",
+          "metaDescription": "Start your application today and get a decision fast."
         }
       }
     },
     "theme": {
-      "current": "theme4"
+      "current": "theme69"
     }
   },
-  "image5_keywords": [
-    "company culture",
-    "professional team",
-    "modern office space"
+  "image1_keywords": [
+    "happy driver",
+    "car keys",
+    "refinance car loan"
   ],
-  "image4_keywords": [
-    "professional photography",
-    "business visual",
-    "modern design element"
+  "image2_keywords": [
+    "modern family car",
+    "smiling couple",
+    "refinance car loan"
   ],
   "image3_keywords": [
-    "professional setting",
-    "modern workspace",
-    "business environment"
+    "auto loan paperwork",
+    "calculator",
+    "refinance car loan"
+  ],
+  "image4_keywords": [
+    "trustworthy advisor",
+    "car dealership",
+    "refinance car loan"
+  ],
+  "image5_keywords": [
+    "approved stamp",
+    "loan document",
+    "refinance car loan"
+  ],
+  "image6_keywords": [
+    "mobile phone app",
+    "car dashboard",
+    "refinance car loan"
+  ],
+  "image7_keywords": [
+    "saving money",
+    "piggy bank",
+    "refinance car loan"
+  ],
+  "image8_keywords": [
+    "quick approval",
+    "online application",
+    "refinance car loan"
   ]
 }
