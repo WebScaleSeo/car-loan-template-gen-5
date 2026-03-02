@@ -1,0 +1,91 @@
+name: Deploy to Dokploy
+
+on:
+  push:
+    branches:
+      - 'dokploy-build-*'
+
+jobs:
+  deploy:
+    name: Deploy to Dokploy
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Load Dokploy config
+        id: config
+        run: |
+          if [ ! -f dokployConfig.json ]; then
+            echo "Error: dokployConfig.json not found"
+            exit 1
+          fi
+          
+          APPLICATION_ID=$(jq -r '.application_id' dokployConfig.json)
+          DOMAIN=$(jq -r '.domain // empty' dokployConfig.json)
+          
+          if [ -z "$APPLICATION_ID" ] || [ "$APPLICATION_ID" = "null" ]; then
+            echo "Error: application_id is missing in dokployConfig.json"
+            exit 1
+          fi
+          
+          echo "application_id=$APPLICATION_ID" >> $GITHUB_OUTPUT
+          echo "domain=$DOMAIN" >> $GITHUB_OUTPUT
+      
+      - name: Extract branch name
+        id: branch
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+      
+      - name: Update application branch in Dokploy
+        run: |
+          echo "Updating application to use branch: ${{ steps.branch.outputs.name }}"
+          RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X POST "${{ secrets.DOKPLOY_API_URL }}/api/application.saveGithubProvider" \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: ${{ secrets.DOKPLOY_API_TOKEN }}" \
+            -d '{
+              "applicationId": "${{ steps.config.outputs.application_id }}",
+              "repository": "${{ github.event.repository.name }}",
+              "branch": "${{ steps.branch.outputs.name }}",
+              "owner": "${{ secrets.DOKPLOY_GITHUB_OWNER }}",
+              "buildPath": "/",
+              "githubId": "${{ secrets.DOKPLOY_GITHUB_ID }}"
+            }')
+          
+          HTTP_CODE=$(echo "$RESPONSE" | grep "HTTP_CODE:" | cut -d: -f2)
+          BODY=$(echo "$RESPONSE" | sed '/HTTP_CODE:/d')
+          
+          echo "Response: $BODY"
+          echo "HTTP Code: $HTTP_CODE"
+          
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "Failed to update application branch"
+            exit 1
+          fi
+      
+      - name: Trigger Dokploy deployment
+        run: |
+          echo "Triggering deployment..."
+          RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X POST "${{ secrets.DOKPLOY_API_URL }}/api/application.deploy" \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: ${{ secrets.DOKPLOY_API_TOKEN }}" \
+            -d '{
+              "applicationId": "${{ steps.config.outputs.application_id }}"
+            }')
+          
+          HTTP_CODE=$(echo "$RESPONSE" | grep "HTTP_CODE:" | cut -d: -f2)
+          BODY=$(echo "$RESPONSE" | sed '/HTTP_CODE:/d')
+          
+          echo "Response: $BODY"
+          echo "HTTP Code: $HTTP_CODE"
+          
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "Failed to trigger deployment"
+            exit 1
+          fi
+          
+          echo "✅ Deployment triggered successfully!"
+          echo "🌐 Domain: ${{ steps.config.outputs.domain }}"
+          echo "📡 Dokploy webhook will notify backend when build completes."

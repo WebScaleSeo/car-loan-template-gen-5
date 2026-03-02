@@ -1,0 +1,157 @@
+name: Deploy to Cloudflare Pages with DNS Update
+
+# Grant the workflow write access so it can push built artifacts
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - 'build-*'  # Triggers on any branch starting with "build-"
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'vite.config.js'
+      - 'cloudflareConfig.json'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy_url: ${{ steps.get_url.outputs.deploy_url }}
+      deploy_status: ${{ steps.set_status.outputs.status }}
+    steps:
+      # Checkout repository (includes cloudflareConfig.json)
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Install jq for JSON parsing
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      # Load dynamic Cloudflare configuration from cloudflareConfig.json
+      - name: Load Cloudflare Config
+        id: load_config
+        run: |
+          echo "ACCOUNT_ID=$(jq -r '.account_id' cloudflareConfig.json)" >> $GITHUB_ENV
+          echo "PROJECT_NAME=$(jq -r '.project_name' cloudflareConfig.json)" >> $GITHUB_ENV
+          echo "API_TOKEN=$(jq -r '.api_token' cloudflareConfig.json)" >> $GITHUB_ENV
+          echo "DEPLOY_DOMAIN=$(jq -r '.domain' cloudflareConfig.json)" >> $GITHUB_ENV
+          echo "ZONE_ID=$(jq -r '.zone_id' cloudflareConfig.json)" >> $GITHUB_ENV
+
+      # Build the project (assumes build output goes to the 'dist' directory)
+      - name: Build Project
+        run: |
+          npm ci
+          npm run build
+
+      # 6. Commit and push the freshly built 'dist' folder back to the same branch
+      - name: Commit dist folder
+        run: |
+          # configure a bot identity
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # stage dist and commit if there are changes
+          git add dist
+          git diff --staged --quiet || git commit -m "chore: add built dist folder"
+          # push back to the current branch
+          git push origin HEAD:${{ github.ref_name }}
+
+      # 7. Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ env.API_TOKEN }}
+          accountId: ${{ env.ACCOUNT_ID }}
+          # Pass the full deploy command; Wrangler Action v3 handles auth and deploy
+          command: pages deploy dist --project-name=${{ env.PROJECT_NAME }} --branch=main
+
+      # Retrieve the latest deployment URL using Cloudflare API
+      - name: Get Deployment URL
+        id: get_url
+        run: |
+          echo "Listing deployments for project ${PROJECT_NAME}..."
+          response=$(curl -s -X GET "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/pages/projects/${PROJECT_NAME}/deployments?page=1&per_page=1" \
+            -H "Authorization: Bearer ${API_TOKEN}" \
+            -H "Content-Type: application/json")
+          deploy_url=$(echo "$response" | jq -r '.result[0].url')
+          if [ -z "$deploy_url" ] || [ "$deploy_url" = "null" ]; then
+            echo "Deployment URL not found!" >&2
+            exit 1
+          fi
+          # Remove protocol for valid CNAME content
+          clean_url=$(echo "$deploy_url" | sed -E 's|https?://||')
+          echo "Deployment URL for DNS: $clean_url"
+          echo "deploy_url=$clean_url" >> $GITHUB_OUTPUT
+
+      # Update the custom domain's CNAME record using Cloudflare API
+      - name: Update Custom Domain CNAME Record
+        run: |
+          DEPLOY_URL_CNAME="${{ steps.get_url.outputs.deploy_url }}"
+          echo "Updating CNAME for ${DEPLOY_DOMAIN} to point to ${DEPLOY_URL_CNAME}"
+          # Check if a DNS record exists for the domain
+          record_response=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records?name=${DEPLOY_DOMAIN}" \
+            -H "Authorization: Bearer ${API_TOKEN}" \
+            -H "Content-Type: application/json")
+          record_id=$(echo "$record_response" | jq -r '.result[0].id')
+          if [ "$record_id" != "null" ] && [ -n "$record_id" ]; then
+            echo "Found existing record ID: $record_id. Updating..."
+            update_response=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records/${record_id}" \
+              -H "Authorization: Bearer ${API_TOKEN}" \
+              -H "Content-Type: application/json" \
+              --data "{\"type\":\"CNAME\",\"name\":\"${DEPLOY_DOMAIN}\",\"content\":\"${DEPLOY_URL_CNAME}\",\"ttl\":1,\"proxied\":true}")
+            echo "$update_response" | jq .
+          else
+            echo "No existing record found. Creating new DNS record..."
+            create_response=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records" \
+              -H "Authorization: Bearer ${API_TOKEN}" \
+              -H "Content-Type: application/json" \
+              --data "{\"type\":\"CNAME\",\"name\":\"${DEPLOY_DOMAIN}\",\"content\":\"${DEPLOY_URL_CNAME}\",\"ttl\":1,\"proxied\":true}")
+            echo "$create_response" | jq .
+          fi
+        env:
+          API_TOKEN: ${{ env.API_TOKEN }}
+          ZONE_ID: ${{ env.ZONE_ID }}
+          DEPLOY_DOMAIN: ${{ env.DEPLOY_DOMAIN }}
+
+      - name: Set deployment status
+        id: set_status
+        if: always()
+        run: |
+          if [[ "${{ job.status }}" == "success" ]]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+          fi
+
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()  # This ensures this job runs regardless of deploy job status
+    steps:
+      - name: Google Auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Publish Deployment Details to Pub/Sub
+        uses: miraliumre/actions-pubsub@v1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          topic_name: ${{ secrets.GCP_PUBSUB_TOPIC }}
+          message: |
+            {
+              "status": "${{ needs.deploy.outputs.deploy_status }}",
+              "deploymentUrl": "${{ needs.deploy.outputs.deploy_url }}",
+              "branch": "${{ github.ref_name }}",
+              "repository": "${{ github.repository }}"
+            }
