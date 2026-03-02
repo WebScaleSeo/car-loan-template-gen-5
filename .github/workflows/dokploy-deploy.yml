@@ -51,7 +51,9 @@ jobs:
               "branch": "${{ steps.branch.outputs.name }}",
               "owner": "${{ secrets.DOKPLOY_GITHUB_OWNER }}",
               "buildPath": "/",
-              "githubId": "${{ secrets.DOKPLOY_GITHUB_ID }}"
+              "githubId": "${{ secrets.DOKPLOY_GITHUB_ID }}",
+              "watchPaths": [],
+              "enableSubmodules": false
             }')
           
           HTTP_CODE=$(echo "$RESPONSE" | grep "HTTP_CODE:" | cut -d: -f2)
