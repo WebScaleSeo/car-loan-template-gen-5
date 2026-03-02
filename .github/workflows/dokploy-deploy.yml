@@ -91,3 +91,25 @@ jobs:
           echo "✅ Deployment triggered successfully!"
           echo "🌐 Domain: ${{ steps.config.outputs.domain }}"
           echo "📡 Dokploy webhook will notify backend when build completes."
+
+  notify_failure:
+    name: Notify backend on CI/CD failure
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Notify backend of CI/CD failure
+        run: |
+          echo "CI/CD pipeline failed for branch: ${{ github.ref_name }}"
+          RESPONSE=$(curl -s -w "\nHTTP_CODE:%{http_code}" -X POST "${{ secrets.BACKEND_API_URL }}/api/website-build/webhook/github-cicd-failure" \
+            -H "Content-Type: application/json" \
+            -H "x-webhook-secret: ${{ secrets.WEBHOOK_SECRET }}" \
+            -d "{
+              \"branch\": \"${{ github.ref_name }}\",
+              \"repository\": \"${{ github.repository }}\",
+              \"reason\": \"GitHub Actions CI/CD pipeline failed (run: ${{ github.run_id }})\"
+            }")
+          HTTP_CODE=$(echo "$RESPONSE" | grep "HTTP_CODE:" | cut -d: -f2)
+          BODY=$(echo "$RESPONSE" | sed '/HTTP_CODE:/d')
+          echo "Response: $BODY"
+          echo "HTTP Code: $HTTP_CODE"
