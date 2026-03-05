@@ -10,4 +10,7 @@ export default defineConfig({
   output: 'static',
   site: 'https://placeholder.com',
   trailingSlash: 'never',
+  build: {
+    format: 'file'
+  }
 })
